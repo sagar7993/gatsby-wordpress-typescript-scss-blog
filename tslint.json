@@ -1,0 +1,78 @@
+{
+    "extends": [
+        "tslint:recommended",
+        "tslint:latest",
+        "tslint-react"
+    ],
+    "jsRules": {
+        "no-empty": true
+    },
+    "rules": {
+        "variable-name": [
+            true,
+            "ban-keywords",
+            "check-format",
+            "allow-leading-underscore",
+            "allow-trailing-underscore",
+            "allow-pascal-case",
+            "allow-snake-case"
+        ],
+        "no-unused-expression": [
+            false,
+            "allow-fast-null-checks"
+        ],
+        "interface-name": [
+            true,
+            "never-prefix"
+        ],
+        "no-empty": [
+            false,
+            "allow-empty-catch",
+            "allow-empty-functions"
+        ],
+        "whitespace": [
+            true,
+            "check-branch",
+            "check-decl",
+            "check-operator",
+            "check-separator",
+            "check-type"
+        ],
+        "triple-equals": [
+            true,
+            "allow-null-check"
+        ],
+        "quotemark": [true, "single", "jsx-double"],
+        "max-classes-per-file": false,
+        "object-literal-shorthand": false,
+        "trailing-comma": true,
+        "eofline": true,
+        "semicolon": true,
+        "no-console": false,
+        "no-eval": true,
+        "array-type": false,
+        "no-bitwise": false,
+        "no-implicit-dependencies": [true, "dev"],
+        "no-submodule-imports": false,
+        "no-shadowed-variable": true,
+        "member-access": false,
+        "member-ordering": false,
+        "ordered-imports": false,
+        "object-literal-sort-keys": false,
+        "no-string-literal": false,
+        "no-empty-interface": false,
+        "jsx-alignment": false,
+        "jsx-no-multiline-js": false,
+        "jsx-boolean-value": false,
+        "jsx-self-close": false,
+        "jsx-no-lambda": false,
+        "indent": [true, "tabs", 4]
+    },
+    "linterOptions": {
+        "exclude": [
+            "config/**/*.js",
+            "node_modules/**/*.ts",
+            "public/**/*.js"
+        ]
+    }
+}
