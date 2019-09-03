@@ -9,6 +9,7 @@ module.exports = {
     title: "OnMyCanvas",
     description: "My travel stories and best personal development ideas to live better",
     author: `@guptapranky`,
+    siteUrl: "https://www.onmycanvas.com"
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -65,8 +66,10 @@ module.exports = {
         }
       }
     },
+    `gatsby-plugin-robots-txt`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-offline`
   ]
 }
