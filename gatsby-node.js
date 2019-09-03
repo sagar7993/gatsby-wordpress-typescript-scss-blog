@@ -36,7 +36,7 @@ exports.createPages = async ({
   const BlogPosts = result.data.allWordpressPost.edges;
   BlogPosts.forEach(post => {
     createPage({
-      path: `/${post.node.slug}`,
+      path: `/post/${post.node.slug}`,
       component: BlogPostTemplate,
       context: {
         id: post.node.wordpress_id,
