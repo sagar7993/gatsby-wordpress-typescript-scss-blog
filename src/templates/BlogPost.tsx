@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import { graphql } from 'gatsby';
 
@@ -6,22 +6,17 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 export const BlogPost = ({ data }: { data: any }) => {
-	console.log(data);
 	return (
 		<Layout>
-			{data &&
-				<Fragment>
-					<SEO title={data.wordpressPost.title} description={data.wordpressPost.excerpt} />
-					<h1>{data.wordpressPost.title}</h1>
-					<p>
-						Written by {data.wordpressPost.author.name} on {data.wordpressPost.date}
-					</p>
-					<div
-						style={{ marginTop: 20 }}
-						dangerouslySetInnerHTML={{ __html: data.wordpressPost.content }}
-					/>
-				</Fragment>
-			}
+			<SEO title={data.wordpressPost.title} description={data.wordpressPost.excerpt} />
+			<h1>{data.wordpressPost.title}</h1>
+			<p>
+				Written by {data.wordpressPost.author.name} on {data.wordpressPost.date}
+			</p>
+			<div
+				style={{ marginTop: 20 }}
+				dangerouslySetInnerHTML={{ __html: data.wordpressPost.content }}
+			/>
 		</Layout>
 	);
 };
