@@ -6,7 +6,6 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 export const BlogPost = ({ data, pageContext }: { data: any, pageContext: any }) => {
-	console.log(pageContext);
 	return (
 		<Layout>
 			<SEO title={data.wordpressPost.title} description={data.wordpressPost.excerpt} />

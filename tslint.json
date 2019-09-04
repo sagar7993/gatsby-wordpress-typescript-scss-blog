@@ -72,6 +72,9 @@
         "exclude": [
             "config/**/*.js",
             "node_modules/**/*.ts",
+            "node_modules/**/*.tsx",
+            "node_modules/**/*.js",
+            "node_modules/**/*.jsx",
             "public/**/*.js"
         ]
     }
