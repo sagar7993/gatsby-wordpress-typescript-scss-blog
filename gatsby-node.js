@@ -9,7 +9,6 @@
 // You can delete this file if you're not using it
 
 const path = require(`path`);
-const slash = require(`slash`);
 
 const createPaginatedPages = require('gatsby-paginate');
 
@@ -62,15 +61,5 @@ exports.createPages = async ({
     pageTemplate: "src/templates/BlogPosts.tsx",
     pageLength: 10,
     pathPrefix: "posts"
-  })
-
-  BlogPosts.forEach(edge => {
-    createPage({
-      path: `/posts/${edge.node.slug}/`,
-      component: slash(BlogPostTemplate),
-      context: {
-        id: edge.node.id
-      },
-    });
   })
 }
