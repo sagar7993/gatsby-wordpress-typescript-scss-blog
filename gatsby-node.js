@@ -10,7 +10,7 @@
 
 const path = require(`path`);
 
-// const createPaginatedPages = require('gatsby-paginate');
+const createPaginatedPages = require('gatsby-paginate');
 
 exports.createPages = async ({
   graphql,
@@ -27,6 +27,7 @@ exports.createPages = async ({
     allWordpressPost {
       edges {
         node {
+          id,
           slug
           wordpress_id,
           title,
@@ -41,9 +42,10 @@ exports.createPages = async ({
       reporter.panicOnBuild(`Error while running GraphQL query.`);
       return;
   }
+
   const BlogPosts = result.data.allWordpressPost.edges;
 
-  BlogPosts.forEach((post, index) => {
+  BlogPosts.forEach(post => {
     createPage({
       path: `/post/${post.node.slug}`,
       component: BlogPostTemplate,
@@ -53,11 +55,12 @@ exports.createPages = async ({
     });
   });
 
-  // createPaginatedPages({
-  //   edges: BlogPosts,
-  //   createPage: createPage,
-  //   pageTemplate: "src/templates/BlogPosts.tsx",
-  //   pageLength: 10,
-  //   pathPrefix: "posts"
-  // })
+  createPaginatedPages({
+    edges: BlogPosts,
+    createPage: createPage,
+    pageTemplate: 'src/templates/BlogPosts.tsx',
+    pageLength: 10,
+    pathPrefix: 'posts',
+    context: {}
+  });
 }
