@@ -17,9 +17,9 @@ exports.createPages = async ({
   actions,
   reporter
 }) => {
-  
+
   const { createPage } = actions;
-  
+
   const BlogPostTemplate = path.resolve("./src/templates/BlogPost.tsx");
 
   const result = await graphql(`
@@ -36,21 +36,23 @@ exports.createPages = async ({
         }
       }
     }
-  }`
-  );
+  }`);
+
   if (result.errors) {
-      reporter.panicOnBuild(`Error while running GraphQL query.`);
-      return;
+    reporter.panicOnBuild(`Error while running GraphQL query.`);
+    return;
   }
 
   const BlogPosts = result.data.allWordpressPost.edges;
 
-  BlogPosts.forEach(post => {
+  BlogPosts.forEach((post, index) => {
     createPage({
       path: `/post/${post.node.slug}`,
       component: BlogPostTemplate,
       context: {
-        id: post.node.wordpress_id
+        id: post.node.wordpress_id,
+        previous: index === 0 ? null : BlogPosts[index - 1].node,
+        next: index === (BlogPosts.length - 1) ? null : BlogPosts[index + 1].node
       }
     });
   });

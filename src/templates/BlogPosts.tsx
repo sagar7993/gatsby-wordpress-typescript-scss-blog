@@ -24,9 +24,7 @@ const IndexPage = ({ pathContext }: any) => {
 					<Link to={'/post/' + node.slug}>
 						<h3>{node.title}</h3>
 					</Link>
-
 					<div className={'post-content'} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-
 					{node.date}
 				</div>
 			))}
