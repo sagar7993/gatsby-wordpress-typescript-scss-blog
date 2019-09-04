@@ -66,6 +66,70 @@ module.exports = {
         }
       }
     },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: "UA-104232438-1",
+    //     // Defines where to place the tracking script - `true` in the head and `false` in the body
+    //     head: false,
+    //     // Setting this parameter is optional
+    //     anonymize: true,
+    //     // Setting this parameter is also optional
+    //     respectDNT: true,
+    //     // Avoids sending pageview hits from custom paths
+    //     exclude: ["/preview/**", "/do-not-track/me/too/"],
+    //     // Delays sending pageview hits on route update (in milliseconds)
+    //     pageTransitionDelay: 0,
+    //     // Any additional optional fields
+    //     sampleRate: 5,
+    //     siteSpeedSampleRate: 10,
+    //     cookieDomain: "onmycanvas.com",
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-instagram`,
+    //   options: {
+    //     username: `priyanka_onmycanvas`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-facebook`,
+    //   options: {
+    //     places: [`${facebookPageID}`], // Can be either a numeric ID or the URL ID
+    //     params: {
+    //       fields: 'hours, posts { message, created_time }', // See Facebooks API to see what you can query for
+    //     },
+    //     key: process.env.FACEBOOK_GRAPH_TOKEN, // You will need to create a Facebook application and go through review in order to get an API token.
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-twitter`,
+    //   options: {
+    //     credentials: {
+    //       consumer_key: "INSERT_HERE_YOUR_CONSUMER_KEY",
+    //       consumer_secret: "INSERT_HERE_YOUR_CONSUMER_SECRET",
+    //       bearer_token: "INSERT_HERE_YOUR_BEARER_TOKEN",
+    //     },
+    //     queries: {
+    //       nameofthequery: {
+    //         endpoint: "statuses/user_timeline",
+    //         params: {
+    //           screen_name: "gatsbyjs",
+    //           include_rts: false,
+    //           exclude_replies: true,
+    //           tweet_mode: "extended",
+    //         },
+    //       },
+    //       nameofanotherthequery: {
+    //         endpoint: "search/tweets",
+    //         params: {
+    //           q: "#gatsbyjs",
+    //           tweet_mode: "extended",
+    //         },
+    //       },
+    //     },
+    //   },
+    // },
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
