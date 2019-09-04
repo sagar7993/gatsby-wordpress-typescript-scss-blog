@@ -10,7 +10,7 @@
 
 const path = require(`path`);
 
-const createPaginatedPages = require('gatsby-paginate');
+// const createPaginatedPages = require('gatsby-paginate');
 
 exports.createPages = async ({
   graphql,
@@ -48,18 +48,16 @@ exports.createPages = async ({
       path: `/post/${post.node.slug}`,
       component: BlogPostTemplate,
       context: {
-        id: post.node.wordpress_id,
-        previous: index === 0 ? null : BlogPosts[index - 1].node,
-        next: index === (BlogPosts.length - 1) ? null : BlogPosts[index + 1].node
+        id: post.node.wordpress_id
       }
     });
   });
 
-  createPaginatedPages({
-    edges: BlogPosts,
-    createPage: createPage,
-    pageTemplate: "src/templates/BlogPosts.tsx",
-    pageLength: 10,
-    pathPrefix: "posts"
-  })
+  // createPaginatedPages({
+  //   edges: BlogPosts,
+  //   createPage: createPage,
+  //   pageTemplate: "src/templates/BlogPosts.tsx",
+  //   pageLength: 10,
+  //   pathPrefix: "posts"
+  // })
 }
