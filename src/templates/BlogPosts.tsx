@@ -5,6 +5,8 @@ import { Button } from 'antd';
 
 import Layout from '../components/Layout';
 
+import { replaceUrlsIfLocalhost } from '../utils';
+
 import './Blog.scss';
 
 const IndexPage = ({ pathContext }: any) => {
@@ -15,13 +17,12 @@ const IndexPage = ({ pathContext }: any) => {
 
 	return (
 		<Layout>
-			<h4>{index} of {pageCount} Pages</h4>
 			{group.map(({ node }: any) => (
 				<div key={node.slug} className="post margin-bottom-48px">
 					<Link to={'/post/' + node.slug}>
 						<h3>{node.title}</h3>
 					</Link>
-					<div className="post-content" dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+					<div className="post-content" dangerouslySetInnerHTML={{ __html: replaceUrlsIfLocalhost(node.excerpt) }} />
 				</div>
 			))}
 			<div className="navigation-links">
