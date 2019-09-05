@@ -1,6 +1,7 @@
 import React from 'react';
-
 import { graphql, Link } from 'gatsby';
+
+import { Button } from 'antd';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
@@ -19,12 +20,12 @@ export const BlogPost = ({ data, pageContext }: { data: any, pageContext: any })
 			<div className="margin-bottom-24px navigation-links">
 				{pageContext.previous && pageContext.previous.slug &&
 					<Link to={`/post/${pageContext.previous.slug}`}>
-						<div>Previous Post</div>
+						<Button type="primary">Go to Previous Post</Button>
 					</Link>
 				}
 				{pageContext.next && pageContext.next.slug &&
 					<Link to={`/post/${pageContext.next.slug}`}>
-						<div>Next Post</div>
+						<Button type="primary">Next Post</Button>
 					</Link>
 				}
 			</div>

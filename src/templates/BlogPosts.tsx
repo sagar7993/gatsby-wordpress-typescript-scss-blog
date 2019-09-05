@@ -29,7 +29,7 @@ const IndexPage = ({ pathContext }: any) => {
 				{index > 0 &&
 					<div className="previous-link">
 						<Link to={'/posts/' + previousUrl}>
-							<Button type="default">Go to Previous Page</Button>
+							<Button type="primary">Go to Previous Page</Button>
 						</Link>
 					</div>
 				}
