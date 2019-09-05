@@ -20,7 +20,7 @@ const IndexPage = ({ pathContext }: any) => {
 			{group.map(({ node }: any) => (
 				<div key={node.slug} className="post margin-bottom-48px">
 					<Link to={'/post/' + node.slug}>
-						<h3>{node.title}</h3>
+						<h3>{decodeHtmlCharCodes(node.title)}</h3>
 					</Link>
 					<div className="post-content" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }} />
 				</div>
