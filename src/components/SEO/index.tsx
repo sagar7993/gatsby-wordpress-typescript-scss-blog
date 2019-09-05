@@ -9,9 +9,15 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-const SEO = ({ description, lang, meta, title }: { description: string, lang: string, meta: any, title: string }) => {
-	const { site } = useStaticQuery(
-		graphql`
+export interface Props {
+	description: string;
+	lang: string;
+	meta: any[];
+	title: string;
+}
+
+export const SEO = (props: Props) => {
+	const { site } = useStaticQuery(graphql`
       query {
         site {
           siteMetadata {
@@ -21,17 +27,14 @@ const SEO = ({ description, lang, meta, title }: { description: string, lang: st
           }
         }
       }
-    `
-	);
+    `);
 
-	const metaDescription = description || site.siteMetadata.description;
+	const metaDescription = props.description || site.siteMetadata.description;
 
 	return (
 		<Helmet
-			htmlAttributes={{
-				lang,
-			}}
-			title={title}
+			htmlAttributes={{ lang: props.lang }}
+			title={props.title}
 			titleTemplate={`%s | ${site.siteMetadata.title}`}
 			meta={[
 				{
@@ -40,7 +43,7 @@ const SEO = ({ description, lang, meta, title }: { description: string, lang: st
 				},
 				{
 					property: 'og:title',
-					content: title,
+					content: props.title,
 				},
 				{
 					property: 'og:description',
@@ -60,13 +63,13 @@ const SEO = ({ description, lang, meta, title }: { description: string, lang: st
 				},
 				{
 					name: 'twitter:title',
-					content: title,
+					content: props.title,
 				},
 				{
 					name: 'twitter:description',
 					content: metaDescription,
 				},
-			].concat(meta)}
+			].concat(props.meta)}
 		/>
 	);
 };

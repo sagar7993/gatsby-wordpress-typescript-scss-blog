@@ -12,7 +12,11 @@ import Header from '../Header';
 
 import './Layout.scss';
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+export interface Props {
+	children: React.ReactNode;
+}
+
+export const Layout = (props: Props) => {
 	const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -27,7 +31,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 		<Fragment>
 			<Header siteTitle={data.site.siteMetadata.title} />
 			<div className="layout">
-				<main>{children}</main>
+				<main>{props.children}</main>
 			</div>
 		</Fragment>
 	);
