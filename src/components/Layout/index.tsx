@@ -8,9 +8,9 @@
 import React, { Fragment } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import './Layout.scss';
-
 import Header from '../Header';
+
+import './Layout.scss';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
 	const data = useStaticQuery(graphql`

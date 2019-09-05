@@ -6,15 +6,17 @@ import { Button } from 'antd';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
+import { decodeHtmlCharCodes } from '../utils';
+
 import './Blog.scss';
 
 export const BlogPost = ({ data, pageContext }: { data: any, pageContext: any }) => {
 	return (
 		<Layout>
 			<SEO title={data.wordpressPost.title} description={data.wordpressPost.excerpt} />
-			<h1>{data.wordpressPost.title}</h1>
-			<p>Written by {data.wordpressPost.author.name} on {data.wordpressPost.date}</p>
-			<div className="margin-top-24px" dangerouslySetInnerHTML={{ __html: data.wordpressPost.content }} />
+			<h1>{decodeHtmlCharCodes(data.wordpressPost.title)}</h1>
+			<p>Written by {decodeHtmlCharCodes(data.wordpressPost.author.name)} on {data.wordpressPost.date}</p>
+			<div className="margin-top-24px" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(data.wordpressPost.content) }} />
 			<div className="margin-bottom-24px navigation-links">
 				{pageContext.previous && pageContext.previous.slug &&
 					<Link to={`/post/${pageContext.previous.slug}`}>

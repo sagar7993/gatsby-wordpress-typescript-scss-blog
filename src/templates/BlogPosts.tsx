@@ -5,6 +5,8 @@ import { Button } from 'antd';
 
 import Layout from '../components/Layout';
 
+import { decodeHtmlCharCodes } from '../utils';
+
 import './Blog.scss';
 
 const IndexPage = ({ pathContext }: any) => {
@@ -20,7 +22,7 @@ const IndexPage = ({ pathContext }: any) => {
 					<Link to={'/post/' + node.slug}>
 						<h3>{node.title}</h3>
 					</Link>
-					<div className="post-content" dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+					<div className="post-content" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }} />
 				</div>
 			))}
 			<div className="navigation-links">
