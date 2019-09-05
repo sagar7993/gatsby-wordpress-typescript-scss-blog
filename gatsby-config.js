@@ -9,7 +9,7 @@ module.exports = {
     title: "My Demo Blog",
     description: "This is a demo blog",
     author: '@sagar7993',
-    siteUrl: "https://www.onmycanvas.com"
+    siteUrl: "http://localhost:8001"
   },
   plugins: [
     'gatsby-plugin-typescript',
@@ -38,15 +38,15 @@ module.exports = {
     {
       resolve: 'gatsby-source-wordpress',
       options: {
-        baseUrl: 'www.onmycanvas.com',
-        protocol: 'https',
+        baseUrl: 'localhost:8001',
+        protocol: 'http',
         hostingWPCOM: false,
         useACF: false,
         verboseOutput: false,
         perPage: 100,
         searchAndReplaceContentUrls: {
-          sourceUrl: "https://www.onmycanvas.com/",
-          replacementUrl: "http://localhost:8000/post/"
+          sourceUrl: "http://localhost:8001",
+          replacementUrl: "http://localhost:8000"
         },
         concurrentRequests: 10,
         includedRoutes: [
