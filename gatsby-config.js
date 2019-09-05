@@ -6,9 +6,9 @@
 
 module.exports = {
   siteMetadata: {
-    title: "OnMyCanvas",
-    description: "My travel stories and best personal development ideas to live better",
-    author: '@guptapranky',
+    title: "My Demo Blog",
+    description: "This is a demo blog",
+    author: '@sagar7993',
     siteUrl: "https://www.onmycanvas.com"
   },
   plugins: [
@@ -29,8 +29,8 @@ module.exports = {
         name: 'gatsby-starter-default',
         short_name: 'starter',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#8B0000',
+        theme_color: '#8B0000',
         display: 'minimal-ui',
         icon: 'src/images/gatsby-icon.png',
       },
@@ -45,8 +45,8 @@ module.exports = {
         verboseOutput: false,
         perPage: 100,
         searchAndReplaceContentUrls: {
-          sourceUrl: "https://www.onmycanvas.com",
-          replacementUrl: "http://localhost:8000",
+          sourceUrl: "https://www.onmycanvas.com/",
+          replacementUrl: "http://localhost:8000/post/",
         },
         concurrentRequests: 10,
         includedRoutes: [
@@ -77,7 +77,7 @@ module.exports = {
     // {
     //   resolve: 'gatsby-plugin-google-analytics',
     //   options: {
-    //     trackingId: "UA-104232438-1",
+    //     trackingId: "my-tracking-id",
     //     // Defines where to place the tracking script - 'true' in the head and 'false' in the body
     //     head: false,
     //     // Setting this parameter is optional
@@ -91,13 +91,13 @@ module.exports = {
     //     // Any additional optional fields
     //     sampleRate: 5,
     //     siteSpeedSampleRate: 10,
-    //     cookieDomain: "onmycanvas.com",
+    //     cookieDomain: "example.com",
     //   },
     // },
     // {
     //   resolve: 'gatsby-source-instagram',
     //   options: {
-    //     username: 'priyanka_onmycanvas',
+    //     username: 'my-instagram-username',
     //   },
     // },
     // {
