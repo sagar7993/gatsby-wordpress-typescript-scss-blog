@@ -8,38 +8,38 @@ module.exports = {
   siteMetadata: {
     title: "OnMyCanvas",
     description: "My travel stories and best personal development ideas to live better",
-    author: `@guptapranky`,
+    author: '@guptapranky',
     siteUrl: "https://www.onmycanvas.com"
   },
   plugins: [
-    `gatsby-plugin-typescript`,
-    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: 'images',
+        path: '${__dirname}/src/images',
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        name: 'gatsby-starter-default',
+        short_name: 'starter',
+        start_url: '/',
+        background_color: '#663399',
+        theme_color: '#663399',
+        display: 'minimal-ui',
+        icon: 'src/images/gatsby-icon.png',
       },
     },
     {
-      resolve: `gatsby-source-wordpress`,
+      resolve: 'gatsby-source-wordpress',
       options: {
-        baseUrl: `www.onmycanvas.com`,
-        protocol: `https`,
+        baseUrl: 'www.onmycanvas.com',
+        protocol: 'https',
         hostingWPCOM: false,
         useACF: false,
         verboseOutput: false,
@@ -66,11 +66,19 @@ module.exports = {
         }
       }
     },
+    {
+      resolve: 'gatsby-plugin-import',
+      options: {
+        libraryName: "antd",
+        style: true, // or 'css'
+      }
+    },
+    'gatsby-plugin-antd',
     // {
-    //   resolve: `gatsby-plugin-google-analytics`,
+    //   resolve: 'gatsby-plugin-google-analytics',
     //   options: {
     //     trackingId: "UA-104232438-1",
-    //     // Defines where to place the tracking script - `true` in the head and `false` in the body
+    //     // Defines where to place the tracking script - 'true' in the head and 'false' in the body
     //     head: false,
     //     // Setting this parameter is optional
     //     anonymize: true,
@@ -87,15 +95,15 @@ module.exports = {
     //   },
     // },
     // {
-    //   resolve: `gatsby-source-instagram`,
+    //   resolve: 'gatsby-source-instagram',
     //   options: {
-    //     username: `priyanka_onmycanvas`,
+    //     username: 'priyanka_onmycanvas',
     //   },
     // },
     // {
-    //   resolve: `gatsby-source-facebook`,
+    //   resolve: 'gatsby-source-facebook',
     //   options: {
-    //     places: [`${facebookPageID}`], // Can be either a numeric ID or the URL ID
+    //     places: ['${facebookPageID}'], // Can be either a numeric ID or the URL ID
     //     params: {
     //       fields: 'hours, posts { message, created_time }', // See Facebooks API to see what you can query for
     //     },
@@ -103,7 +111,7 @@ module.exports = {
     //   },
     // },
     // {
-    //   resolve: `gatsby-source-twitter`,
+    //   resolve: 'gatsby-source-twitter',
     //   options: {
     //     credentials: {
     //       consumer_key: "INSERT_HERE_YOUR_CONSUMER_KEY",
@@ -130,10 +138,10 @@ module.exports = {
     //     },
     //   },
     // },
-    `gatsby-plugin-robots-txt`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-advanced-sitemap`,
-    `gatsby-plugin-offline`
+    'gatsby-plugin-robots-txt',
+    'gatsby-plugin-sass',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-advanced-sitemap',
+    'gatsby-plugin-offline'
   ]
 }

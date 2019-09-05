@@ -26,18 +26,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<Fragment>
 			<Header siteTitle={data.site.siteMetadata.title} />
-			<div
-				style={{
-					margin: `0 auto`,
-					maxWidth: 960,
-					padding: `0px 1.0875rem 1.45rem`,
-					paddingTop: 0,
-				}}
-			>
+			<div className="layout">
 				<main>{children}</main>
-				<footer>
-					© {new Date().getFullYear()}, Built with <a target="_blank" href="https://www.onmycanvas.com">love</a>
-				</footer>
 			</div>
 		</Fragment>
 	);

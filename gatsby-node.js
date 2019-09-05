@@ -8,7 +8,7 @@
 
 // You can delete this file if you're not using it
 
-const path = require(`path`);
+const path = require('path');
 
 const createPaginatedPages = require('gatsby-paginate');
 
@@ -18,7 +18,9 @@ exports.createPages = async ({
   reporter
 }) => {
 
-  const { createPage } = actions;
+  const {
+    createPage
+  } = actions;
 
   const BlogPostTemplate = path.resolve("./src/templates/BlogPost.tsx");
 
@@ -39,7 +41,7 @@ exports.createPages = async ({
   }`);
 
   if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`);
+    reporter.panicOnBuild('Error while running GraphQL query.');
     return;
   }
 

@@ -12,12 +12,15 @@
     "lint": "tslint -c tslint.json -p tsconfig.json ./src/**/*.{ts,tsx}"
   },
   "dependencies": {
+    "antd": "^3.23.1",
     "axios": "0.19.0",
     "gatsby": "2.15.6",
     "gatsby-image": "2.2.17",
     "gatsby-paginate": "1.1.1",
     "gatsby-plugin-advanced-sitemap": "1.4.1",
+    "gatsby-plugin-antd": "2.0.2",
     "gatsby-plugin-google-analytics": "2.1.14",
+    "gatsby-plugin-import": "^2.1.5",
     "gatsby-plugin-manifest": "2.2.13",
     "gatsby-plugin-offline": "3.0.1",
     "gatsby-plugin-react-helmet": "3.1.6",
@@ -54,6 +57,7 @@
     "@types/react-router": "5.0.3",
     "@types/react-router-dom": "4.3.5",
     "@types/react-test-renderer": "16.9.0",
+    "babel-plugin-import": "1.12.1",
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.14.0",
     "husky": "3.0.5",

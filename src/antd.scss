@@ -1,0 +1,61 @@
+@import './styles.scss';
+
+.ant-btn {
+    &.ant-btn-primary {
+        color: $whiteColor;
+        background-color: $accentColor;
+        border-color: $accentColor;
+        border-radius: 0px;
+        box-shadow: none;
+
+        span {
+            color: $whiteColor;
+        }
+
+        &:active,
+        &:hover,
+        &:focus,
+        &.active {
+            color: $whiteColor;
+            background-color: $accentColor;
+            border-color: $accentColor;
+
+            span {
+                color: $whiteColor;
+            }
+        }
+    }
+
+    &.ant-btn-default {
+        color: $accentColor;
+        background-color: $whiteColor;
+        border-color: $accentColor;
+        border-radius: 0px;
+        box-shadow: none;
+
+        span {
+            color: $accentColor;
+        }
+
+        &:active,
+        &:hover,
+        &:focus,
+        &.active {
+            color: $accentColor;
+            background-color: $whiteColor;
+            border-color: $accentColor;
+
+            span {
+                color: $accentColor;
+            }
+        }
+    }
+
+    &.ant-btn-link {
+        color: $accentColor;
+        background-color: transparent;
+        border-color: transparent;
+        border-radius: 0px;
+        box-shadow: none;
+    }
+}

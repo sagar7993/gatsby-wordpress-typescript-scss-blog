@@ -1,0 +1,17 @@
+@import '../antd.scss';
+
+.post,
+.page {
+    font-family: $fontFamily;
+
+    .more-link {
+        color: $accentColor;
+        border: 1px solid $accentColor;
+        padding: 6px 12px;
+    }
+}
+
+.navigation-links {
+    display: flex;
+    justify-content: space-between;
+}
