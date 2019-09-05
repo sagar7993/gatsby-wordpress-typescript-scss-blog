@@ -18,7 +18,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: '${__dirname}/src/images',
+        path: 'src/images',
       },
     },
     'gatsby-transformer-sharp',
@@ -45,7 +45,7 @@ module.exports = {
         verboseOutput: false,
         perPage: 100,
         searchAndReplaceContentUrls: {
-          sourceUrl: "https://www.using-wordpress-with-gatsby.iamtimsmith.com",
+          sourceUrl: "https://www.onmycanvas.com",
           replacementUrl: "http://localhost:8000",
         },
         concurrentRequests: 10,
