@@ -46,18 +46,12 @@ module.exports = {
 						options: {
 							baseUrl: 'localhost:8001',
 							protocol: 'http',
-							maxWidth: 2160,
-							withWebp: true,
-							postTypes: [
-								'post',
-								'page'
-							],
-							backgroundColor: 'transparent',
+							withWebp: true
 						}
 					}
 				],
 				hostingWPCOM: false,
-				useACF: false,
+				useACF: true,
 				verboseOutput: false,
 				perPage: 100,
 				searchAndReplaceContentUrls: {

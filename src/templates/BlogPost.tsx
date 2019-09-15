@@ -1,28 +1,38 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import Image from 'gatsby-image';
+import Image, { FixedObject } from 'gatsby-image';
 
 import { Button } from 'antd';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
+import { Post } from '../contracts/post';
 import { decodeHtmlCharCodes } from '../utils';
 
 import './Blog.scss';
 
 export interface Props {
-	data: any;
-	pageContext: any;
+	data: {
+		wordpressPost: Post;
+	};
+	pageContext: {
+		previous: {
+			slug: string;
+		}
+		next: {
+			slug: string;
+		}
+	};
 }
 
 export const BlogPost = (props: Props) => {
-	const fixed = (props.data.wordpressPost.featured_media && props.data.wordpressPost.featured_media.localFile && props.data.wordpressPost.featured_media.localFile.childImageSharp && props.data.wordpressPost.featured_media.localFile.childImageSharp.fixed) ? props.data.wordpressPost.featured_media.localFile.childImageSharp.fixed : null;
+	const fixed: FixedObject | null = (props.data.wordpressPost.featured_media && props.data.wordpressPost.featured_media.localFile && props.data.wordpressPost.featured_media.localFile.childImageSharp && props.data.wordpressPost.featured_media.localFile.childImageSharp.fixed) ? props.data.wordpressPost.featured_media.localFile.childImageSharp.fixed : null;
 	return (
 		<Layout>
 			<SEO title={props.data.wordpressPost.title} description={props.data.wordpressPost.excerpt} />
 			<h1>{decodeHtmlCharCodes(props.data.wordpressPost.title)}</h1>
-			{fixed && <Image fixed={fixed} />}
+			{fixed && fixed.src && fixed.src.length > 0 && <Image fixed={fixed} />}
 			<div className="margin-top-24px" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wordpressPost.content) }} />
 			<div className="margin-bottom-24px navigation-links">
 				{props.pageContext.previous && props.pageContext.previous.slug &&
@@ -32,7 +42,7 @@ export const BlogPost = (props: Props) => {
 				}
 				{props.pageContext.next && props.pageContext.next.slug &&
 					<Link to={`/post/${props.pageContext.next.slug}`}>
-						<Button type="primary">Next Post</Button>
+						<Button type="primary">Go to Next Post</Button>
 					</Link>
 				}
 			</div>
@@ -59,6 +69,11 @@ export const query = graphql`
 							src
 							width
 							height
+							srcSet
+							base64
+							tracedSVG
+							srcWebp
+							srcSetWebp
 						}
 					}
 				}
