@@ -10,7 +10,9 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "lint": "tslint -c tslint.json -p tsconfig.json ./src/**/*.{ts,tsx}",
-    "purge": "rm -rf node_modules && rm -rf yarn.lock rm -rf package-lock.json && rm -rf .cache && rm -rf public && npm install"
+    "purgeAll": "rm -rf node_modules && rm -rf yarn.lock rm -rf package-lock.json && rm -rf .cache && rm -rf public && npm install",
+    "purgeCache": "rm -rf .cache && rm -rf public",
+    "purgeDependencies": "rm -rf node_modules && rm -rf yarn.lock rm -rf package-lock.json && npm install"
   },
   "dependencies": {
     "antd": "3.23.2",
@@ -34,7 +36,6 @@
     "gatsby-source-twitter": "3.0.0",
     "gatsby-source-wordpress": "3.1.31",
     "gatsby-transformer-sharp": "2.2.14",
-    "gatsby-wordpress-inline-images": "1.0.0",
     "path": "0.12.7",
     "react": "16.9.0",
     "react-dom": "16.9.0",

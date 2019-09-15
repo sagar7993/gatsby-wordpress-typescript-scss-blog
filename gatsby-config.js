@@ -40,16 +40,6 @@ module.exports = {
 			options: {
 				baseUrl: 'localhost:8001',
 				protocol: 'http',
-				plugins: [
-					{
-						resolve: 'gatsby-wordpress-inline-images',
-						options: {
-							baseUrl: 'localhost:8001',
-							protocol: 'http',
-							withWebp: true
-						}
-					}
-				],
 				hostingWPCOM: false,
 				useACF: true,
 				verboseOutput: false,
