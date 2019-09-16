@@ -90,8 +90,13 @@ a {
     }
 }
 
-.aligncenter,
-.center,
-.align-center {
-    text-align: center;
+.post {
+    margin-top: 24px;
+
+    .aligncenter {
+        clear: both;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

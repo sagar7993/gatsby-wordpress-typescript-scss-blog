@@ -33,7 +33,7 @@ export const BlogPost = (props: Props) => {
 			<SEO title={props.data.wordpressPost.title} description={props.data.wordpressPost.excerpt} />
 			<h1>{decodeHtmlCharCodes(props.data.wordpressPost.title)}</h1>
 			{fixed && fixed.src && fixed.src.length > 0 && <Image fixed={fixed} />}
-			<div className="margin-top-24px" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wordpressPost.content) }} />
+			<div className="post" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wordpressPost.content) }} />
 			<div className="margin-bottom-24px navigation-links">
 				{props.pageContext.previous && props.pageContext.previous.slug &&
 					<Link to={`/post/${props.pageContext.previous.slug}`}>
