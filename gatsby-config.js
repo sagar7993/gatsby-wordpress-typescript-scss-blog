@@ -77,7 +77,7 @@ module.exports = {
 		'gatsby-transformer-yaml', {
 			resolve: 'gatsby-source-filesystem',
 			options: {
-				path: `${__dirname}/_data/comments`,
+				path: './src/data/comments',
 				name: 'comments',
 			},
 		},
