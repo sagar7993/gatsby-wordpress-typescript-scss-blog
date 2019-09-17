@@ -82,7 +82,7 @@ exports.createPages = async ({
 		edges: BlogPosts,
 		createPage: createPage,
 		pageTemplate: 'src/templates/BlogPosts.tsx',
-		pageLength: 3,
+		pageLength: 2,
 		pathPrefix: 'posts',
 		context: {}
 	});
