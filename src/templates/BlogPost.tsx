@@ -37,7 +37,7 @@ export const BlogPost = (props: Props) => {
 			{fixed && fixed.src && fixed.src.length > 0 && <Image fixed={fixed} />}
 			<div className="post" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wordpressPost.content) }} />
 			<div className="comments">
-				<Comments />
+				<Comments slug={props.data.wordpressPost.slug} />
 			</div>
 			<div className="margin-bottom-24px navigation-links">
 				{props.pageContext.next && props.pageContext.next.slug &&
@@ -67,6 +67,7 @@ export const query = graphql`
 			author {
 				name
 			}
+			slug
 			featured_media {
 				localFile {
 					childImageSharp {
