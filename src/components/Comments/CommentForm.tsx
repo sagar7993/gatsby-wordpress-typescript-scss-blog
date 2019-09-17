@@ -73,7 +73,7 @@ export class CommentForm extends Component<Props, State> {
 						<Input.TextArea placeholder="Please enter your comment" rows={4} />
 					)}
 				</Form.Item>
-				<Form.Item>
+				<Form.Item className="margin-bottom-0px">
 					{this.props.form.getFieldDecorator('slug', {
 						rules: [{ required: true }],
 						initialValue: this.props.slug
@@ -81,7 +81,7 @@ export class CommentForm extends Component<Props, State> {
 						<Input type="hidden" />
 					)}
 				</Form.Item>
-				<Form.Item>
+				<Form.Item className="margin-bottom-0px">
 					{this.props.form.getFieldDecorator('wordpress_id', {
 						rules: [{ required: true }],
 						initialValue: this.props.wordpress_id
