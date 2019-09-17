@@ -4,9 +4,12 @@ import './Comments.scss';
 
 import CommentForm from './CommentForm';
 
+import { Comment } from '../../contracts/comment';
+
 export interface Props {
 	slug: string;
-	wordpress_id: string;
+	wordpress_id: number;
+	comments: Comment;
 }
 
 export interface State {
@@ -24,7 +27,7 @@ export class Comments extends Component<Props, State> {
 			<div>
 				<hr />
 				<h2>Comments</h2>
-				<p>No comments yet.</p>
+				<p>{(this.props.comments && this.props.comments.edges && this.props.comments.edges.length > 0) ? `${this.props.comments.edges.length} Comment${this.props.comments.edges.length > 1 ? 's' : ''}` : 'No comments yet.'}</p>
 				<CommentForm slug={this.props.slug} wordpress_id={this.props.wordpress_id} />
 			</div>
 		);

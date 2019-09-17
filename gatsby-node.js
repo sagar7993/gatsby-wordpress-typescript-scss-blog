@@ -72,6 +72,7 @@ exports.createPages = async ({
 			component: BlogPostTemplate,
 			context: {
 				id: post.node.wordpress_id,
+				slug: post.node.slug,
 				previous: index === 0 ? null : BlogPosts[index - 1].node,
 				next: index === (BlogPosts.length - 1) ? null : BlogPosts[index + 1].node
 			}

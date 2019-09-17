@@ -10,6 +10,7 @@ import SEO from '../components/SEO';
 import Comments from '../components/Comments';
 
 import { Post } from '../contracts/post';
+import { Comment } from '../contracts/comment';
 import { decodeHtmlCharCodes } from '../utils';
 
 import './Blog.scss';
@@ -17,6 +18,7 @@ import './Blog.scss';
 export interface Props {
 	data: {
 		wordpressPost: Post;
+		allCommentsYaml: Comment;
 	};
 	pageContext: {
 		previous: {
@@ -37,7 +39,7 @@ export const BlogPost = (props: Props) => {
 			{fixed && fixed.src && fixed.src.length > 0 && <Image fixed={fixed} />}
 			<div className="post" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wordpressPost.content) }} />
 			<div className="comments">
-				<Comments slug={props.data.wordpressPost.slug} wordpress_id={props.data.wordpressPost.wordpress_id} />
+				<Comments slug={props.data.wordpressPost.slug} wordpress_id={props.data.wordpressPost.wordpress_id} comments={props.data.allCommentsYaml} />
 			</div>
 			<div className="margin-bottom-24px navigation-links">
 				{props.pageContext.next && props.pageContext.next.slug &&
@@ -86,7 +88,7 @@ export const query = graphql`
 				}
 			}
 		}
-		allCommentsYaml(filter: { wordpress_id: { eq: $id } }) {
+		allCommentsYaml(filter: { slug: { eq: $slug } }) {
 			edges {
 				node {
 					id
@@ -95,7 +97,6 @@ export const query = graphql`
 					message
 					date
 					slug
-					wordpress_id
 				}
 			}
 		}

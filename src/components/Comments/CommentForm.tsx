@@ -9,7 +9,7 @@ import { addComment } from '../../services/comment';
 
 export interface Props extends FormComponentProps {
 	slug: string;
-	wordpress_id: string;
+	wordpress_id: number;
 }
 
 export interface State {

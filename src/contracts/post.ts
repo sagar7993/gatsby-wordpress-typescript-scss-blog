@@ -13,7 +13,7 @@ export class Post {
 	excerpt: string = '';
 	author: string = '';
 	featured_media: any = {};
-	wordpress_id: string = '';
+	wordpress_id: number = 0;
 }
 
 export class Media {
