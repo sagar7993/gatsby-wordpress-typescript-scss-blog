@@ -6,6 +6,7 @@ import CommentForm from './CommentForm';
 
 export interface Props {
 	slug: string;
+	wordpress_id: string;
 }
 
 export interface State {
@@ -24,7 +25,7 @@ export class Comments extends Component<Props, State> {
 				<hr />
 				<h2>Comments</h2>
 				<p>No comments yet.</p>
-				<CommentForm slug={this.props.slug} />
+				<CommentForm slug={this.props.slug} wordpress_id={this.props.wordpress_id} />
 			</div>
 		);
 	}

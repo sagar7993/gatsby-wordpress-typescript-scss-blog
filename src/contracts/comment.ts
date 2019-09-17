@@ -3,6 +3,7 @@ export class AddCommentRequest {
 	email: string = '';
 	comment: string = '';
 	slug: string = '';
+	wordpress_id: string = '';
 }
 
 export class AddCommentResponse {

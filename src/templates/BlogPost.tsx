@@ -37,7 +37,7 @@ export const BlogPost = (props: Props) => {
 			{fixed && fixed.src && fixed.src.length > 0 && <Image fixed={fixed} />}
 			<div className="post" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wordpressPost.content) }} />
 			<div className="comments">
-				<Comments slug={props.data.wordpressPost.slug} />
+				<Comments slug={props.data.wordpressPost.slug} wordpress_id={props.data.wordpressPost.wordpress_id} />
 			</div>
 			<div className="margin-bottom-24px navigation-links">
 				{props.pageContext.next && props.pageContext.next.slug &&
@@ -68,6 +68,7 @@ export const query = graphql`
 				name
 			}
 			slug
+			wordpress_id
 			featured_media {
 				localFile {
 					childImageSharp {
@@ -82,6 +83,19 @@ export const query = graphql`
 							srcSetWebp
 						}
 					}
+				}
+			}
+		}
+		allCommentsYaml(filter: { wordpress_id: { eq: $id } }) {
+			edges {
+				node {
+					id
+					name
+					email
+					message
+					date
+					slug
+					wordpress_id
 				}
 			}
 		}

@@ -9,6 +9,7 @@ import { addComment } from '../../services/comment';
 
 export interface Props extends FormComponentProps {
 	slug: string;
+	wordpress_id: string;
 }
 
 export interface State {
@@ -75,6 +76,14 @@ export class CommentForm extends Component<Props, State> {
 					{this.props.form.getFieldDecorator('slug', {
 						rules: [{ required: true }],
 						initialValue: this.props.slug
+					})(
+						<Input type="hidden" />
+					)}
+				</Form.Item>
+				<Form.Item>
+					{this.props.form.getFieldDecorator('wordpress_id', {
+						rules: [{ required: true }],
+						initialValue: this.props.wordpress_id
 					})(
 						<Input type="hidden" />
 					)}
