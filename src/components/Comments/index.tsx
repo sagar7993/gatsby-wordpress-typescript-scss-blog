@@ -75,14 +75,6 @@ export class Comments extends Component<Props, State> {
 							<Input.TextArea placeholder="Please enter your comment" rows={4} />
 						)}
 					</Form.Item>
-					<Form.Item className="margin-bottom-0px">
-						{this.props.form.getFieldDecorator('slug', {
-							rules: [{ required: true }],
-							initialValue: '{{ page.slug }}'
-						})(
-							<Input type="hidden" />
-						)}
-					</Form.Item>
 					<div className="margin-bottom-36px">
 						<Button type="primary" htmlType="submit" loading={this.state.isLoading}>Submit</Button>
 					</div>
