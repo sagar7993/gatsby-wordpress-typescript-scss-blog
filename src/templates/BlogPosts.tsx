@@ -22,7 +22,6 @@ export interface Props {
 
 export const IndexPage = (props: Props) => {
 	const { group, index, pageCount } = props.pathContext;
-	console.log(props.pathContext);
 	const previousUrl = index - 1 === 1 ? '' : (index - 1).toString();
 	const nextUrl = (index + 1).toString();
 	const { site } = useStaticQuery(graphql`

@@ -7,6 +7,8 @@ import { Button } from 'antd';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
+import Comments from '../components/Comments';
+
 import { Post } from '../contracts/post';
 import { decodeHtmlCharCodes } from '../utils';
 
@@ -34,14 +36,17 @@ export const BlogPost = (props: Props) => {
 			<h1>{decodeHtmlCharCodes(props.data.wordpressPost.title)}</h1>
 			{fixed && fixed.src && fixed.src.length > 0 && <Image fixed={fixed} />}
 			<div className="post" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wordpressPost.content) }} />
+			<div className="comments">
+				<Comments />
+			</div>
 			<div className="margin-bottom-24px navigation-links">
-				{props.pageContext.previous && props.pageContext.previous.slug &&
-					<Link to={`/post/${props.pageContext.previous.slug}`}>
+				{props.pageContext.next && props.pageContext.next.slug &&
+					<Link to={`/post/${props.pageContext.next.slug}`}>
 						<Button type="primary">Go to Previous Post</Button>
 					</Link>
 				}
-				{props.pageContext.next && props.pageContext.next.slug &&
-					<Link to={`/post/${props.pageContext.next.slug}`}>
+				{props.pageContext.previous && props.pageContext.previous.slug &&
+					<Link to={`/post/${props.pageContext.previous.slug}`}>
 						<Button type="primary">Go to Next Post</Button>
 					</Link>
 				}
