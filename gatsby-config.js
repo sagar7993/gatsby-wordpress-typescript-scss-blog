@@ -29,8 +29,8 @@ module.exports = {
 				name: 'gatsby-starter-default',
 				short_name: 'starter',
 				start_url: '/',
-				background_color: '#8B0000',
-				theme_color: '#8B0000',
+				background_color: '#4C84FF',
+				theme_color: '#4C84FF',
 				display: 'minimal-ui',
 				icon: 'src/images/gatsby-icon.png'
 			},
@@ -74,6 +74,13 @@ module.exports = {
 			}
 		},
 		'gatsby-plugin-antd',
+		'gatsby-transformer-yaml', {
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				path: `${__dirname}/_data/comments`,
+				name: 'comments',
+			},
+		},
 		// {
 		//   resolve: 'gatsby-plugin-google-analytics',
 		//   options: {
