@@ -84,16 +84,5 @@ export const query = graphql`
 				}
 			}
 		}
-		allCommentsYaml(filter: { slug: { eq: $slug } }) {
-			edges {
-				node {
-				id
-				name
-				email
-				message
-				date
-				}
-			}
-		}
 	}
 `;

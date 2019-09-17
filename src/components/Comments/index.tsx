@@ -8,7 +8,9 @@ import './Comments.scss';
 import { AddCommentRequest } from '../../contracts/comment';
 import { addComment } from '../../services/comment';
 
-export interface Props extends FormComponentProps { }
+export interface Props extends FormComponentProps {
+	slug: string;
+}
 
 export interface State {
 	isLoading: boolean;
@@ -73,6 +75,14 @@ export class Comments extends Component<Props, State> {
 							rules: [{ required: true, message: 'Please enter your comment' }]
 						})(
 							<Input.TextArea placeholder="Please enter your comment" rows={4} />
+						)}
+					</Form.Item>
+					<Form.Item>
+						{this.props.form.getFieldDecorator('slug', {
+							rules: [{ required: true }],
+							initialValue: this.props.slug
+						})(
+							<Input type="hidden" />
 						)}
 					</Form.Item>
 					<div className="margin-bottom-36px">

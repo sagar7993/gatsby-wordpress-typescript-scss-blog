@@ -12,6 +12,7 @@ export const addComment = async (addCommentRequest: AddCommentRequest): Promise<
 		formdata.set('fields[name]', addCommentRequest.name);
 		formdata.set('fields[email]', addCommentRequest.email);
 		formdata.set('fields[message]', addCommentRequest.comment);
+		formdata.set('options[slug]', addCommentRequest.slug);
 		const json: Record<string, any> = {};
 		formdata.forEach((value, prop) => (json[prop] = value));
 		const formBody = Object.keys(json).map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(json[key])).join('&');
