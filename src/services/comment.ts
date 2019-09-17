@@ -11,7 +11,7 @@ export const addComment = async (addCommentRequest: AddCommentRequest): Promise<
 		const formdata = new FormData();
 		formdata.set('fields[name]', addCommentRequest.name);
 		formdata.set('fields[email]', addCommentRequest.email);
-		formdata.set('fields[message]', addCommentRequest.comment);
+		formdata.set('fields[message]', addCommentRequest.message);
 		formdata.set('fields[slug]', addCommentRequest.slug);
 		formdata.set('fields[wordpress_id]', addCommentRequest.wordpress_id.toString());
 		const json: Record<string, any> = {};

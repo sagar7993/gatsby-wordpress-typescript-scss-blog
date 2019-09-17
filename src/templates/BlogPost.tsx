@@ -60,7 +60,7 @@ export const BlogPost = (props: Props) => {
 export default BlogPost;
 
 export const query = graphql`
-	query($id: Int!) {
+	query($id: Int!, $slug: String!) {
 		wordpressPost(wordpress_id: { eq: $id }) {
 			title
 			content

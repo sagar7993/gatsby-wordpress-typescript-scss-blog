@@ -45,11 +45,12 @@ export class CommentForm extends Component<Props, State> {
 			Message.success('Comment could not be added', 3);
 		} finally {
 			this.setState({ isLoading: false });
+			this.props.form.setFieldsValue({ name: '', email: '', comment: '' });
 		}
 	}
 
 	render() {
-		return(
+		return (
 			<Form onSubmit={this.onSubmit}>
 				<Form.Item label="Name" labelAlign="left" hasFeedback={true} className="margin-bottom-0px">
 					{this.props.form.getFieldDecorator('name', {
@@ -66,7 +67,7 @@ export class CommentForm extends Component<Props, State> {
 					)}
 				</Form.Item>
 				<Form.Item label="Comment" labelAlign="left" hasFeedback={true}>
-					{this.props.form.getFieldDecorator('comment', {
+					{this.props.form.getFieldDecorator('message', {
 						rules: [{ required: true, message: 'Please enter your comment' }]
 					})(
 						<Input.TextArea placeholder="Please enter your comment" rows={4} />

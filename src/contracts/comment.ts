@@ -1,7 +1,7 @@
 export class AddCommentRequest {
 	name: string = '';
 	email: string = '';
-	comment: string = '';
+	message: string = '';
 	slug: string = '';
 	wordpress_id: number = 0;
 }
