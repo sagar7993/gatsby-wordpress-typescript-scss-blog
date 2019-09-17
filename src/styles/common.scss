@@ -1,8 +1,4 @@
-$fontFamily: 'Helvetica';
-
-$blackColor: #333333;
-$whiteColor: #FFFFFF;
-$accentColor: #8B0000;
+@import './colors.scss';
 
 .display-none {
     display: none;
