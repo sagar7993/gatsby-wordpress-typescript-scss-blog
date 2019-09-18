@@ -2,12 +2,16 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Image, { FluidObject } from 'gatsby-image';
 
-import { Button, Tag } from 'antd';
+import { Button, Tag, Row, Col } from 'antd';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
-import { Post, CategoryTagInfo } from '../contracts/post';
+import Instagram from '../components/Instagram';
+import Twitter from '../components/Twitter';
+import Facebook from '../components/Facebook';
+
+import { Post, CategoryTagInfo, InstagramFeed } from '../contracts/post';
 import { decodeHtmlCharCodes } from '../utils';
 
 import './Blog.scss';
@@ -17,6 +21,7 @@ export interface Props {
 		group: { node: Post }[];
 		index: number;
 		pageCount: number;
+		allInstaNode: InstagramFeed;
 	};
 }
 
@@ -77,6 +82,17 @@ export const IndexPage = (props: Props) => {
 					</div>
 				)}
 			</div>
+			<Row type="flex" align="middle" gutter={36}>
+				<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
+					<Instagram allInstaNode={props.pathContext.allInstaNode} />
+				</Col>
+				<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
+					<Twitter />
+				</Col>
+				<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
+					<Facebook />
+				</Col>
+			</Row>
 		</Layout>
 	);
 };

@@ -13,8 +13,8 @@ const path = require('path');
 const createPaginatedPages = require('gatsby-paginate');
 
 require('dotenv').config({
-	path: `.env.${process.env.NODE_ENV}`,
-})
+	path: `.env.${process.env.NODE_ENV}`
+});
 
 exports.createPages = async ({
 	graphql,
@@ -81,6 +81,43 @@ exports.createPages = async ({
 				}
 			}
 		}
+		allInstaNode(limit: 8) {
+			edges {
+				node {
+					id
+					likes
+					comments
+					mediaType
+					preview
+					original
+					timestamp
+					caption
+					localFile {
+						childImageSharp {
+							fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
+								aspectRatio
+								src
+								srcSet
+								sizes
+								base64
+								tracedSVG
+								srcWebp
+								srcSetWebp
+							}
+						}
+					}
+					thumbnails {
+						src
+						config_width
+						config_height
+					}
+					dimensions {
+						height
+						width
+					}
+				}
+			}
+		}
 	}`);
 
 	if (BlogPostsResult.errors) {
@@ -109,6 +146,8 @@ exports.createPages = async ({
 		pageTemplate: 'src/templates/BlogPosts.tsx',
 		pageLength: 2,
 		pathPrefix: 'posts',
-		context: {}
+		context: {
+			allInstaNode: BlogPostsResult.data.allInstaNode
+		}
 	});
 }

@@ -1,0 +1,49 @@
+@import '../../styles/antd.scss';
+
+.instagram-feed {
+    display: flex;
+    flex-wrap: wrap;
+    background: $whiteColor;
+
+    .instagram-post {
+        width: 12.5%;
+        padding: 6.25% 0;
+        margin: 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 1s ease;
+
+        .gatsby-image-wrapper {
+            display: table-row;
+
+            img {
+                margin-bottom: 0px;
+            }
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    @media screen and (max-width: 1120px) {
+        .instagram-post {
+            width: 25%;
+            padding: 12.5% 0;
+            height: auto;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .instagram-post {
+            width: 50%;
+            padding: 25% 0;
+        }
+
+        .instagram-post:nth-child(n+5) {
+            display: none;
+        }
+    }
+}

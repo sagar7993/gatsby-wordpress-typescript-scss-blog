@@ -2,15 +2,19 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Image, { FluidObject } from 'gatsby-image';
 
-import { Button, Tag } from 'antd';
+import { Button, Tag, Row, Col } from 'antd';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 import Comments from '../components/Comments';
+import Instagram from '../components/Instagram';
+import Twitter from '../components/Twitter';
+import Facebook from '../components/Facebook';
 
-import { Post, CategoryTagInfo } from '../contracts/post';
+import { Post, CategoryTagInfo, InstagramFeed } from '../contracts/post';
 import { Comment } from '../contracts/comment';
+
 import { decodeHtmlCharCodes } from '../utils';
 
 import './Blog.scss';
@@ -19,6 +23,7 @@ export interface Props {
 	data: {
 		wordpressPost: Post;
 		allCommentsYaml: Comment;
+		allInstaNode: InstagramFeed;
 	};
 	pageContext: {
 		previous: {
@@ -65,6 +70,17 @@ export const BlogPost = (props: Props) => {
 					</Link>
 				)}
 			</div>
+			<Row type="flex" align="middle" gutter={36}>
+				<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
+					<Instagram allInstaNode={props.data.allInstaNode} />
+				</Col>
+				<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
+					<Twitter />
+				</Col>
+				<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
+					<Facebook />
+				</Col>
+			</Row>
 		</Layout>
 	);
 };
@@ -129,6 +145,43 @@ export const query = graphql`
 					message
 					date
 					slug
+				}
+			}
+		}
+		allInstaNode(limit: 8) {
+			edges {
+				node {
+					id
+					likes
+					comments
+					mediaType
+					preview
+					original
+					timestamp
+					caption
+					localFile {
+						childImageSharp {
+							fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
+								aspectRatio
+								src
+								srcSet
+								sizes
+								base64
+								tracedSVG
+								srcWebp
+								srcSetWebp
+							}
+						}
+					}
+					thumbnails {
+						src
+						config_width
+						config_height
+					}
+					dimensions {
+						height
+						width
+					}
 				}
 			}
 		}

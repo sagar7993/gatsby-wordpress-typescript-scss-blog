@@ -8,6 +8,10 @@ import { Card, Row, Col } from 'antd';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
+import Instagram from '../components/Instagram';
+import Twitter from '../components/Twitter';
+import Facebook from '../components/Facebook';
+
 import { ChildImageSharp, InstagramFeed } from '../contracts/post';
 
 import '../templates/Blog.scss';
@@ -34,27 +38,23 @@ export const IndexPage = (props: Props) => {
 							<div className="features-wrapper margin-top-36px">
 								<div className="features">
 									<p>This is an opinionated starter project to help you create lightening fast PWA websites with Gatsby and Wordpress CMS, built using Typescript and Ant Design.</p>
-									<p className="margin-bottom-0px">View the <a href="https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate" target="_blank" rel="noopener nofollow">Github repo</a></p>
+									<p className="margin-bottom-0px">View the <a href="https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate" target="_blank" rel="noopener noreferrer nofollow">Github repo</a></p>
 								</div>
 							</div>
 						</Col>
 					</Row>
 				</Card>
-				{props.data && props.data.allInstaNode && props.data.allInstaNode.edges && props.data.allInstaNode.edges.length > 0 && (
-					<div className="instagram-feed margin-top-36px">
-						{props.data.allInstaNode.edges.map((instagramPost, index) => {
-							return (
-								(instagramPost.node) && (
-									<div key={index} className="instagram-post">
-										{(instagramPost.node.localFile && instagramPost.node.localFile.childImageSharp) && (
-											<Image fluid={instagramPost.node.localFile.childImageSharp.fluid} />
-										)}
-									</div>
-								)
-							);
-						})}
-					</div>
-				)}
+				<Row type="flex" align="middle" gutter={36}>
+					<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
+						<Instagram allInstaNode={props.data.allInstaNode} />
+					</Col>
+					<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
+						<Twitter />
+					</Col>
+					<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
+						<Facebook />
+					</Col>
+				</Row>
 			</div>
 		</Layout>
 	);
