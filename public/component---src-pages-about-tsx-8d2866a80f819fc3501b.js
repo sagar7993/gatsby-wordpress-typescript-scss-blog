@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{362:function(e,l,n){"use strict";n.r(l);var a=n(1),t=n.n(a),o=n(358);l.default=function(){return t.a.createElement(o.a,null,t.a.createElement("h1",null,"Hello World"),t.a.createElement("p",null,"Welcome to your new Gatsby site."),t.a.createElement("p",null,"This is a placeholder about page."))}}}]);
+//# sourceMappingURL=component---src-pages-about-tsx-8d2866a80f819fc3501b.js.map

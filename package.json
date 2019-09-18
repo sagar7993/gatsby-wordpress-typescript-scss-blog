@@ -63,11 +63,6 @@
     "tslint-react": "4.1.0",
     "typescript": "3.6.3"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run build"
-    }
-  },
   "browserslist": [
     ">0.2%",
     "not dead",

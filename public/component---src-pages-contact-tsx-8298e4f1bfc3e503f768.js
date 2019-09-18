@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{363:function(e,n,l){"use strict";l.r(n);var t=l(1),a=l.n(t),c=l(358);n.default=function(){return a.a.createElement(c.a,null,a.a.createElement("h1",null,"Hello World"),a.a.createElement("p",null,"Welcome to your new Gatsby site."),a.a.createElement("p",null,"This is a placeholder contact page."))}}}]);
+//# sourceMappingURL=component---src-pages-contact-tsx-8298e4f1bfc3e503f768.js.map
