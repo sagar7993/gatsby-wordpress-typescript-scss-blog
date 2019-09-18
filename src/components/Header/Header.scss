@@ -1,20 +1,49 @@
 @import '../../styles/colors.scss';
 
 .header-container {
-    background: $primaryAccentColor;
     margin-bottom: 1.45rem;
+    background: $primaryAccentColor;
+    height: 64px;
 
-    .header {
-        margin: 0 auto;
+    .header-wrapper {
         max-width: 960px;
-        padding: 1.45rem 1.0875rem;
+        margin: 0 auto;
+        padding: 0px 1.0875rem 0px 1.0875rem;
+        height: 64px;
 
-        h1 {
-            margin: 0px;
+        .ant-layout {
+            .ant-layout-header {
+                padding: 0px;
+                height: 64px;
 
-            .header-link {
-                color: $whiteColor;
-                text-decoration: none;
+                .logo {
+                    width: 64px;
+                    height: 64px;
+                    background-image: url('../../../static/logo.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 36px;
+                    margin: 0px 28px 0px 0;
+                    float: left;
+                }
+
+                .ant-menu {
+                    background: $primaryAccentColor;
+                    line-height: 64px;
+
+                    .ant-menu-item {
+                        border-color: $primaryAccentColor;
+
+                        a {
+                            color: $whiteColor;
+                        }
+
+                        &.ant-menu-item-selected {
+                            background-color: $primaryAccentColor;
+                            text-decoration: underline;
+                        }
+                    }
+                }
             }
         }
     }

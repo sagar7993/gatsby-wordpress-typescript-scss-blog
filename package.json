@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "gatsby-wordpress-typescript-blog-boilerplate",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "A starter Gatsby template for a Wordpress blog, built using Typescript and Ant Design",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -55,11 +55,23 @@
     "babel-plugin-import": "1.12.1",
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.14.0",
+    "husky": "3.0.5",
     "node-sass": "4.12.0",
     "react-test-renderer": "16.9.0",
     "source-map-explorer": "2.0.1",
     "tslint": "5.20.0",
-    "tslint-react": "4.0.0",
+    "tslint-react": "4.1.0",
     "typescript": "3.6.3"
-  }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build"
+    }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
