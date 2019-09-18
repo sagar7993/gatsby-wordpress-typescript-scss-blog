@@ -29,15 +29,48 @@ export class Post {
 	tags: CategoryTagInfo[] = new Array<CategoryTagInfo>();
 }
 
+export class ChildImageFluid {
+	fluid?: FluidObject;
+}
+
+export class ChildImageSharp {
+	childImageSharp?: ChildImageFluid;
+}
+
 export class Media {
-	localFile?: {
-		childImageSharp: {
-			fluid: FluidObject;
-		}
-	} | null = null;
-	file?: {
-		childImageSharp: {
-			fluid: FluidObject;
-		}
-	} | null = null;
+	localFile?: ChildImageSharp;
+	file?: ChildImageSharp;
+}
+
+export class InstagramPostDimensions {
+	height: number = 0;
+	width: number = 0;
+}
+
+export class InstagramPostThumbnail {
+	config_height: number = 0;
+	config_width: number = 0;
+	src: string = '';
+}
+
+export class InstagramPost {
+	caption: string = '';
+	comments: number = 0;
+	dimensions: InstagramPostDimensions = new InstagramPostDimensions();
+	id: string = '';
+	likes: number = 0;
+	localFile?: ChildImageSharp;
+	mediaType: string = '';
+	original: string = '';
+	preview: string = '';
+	thumbnails: InstagramPostThumbnail[] = new Array<InstagramPostThumbnail>();
+	timestamp: number = 0;
+}
+
+export class InstagramNode {
+	node: InstagramPost = new InstagramPost();
+}
+
+export class InstagramFeed {
+	edges: InstagramNode[] = new Array<InstagramNode>();
 }

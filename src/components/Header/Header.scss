@@ -12,35 +12,37 @@
         height: 64px;
 
         .ant-layout {
-            .ant-layout-header {
-                padding: 0px;
-                height: 64px;
-
-                .logo {
-                    width: 64px;
+            .header {
+                &.ant-layout-header {
+                    padding: 0px;
                     height: 64px;
-                    background-image: url('../../../static/logo.png');
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: 36px;
-                    margin: 0px 6px 0px 0;
-                    float: left;
-                }
 
-                .ant-menu {
-                    background: $primaryAccentColor;
-                    line-height: 64px;
+                    .logo {
+                        width: 64px;
+                        height: 64px;
+                        background-image: url('../../../static/logo.png');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: 36px;
+                        margin: 0px 6px 0px 0;
+                        float: left;
+                    }
 
-                    .ant-menu-item {
-                        border-color: $primaryAccentColor;
+                    .ant-menu {
+                        background: $primaryAccentColor;
+                        line-height: 64px;
 
-                        a {
-                            color: $whiteColor;
-                            font-size: 1.45rem;
-                        }
+                        .ant-menu-item {
+                            border-color: $primaryAccentColor;
 
-                        &.ant-menu-item-selected {
-                            background-color: $primaryAccentColor;
+                            a {
+                                color: $whiteColor;
+                                font-size: 1.45rem;
+                            }
+
+                            &.ant-menu-item-selected {
+                                background-color: $primaryAccentColor;
+                            }
                         }
                     }
                 }

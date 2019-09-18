@@ -1,0 +1,13 @@
+@import '../../styles/colors.scss';
+
+.footer-container {
+    .footer-wrapper {
+        .ant-layout {
+            .footer {
+                &.ant-layout-footer {
+                    background: $tertiaryAccentColor;
+                }
+            }
+        }
+    }
+}

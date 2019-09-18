@@ -8,6 +8,7 @@
 import React, { Fragment } from 'react';
 
 import Header from '../Header';
+import Footer from '../Footer';
 
 import './Layout.scss';
 
@@ -22,6 +23,7 @@ export const Layout = (props: Props) => {
 			<div className="layout">
 				<main>{props.children}</main>
 			</div>
+			<Footer />
 		</Fragment>
 	);
 };

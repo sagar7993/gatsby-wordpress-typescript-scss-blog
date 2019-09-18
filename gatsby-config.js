@@ -29,8 +29,8 @@ module.exports = {
 				name: 'gatsby-starter-default',
 				short_name: 'starter',
 				start_url: '/',
-				background_color: '#4C84FF',
-				theme_color: '#4C84FF',
+				background_color: process.env.GATSBY_PRIMARY_ACCENT_COLOR || '#4C84FF',
+				theme_color: process.env.GATSBY_PRIMARY_ACCENT_COLOR || '#4C84FF',
 				display: 'minimal-ui',
 				icon: 'src/images/gatsby-icon.png'
 			},
@@ -81,35 +81,30 @@ module.exports = {
 				name: 'comments',
 			},
 		},
-		// {
-		//   resolve: 'gatsby-plugin-google-analytics',
-		//   options: {
-		//     trackingId: "my-tracking-id",
-		//     // Defines where to place the tracking script - 'true' in the head and 'false' in the body
-		//     head: false,
-		//     // Setting this parameter is optional
-		//     anonymize: true,
-		//     // Setting this parameter is also optional
-		//     respectDNT: true,
-		//     // Avoids sending pageview hits from custom paths
-		//     exclude: ["/preview/**", "/do-not-track/me/too/"],
-		//     // Delays sending pageview hits on route update (in milliseconds)
-		//     pageTransitionDelay: 0,
-		//     // Any additional optional fields
-		//     sampleRate: 5,
-		//     siteSpeedSampleRate: 10,
-		//     cookieDomain: "example.com"
-		//   }
-		// },
-		// {
-		//   resolve: 'gatsby-source-instagram',
-		//   options: {
-		//     username: 'my-instagram-username'
-		//   }
-		// },
+		{
+		  resolve: 'gatsby-plugin-google-analytics',
+		  options: {
+		    trackingId: process.env.GATSBY_GOOGLE_ANALYTICS || 'my-tracking-id',
+		    // Defines where to place the tracking script - 'true' in the head and 'false' in the body
+		    head: false,
+		    // Setting this parameter is optional
+		    anonymize: true,
+		    // Setting this parameter is also optional
+		    respectDNT: true,
+		    // Avoids sending pageview hits from custom paths
+		    exclude: ["/preview/**", "/do-not-track/me/too/"],
+		    // Delays sending pageview hits on route update (in milliseconds)
+		    pageTransitionDelay: 0,
+		  }
+		},
+		{
+		  resolve: 'gatsby-source-instagram',
+		  options: {
+		    username: process.env.GATSBY_INSTAGRAM_SOURCE || 'lonelyplanet'
+		  }
+		},
 		'gatsby-plugin-robots-txt',
 		'gatsby-plugin-sass',
-		'gatsby-plugin-sitemap',
 		'gatsby-plugin-advanced-sitemap',
 		{
 			resolve: 'gatsby-plugin-offline',

@@ -33,7 +33,6 @@ export interface Props {
 export const BlogPost = (props: Props) => {
 	const fluid: FluidObject | null = (props.data.wordpressPost.featured_media && props.data.wordpressPost.featured_media.localFile && props.data.wordpressPost.featured_media.localFile.childImageSharp && props.data.wordpressPost.featured_media.localFile.childImageSharp.fluid) ? props.data.wordpressPost.featured_media.localFile.childImageSharp.fluid : null;
 	const categories: CategoryTagInfo[] = props.data.wordpressPost.categories && props.data.wordpressPost.categories.length > 0 ? props.data.wordpressPost.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
-	console.log(props);
 	return (
 		<Layout>
 			<SEO title={props.data.wordpressPost.title} description={props.data.wordpressPost.excerpt} />
