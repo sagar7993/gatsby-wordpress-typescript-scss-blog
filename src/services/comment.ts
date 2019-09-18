@@ -4,7 +4,7 @@ import { postRequest } from './common';
 
 import { AddCommentRequest, AddCommentResponse } from '../contracts/comment';
 
-const addCommentUrl = 'https://dev.staticman.net/v3/entry/github/sagar7993/gatsby-wordpress-typescript-blog-boilerplate/master/comments';
+const addCommentUrl = `https://dev.staticman.net/v3/entry/github/${process.env.GATSBY_GITHUB_USER}/${process.env.GATSBY_GITHUB_REPO}/master/comments`;
 
 export const addComment = async (addCommentRequest: AddCommentRequest): Promise<any> => {
 	try {

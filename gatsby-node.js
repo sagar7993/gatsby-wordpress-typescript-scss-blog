@@ -12,6 +12,10 @@ const path = require('path');
 
 const createPaginatedPages = require('gatsby-paginate');
 
+require('dotenv').config({
+	path: `.env.${process.env.NODE_ENV}`,
+})
+
 exports.createPages = async ({
 	graphql,
 	actions,
@@ -41,11 +45,11 @@ exports.createPages = async ({
 					featured_media {
 						localFile {
 							childImageSharp {
-								fixed(width: 960, height: 600) {
+								fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
+									aspectRatio
 									src
-									width
-									height
 									srcSet
+									sizes
 									base64
 									tracedSVG
 									srcWebp
@@ -53,6 +57,26 @@ exports.createPages = async ({
 								}
 							}
 						}
+					}
+					categories {
+						id
+						link
+						wordpress_id
+						count
+						description
+						name
+						slug
+						path
+					}
+					tags {
+						id
+						link
+						wordpress_id
+						count
+						description
+						name
+						slug
+						path
 					}
 				}
 			}

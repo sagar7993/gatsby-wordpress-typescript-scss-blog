@@ -316,3 +316,260 @@ textarea:focus,
         }
     }
 }
+
+.ant-card {
+    color: $blackColor;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+
+    &.ant-card-bordered {
+        border: 1px solid $borderColor;
+    }
+
+    .ant-card-body {
+        .ant-card-meta {
+            .ant-card-meta-avatar {
+                .ant-avatar {
+                    color: $blackColor;
+
+                    img {
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .ant-card-meta-detail {
+
+                .ant-card-meta-title,
+                .ant-card-meta-description {
+                    color: $blackColor;
+                }
+            }
+        }
+    }
+}
+
+.ant-form {
+    color: $blackColor;
+
+    .ant-form-item {
+        color: $blackColor;
+
+        .ant-form-item-label>label {
+            color: $blackColor;
+        }
+
+        .ant-form-item-control-wrapper {
+            .ant-form-item-control {
+                &.has-feedback {
+
+                    &.has-success,
+                    &.has-error {
+
+                        .ant-input-wrapper,
+                        .ant-input-affix-wrapper {
+                            .ant-input-group-addon {
+                                padding-right: 32px;
+                            }
+
+                            .ant-input-suffix {
+                                right: 24px;
+
+                                .ant-input-password-icon {
+                                    margin-right: 6px;
+                                }
+                            }
+                        }
+                    }
+
+                    &.has-error {
+                        .ant-form-explain {
+                            color: $redColor;
+                        }
+                    }
+                }
+
+                .ant-input-wrapper,
+                .ant-input-affix-wrapper {
+                    .ant-input-group-addon {
+                        .ant-select {
+                            .ant-select-selection {
+                                border-color: rgba(0, 0, 0, 0) !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.ant-form-horizontal {
+        .ant-form-item {
+            @media (max-width: 575px) {
+                .ant-form-item-label {
+                    padding-bottom: 0px;
+                }
+            }
+        }
+    }
+}
+
+.ant-collapse {
+    .ant-collapse-item {
+
+        .ant-collapse-header,
+        .ant-collapse-content {
+            color: $blackColor;
+        }
+    }
+}
+
+.ant-checkbox-wrapper {
+    color: $blackColor;
+
+    .ant-checkbox {
+        color: $blackColor;
+
+        &:hover {
+            .ant-checkbox-inner {
+                border-color: $primaryAccentColor;
+            }
+        }
+
+        &.ant-checkbox-checked {
+            .ant-checkbox-inner {
+                &:after {
+                    left: 21.5%;
+                }
+            }
+        }
+
+        &.ant-checkbox-indeterminate {
+            .ant-checkbox-inner {
+                &:after {
+                    background-color: $primaryAccentColor;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        .ant-checkbox-inner {
+            border-color: $primaryAccentColor;
+        }
+    }
+}
+
+.ant-radio-group {
+    .ant-radio-button-wrapper {
+        outline: none;
+        color: $blackColor;
+
+        &:hover {
+            color: $primaryAccentColor;
+        }
+
+        &.ant-radio-button-wrapper-checked {
+            border-color: $primaryAccentColor;
+            color: $primaryAccentColor;
+            box-shadow: -1px 0 0 0 $primaryAccentColor;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        .ant-radio-button-wrapper {
+            padding: 0px 6px;
+        }
+    }
+}
+
+.ant-notification {
+    .ant-notification-notice {
+        .ant-notification-notice-content {
+            .ant-notification-notice-with-icon {
+                .anticon {
+                    &.ant-notification-notice-icon {
+                        color: $primaryAccentColor;
+                    }
+                }
+
+                .ant-notification-notice-message {
+                    color: $blackColor;
+                }
+
+                .ant-notification-notice-description {
+                    color: $blackColor;
+                }
+            }
+        }
+
+        .ant-notification-notice-close {
+            .anticon {
+                &.anticon-close {
+                    svg {
+                        fill: $primaryAccentColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ant-drawer {
+    .ant-drawer-content-wrapper {
+        .ant-drawer-content {
+            .ant-drawer-wrapper-body {
+                .ant-drawer-header {
+                    color: inherit;
+                    padding: 24px 24px;
+
+                    .ant-drawer-title {
+                        color: $blackColor;
+                    }
+
+                    .ant-drawer-close {
+                        position: absolute;
+                        top: 24px;
+                        right: 12px;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: $tertiaryAccentColor;
+                        }
+                    }
+                }
+
+                .ant-drawer-body {
+                    .ant-drawer-footer {
+                        position: absolute;
+                        left: 0px;
+                        bottom: 0px;
+                        width: 100%;
+                        border-top: 1px solid $borderColor;
+                        padding: 10px 16px;
+                        background: $whiteColor;
+                        text-align: right;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .ant-drawer-content-wrapper {
+            width: 100% !important;
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        .ant-drawer-content-wrapper {
+            width: 75% !important;
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        .ant-drawer-content-wrapper {
+            width: 50% !important;
+        }
+    }
+}

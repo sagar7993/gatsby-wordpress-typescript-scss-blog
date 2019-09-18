@@ -68,8 +68,10 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .post,
+.posts,
 .page {
     font-family: $fontFamily;
+    margin-top: 24px;
 
     .more-link {
         color: $primaryAccentColor;
@@ -77,13 +79,45 @@ input[type='number']::-webkit-outer-spin-button {
         padding: 6px 12px;
     }
 
-    img {
-        max-height: 600px;
-        max-width: 100%;
+    .aligncenter {
+        clear: both;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .post-excerpt {
+        margin-top: 1.45rem;
     }
 }
 
 .navigation-links {
     display: flex;
     justify-content: space-between;
+}
+
+.home {
+    .ant-card {
+        box-shadow: none;
+    }
+}
+
+.about {
+    .ant-card {
+        box-shadow: none;
+
+        .ant-card-body {
+            .description-wrapper {
+                .description {
+                    .icon {
+                        margin-right: 12px;
+
+                        .anticon {
+                            vertical-align: text-bottom;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import Image, { FixedObject } from 'gatsby-image';
+import Image, { FluidObject } from 'gatsby-image';
 
-import { Button } from 'antd';
+import { Button, Tag } from 'antd';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
-import { Post } from '../contracts/post';
+import { Post, CategoryTagInfo } from '../contracts/post';
 import { decodeHtmlCharCodes } from '../utils';
 
 import './Blog.scss';
@@ -33,37 +33,49 @@ export const IndexPage = (props: Props) => {
           }
         }
       }
-    `);
+	`);
 	return (
 		<Layout>
 			<SEO title={`${site.siteMetadata.title} | ${site.siteMetadata.description}`} description={site.siteMetadata.description} />
 			{group.map(({ node }: { node: Post }) => {
-				const fixed: FixedObject | null = (node.featured_media && node.featured_media.localFile && node.featured_media.localFile.childImageSharp && node.featured_media.localFile.childImageSharp.fixed) ? node.featured_media.localFile.childImageSharp.fixed : null;
+				const fluid: FluidObject | null = (node.featured_media && node.featured_media.localFile && node.featured_media.localFile.childImageSharp && node.featured_media.localFile.childImageSharp.fluid) ? node.featured_media.localFile.childImageSharp.fluid : null;
+				const categories: CategoryTagInfo[] = node.categories && node.categories.length > 0 ? node.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
 				return (
-					<div key={node.slug} className="post margin-bottom-48px">
+					<div key={node.slug} className="posts">
 						<Link to={'/post/' + node.slug}>
-							<h3>{decodeHtmlCharCodes(node.title)}</h3>
-							{(fixed && fixed.src && fixed.src.length > 0) && <Image fixed={fixed} />}
+							<h1 className="black-color margin-bottom-16px">{decodeHtmlCharCodes(node.title)}</h1>
 						</Link>
-						<div className="post-content" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }} />
+						{categories && categories.length > 0 && (
+							<div className="categories margin-bottom-24px">
+								{categories.map((category, categoryIndex) => {
+									return (
+										<Tag key={categoryIndex}>{category.name}</Tag>
+									);
+								})}
+							</div>
+						)}
+						<Link to={'/post/' + node.slug}>
+							{(fluid && fluid.src && fluid.src.length > 0) && <Image fluid={fluid} alt={node.title} />}
+						</Link>
+						<div className="post-excerpt" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }} />
 					</div>
 				);
 			})}
 			<div className="navigation-links">
-				{index > 1 &&
+				{index > 1 && (
 					<div className="previous-link">
 						<Link to={'/posts/' + previousUrl}>
 							<Button type="primary">Go to Previous Page</Button>
 						</Link>
 					</div>
-				}
-				{index <= (pageCount - 1) &&
+				)}
+				{index <= (pageCount - 1) && (
 					<div className="next-link">
 						<Link to={'/posts/' + nextUrl}>
 							<Button type="primary">Go to Next Page</Button>
 						</Link>
 					</div>
-				}
+				)}
 			</div>
 		</Layout>
 	);

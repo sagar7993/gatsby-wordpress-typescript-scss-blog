@@ -6,10 +6,10 @@
 
 module.exports = {
 	siteMetadata: {
-		title: "My Demo Blog",
-		description: "This is a demo blog",
+		title: 'My Demo Blog',
+		description: 'This is a demo blog',
 		author: '@sagar7993',
-		siteUrl: "http://localhost:8001"
+		siteUrl: 'http://localhost:8000'
 	},
 	plugins: [
 		'gatsby-plugin-typescript',
@@ -45,8 +45,8 @@ module.exports = {
 				verboseOutput: false,
 				perPage: 100,
 				searchAndReplaceContentUrls: {
-					sourceUrl: "http://localhost:8001",
-					replacementUrl: "http://localhost:8000"
+					sourceUrl: 'http://localhost:8001',
+					replacementUrl: 'http://localhost:8000'
 				},
 				concurrentRequests: 10,
 				includedRoutes: [
@@ -107,48 +107,15 @@ module.exports = {
 		//     username: 'my-instagram-username'
 		//   }
 		// },
-		// {
-		//   resolve: 'gatsby-source-facebook',
-		//   options: {
-		//     places: ['${facebookPageID}'], // Can be either a numeric ID or the URL ID
-		//     params: {
-		//       fields: 'hours, posts { message, created_time }', // See Facebooks API to see what you can query for
-		//     },
-		//     key: process.env.FACEBOOK_GRAPH_TOKEN // You will need to create a Facebook application and go through review in order to get an API token.
-		//   }
-		// },
-		// {
-		//   resolve: 'gatsby-source-twitter',
-		//   options: {
-		//     credentials: {
-		//       consumer_key: "INSERT_HERE_YOUR_CONSUMER_KEY",
-		//       consumer_secret: "INSERT_HERE_YOUR_CONSUMER_SECRET",
-		//       bearer_token: "INSERT_HERE_YOUR_BEARER_TOKEN"
-		//     },
-		//     queries: {
-		//       nameofthequery: {
-		//         endpoint: "statuses/user_timeline",
-		//         params: {
-		//           screen_name: "gatsbyjs",
-		//           include_rts: false,
-		//           exclude_replies: true,
-		//           tweet_mode: "extended"
-		//         }
-		//       }
-		//       nameofanotherthequery: {
-		//         endpoint: "search/tweets",
-		//         params: {
-		//           q: "#gatsbyjs",
-		//           tweet_mode: "extended"
-		//         }
-		//       }
-		//     }
-		//   }
-		// },
 		'gatsby-plugin-robots-txt',
 		'gatsby-plugin-sass',
 		'gatsby-plugin-sitemap',
 		'gatsby-plugin-advanced-sitemap',
-		'gatsby-plugin-offline'
+		{
+			resolve: 'gatsby-plugin-offline',
+			options: {
+				precachePages: ['/posts/*', '/post/*', '/about/'],
+			}
+		}
 	]
 }

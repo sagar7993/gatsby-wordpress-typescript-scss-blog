@@ -53,6 +53,7 @@
     "@types/react-helmet": "5.0.10",
     "@types/react-test-renderer": "16.9.0",
     "babel-plugin-import": "1.12.1",
+    "dotenv": "^8.1.0",
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.14.0",
     "node-sass": "4.12.0",

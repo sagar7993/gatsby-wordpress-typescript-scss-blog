@@ -1,15 +1,15 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import Image, { FixedObject } from 'gatsby-image';
+import Image, { FluidObject } from 'gatsby-image';
 
-import { Button } from 'antd';
+import { Button, Tag } from 'antd';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 import Comments from '../components/Comments';
 
-import { Post } from '../contracts/post';
+import { Post, CategoryTagInfo } from '../contracts/post';
 import { Comment } from '../contracts/comment';
 import { decodeHtmlCharCodes } from '../utils';
 
@@ -31,27 +31,40 @@ export interface Props {
 }
 
 export const BlogPost = (props: Props) => {
-	const fixed: FixedObject | null = (props.data.wordpressPost.featured_media && props.data.wordpressPost.featured_media.localFile && props.data.wordpressPost.featured_media.localFile.childImageSharp && props.data.wordpressPost.featured_media.localFile.childImageSharp.fixed) ? props.data.wordpressPost.featured_media.localFile.childImageSharp.fixed : null;
+	const fluid: FluidObject | null = (props.data.wordpressPost.featured_media && props.data.wordpressPost.featured_media.localFile && props.data.wordpressPost.featured_media.localFile.childImageSharp && props.data.wordpressPost.featured_media.localFile.childImageSharp.fluid) ? props.data.wordpressPost.featured_media.localFile.childImageSharp.fluid : null;
+	const categories: CategoryTagInfo[] = props.data.wordpressPost.categories && props.data.wordpressPost.categories.length > 0 ? props.data.wordpressPost.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
+	console.log(props);
 	return (
 		<Layout>
 			<SEO title={props.data.wordpressPost.title} description={props.data.wordpressPost.excerpt} />
 			<h1>{decodeHtmlCharCodes(props.data.wordpressPost.title)}</h1>
-			{fixed && fixed.src && fixed.src.length > 0 && <Image fixed={fixed} />}
+			{categories && categories.length > 0 && (
+				<div className="categories margin-bottom-24px">
+					{categories.map((category, categoryIndex) => {
+						return (
+							<Tag key={categoryIndex}>{category.name}</Tag>
+						);
+					})}
+				</div>
+			)}
+			{fluid && fluid.src && fluid.src.length > 0 && <Image fluid={fluid} alt={props.data.wordpressPost.title} />}
 			<div className="post" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wordpressPost.content) }} />
-			<div className="comments">
-				<Comments slug={props.data.wordpressPost.slug} wordpress_id={props.data.wordpressPost.wordpress_id} comments={props.data.allCommentsYaml} />
-			</div>
+			{process.env && (
+				<div className="comments">
+					<Comments slug={props.data.wordpressPost.slug} wordpress_id={props.data.wordpressPost.wordpress_id} comments={props.data.allCommentsYaml} />
+				</div>
+			)}
 			<div className="margin-bottom-24px navigation-links">
-				{props.pageContext.next && props.pageContext.next.slug &&
+				{props.pageContext.next && props.pageContext.next.slug && (
 					<Link to={`/post/${props.pageContext.next.slug}`}>
 						<Button type="primary">Go to Previous Post</Button>
 					</Link>
-				}
-				{props.pageContext.previous && props.pageContext.previous.slug &&
+				)}
+				{props.pageContext.previous && props.pageContext.previous.slug && (
 					<Link to={`/post/${props.pageContext.previous.slug}`}>
 						<Button type="primary">Go to Next Post</Button>
 					</Link>
-				}
+				)}
 			</div>
 		</Layout>
 	);
@@ -74,11 +87,11 @@ export const query = graphql`
 			featured_media {
 				localFile {
 					childImageSharp {
-						fixed(width: 960, height: 600) {
+						fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
+							aspectRatio
 							src
-							width
-							height
 							srcSet
+							sizes
 							base64
 							tracedSVG
 							srcWebp
@@ -86,6 +99,26 @@ export const query = graphql`
 						}
 					}
 				}
+			}
+			categories {
+				id
+				link
+				wordpress_id
+				count
+				description
+				name
+				slug
+				path
+			}
+			tags {
+				id
+				link
+				wordpress_id
+				count
+				description
+				name
+				slug
+				path
 			}
 		}
 		allCommentsYaml(filter: { slug: { eq: $slug } }) {

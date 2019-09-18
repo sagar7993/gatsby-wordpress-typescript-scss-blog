@@ -23,7 +23,7 @@
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: 36px;
-                    margin: 0px 28px 0px 0;
+                    margin: 0px 6px 0px 0;
                     float: left;
                 }
 
@@ -36,11 +36,11 @@
 
                         a {
                             color: $whiteColor;
+                            font-size: 1.45rem;
                         }
 
                         &.ant-menu-item-selected {
                             background-color: $primaryAccentColor;
-                            text-decoration: underline;
                         }
                     }
                 }

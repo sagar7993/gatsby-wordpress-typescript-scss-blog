@@ -118,6 +118,22 @@
     cursor: pointer;
 }
 
+.black-color {
+    color: $blackColor;
+}
+
+.white-color {
+    color: $blackColor;
+}
+
+.primary-color {
+    color: $primaryAccentColor;
+}
+
+.box-shadow-none {
+    box-shadow: none;
+}
+
 .border-top {
     border-top: 1px solid $blackColor;
 }
