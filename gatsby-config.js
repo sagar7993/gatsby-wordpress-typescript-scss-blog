@@ -38,6 +38,13 @@ module.exports = {
 			options: {
 				baseUrl: `${process.env.GATSBY_WORDPRESS_URL_PATH}`,
 				protocol: `${process.env.GATSBY_WORDPRESS_URL_PROTOCOL}`,
+				plugins: [{
+					resolve: `gatsby-wordpress-inline-images`,
+					options: {
+						baseUrl: `${process.env.GATSBY_WORDPRESS_URL_PATH}`,
+						protocol: `${process.env.GATSBY_WORDPRESS_URL_PROTOCOL}`
+					}
+				}],
 				hostingWPCOM: false,
 				useACF: false,
 				verboseOutput: false,
