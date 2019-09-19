@@ -9,8 +9,6 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 import Instagram from '../components/Instagram';
-import Twitter from '../components/Twitter';
-import Facebook from '../components/Facebook';
 
 import { ChildImageSharp, InstagramFeed } from '../contracts/post';
 
@@ -25,7 +23,6 @@ export interface Props {
 
 export const AboutPage = (props: Props) => {
 	const fluid: FluidObject | null = (props.data && props.data.file && props.data.file.childImageSharp && props.data.file.childImageSharp.fluid) ? props.data.file.childImageSharp.fluid : null;
-	console.log(props);
 	return (
 		<Layout>
 			<SEO title="About Me" />
@@ -72,17 +69,7 @@ export const AboutPage = (props: Props) => {
 						</Col>
 					</Row>
 				</Card>
-				<Row type="flex" align="middle" gutter={36}>
-					<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
-						<Instagram allInstaNode={props.data.allInstaNode} />
-					</Col>
-					<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
-						<Twitter />
-					</Col>
-					<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
-						<Facebook />
-					</Col>
-				</Row>
+				<Instagram allInstaNode={props.data.allInstaNode} />
 			</div>
 		</Layout>
 	);

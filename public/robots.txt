@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: http://localhost:8000/sitemap.xml
-Host: localhost:8000
+Sitemap: https://eloquent-bartik-09a1e8.netlify.com/sitemap.xml
+Host: https://eloquent-bartik-09a1e8.netlify.com

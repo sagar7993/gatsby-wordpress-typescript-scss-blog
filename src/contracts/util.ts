@@ -73,29 +73,3 @@ export const getAvatarBackgroundColor = (avatar: string = ''): string => {
 	}
 	return avatarBackgroundColors[sum % avatarBackgroundColors.length];
 };
-
-export const addScriptToDocument = (
-	scriptPath: string,
-	scriptPreLoadInitialize: (() => void) | null,
-	scriptLoadedCallback: (() => void) | null,
-	externalDomain: boolean
-) => {
-	if (scriptPreLoadInitialize) {
-		scriptPreLoadInitialize();
-	}
-	const script = document.createElement('script');
-	script.type = 'text/javascript';
-	script.async = true;
-	script.src = scriptPath;
-	if (externalDomain) {
-		const res = document.createElement('link');
-		res.rel = 'preload';
-		res.as = 'script';
-		res.href = scriptPath;
-		document.head.appendChild(res);
-	}
-	if (scriptLoadedCallback) {
-		script.onload = scriptLoadedCallback;
-	}
-	document.body.appendChild(script);
-};

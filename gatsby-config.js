@@ -12,8 +12,8 @@ module.exports = {
 	siteMetadata: {
 		title: 'My Demo Blog',
 		description: 'This is a demo blog',
-		author: '@sagar7993',
-		siteUrl: 'http://localhost:8000'
+		author: `@${process.env.GATSBY_SITE_AUTHOR}`,
+		siteUrl: `${process.env.GATSBY_SITE_URL_PROTOCOL}://${process.env.GATSBY_SITE_URL_PATH}`
 	},
 	plugins: [
 		'gatsby-plugin-typescript',
@@ -33,8 +33,8 @@ module.exports = {
 				name: 'gatsby-starter-default',
 				short_name: 'starter',
 				start_url: '/',
-				background_color: process.env.GATSBY_PRIMARY_ACCENT_COLOR || '#4C84FF',
-				theme_color: process.env.GATSBY_PRIMARY_ACCENT_COLOR || '#4C84FF',
+				background_color: process.env.GATSBY_PRIMARY_ACCENT_COLOR,
+				theme_color: process.env.GATSBY_PRIMARY_ACCENT_COLOR,
 				display: 'minimal-ui',
 				icon: 'src/images/gatsby-icon.png'
 			},
@@ -42,15 +42,15 @@ module.exports = {
 		{
 			resolve: 'gatsby-source-wordpress',
 			options: {
-				baseUrl: 'localhost:8001',
-				protocol: 'http',
+				baseUrl: `${process.env.GATSBY_WORDPRESS_URL_PATH}`,
+				protocol: `${process.env.GATSBY_WORDPRESS_URL_PROTOCOL}`,
 				hostingWPCOM: false,
-				useACF: true,
+				useACF: false,
 				verboseOutput: false,
 				perPage: 100,
 				searchAndReplaceContentUrls: {
-					sourceUrl: 'http://localhost:8001',
-					replacementUrl: 'http://localhost:8000'
+					sourceUrl: `${process.env.GATSBY_WORDPRESS_URL_PROTOCOL}://${process.env.GATSBY_WORDPRESS_URL_PATH}`,
+					replacementUrl: `${process.env.GATSBY_SITE_URL_PROTOCOL}://${process.env.GATSBY_SITE_URL_PATH}`
 				},
 				concurrentRequests: 10,
 				includedRoutes: [
@@ -88,7 +88,7 @@ module.exports = {
 		{
 		  resolve: 'gatsby-plugin-google-analytics',
 		  options: {
-		    trackingId: process.env.GATSBY_GOOGLE_ANALYTICS || 'my-tracking-id',
+		    trackingId: process.env.GATSBY_GOOGLE_ANALYTICS,
 		    // Defines where to place the tracking script - 'true' in the head and 'false' in the body
 		    head: false,
 		    // Setting this parameter is optional
@@ -104,7 +104,7 @@ module.exports = {
 		{
 		  resolve: 'gatsby-source-instagram',
 		  options: {
-		    username: process.env.GATSBY_INSTAGRAM_SOURCE || 'lonelyplanet'
+		    username: process.env.GATSBY_INSTAGRAM_SOURCE
 		  }
 		},
 		'gatsby-plugin-robots-txt',
