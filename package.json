@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "build": "npm run purgeCach && npm run linte && gatsby build",
+    "build": "npm run purgeCache && npm run lint && gatsby build",
     "start": "npm run purgeCache && npm run lint && gatsby develop",
     "serve": "npm run purgeCache && npm run lint && gatsby build && gatsby serve",
     "lint": "tslint -c tslint.json -p tsconfig.json ./src/**/*.{ts,tsx}",
