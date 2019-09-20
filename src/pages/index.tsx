@@ -45,7 +45,7 @@ export const IndexPage = (props: Props) => {
 					</Row>
 				</Card>
 				<Instagram allInstaNode={props.data.allInstaNode} />
-				<Row>
+				<Row type="flex" align="middle" gutter={36}>
 					<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
 						<Twitter />
 					</Col>
