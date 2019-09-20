@@ -2,13 +2,16 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Image, { FluidObject } from 'gatsby-image';
 
-import { Button, Tag } from 'antd';
+import { Button, Tag, Row, Col } from 'antd';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 import Comments from '../components/Comments';
+
 import Instagram from '../components/Instagram';
+import Twitter from '../components/Twitter';
+import Facebook from '../components/Facebook';
 
 import { Post, CategoryTagInfo, InstagramFeed } from '../contracts/post';
 import { Comment } from '../contracts/comment';
@@ -69,6 +72,14 @@ export const BlogPost = (props: Props) => {
 				)}
 			</div>
 			<Instagram allInstaNode={props.data.allInstaNode} />
+			<Row>
+				<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
+					<Twitter />
+				</Col>
+				<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
+					<Facebook />
+				</Col>
+			</Row>
 		</Layout>
 	);
 };

@@ -9,6 +9,8 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 import Instagram from '../components/Instagram';
+import Twitter from '../components/Twitter';
+import Facebook from '../components/Facebook';
 
 import { ChildImageSharp, InstagramFeed } from '../contracts/post';
 
@@ -43,6 +45,14 @@ export const IndexPage = (props: Props) => {
 					</Row>
 				</Card>
 				<Instagram allInstaNode={props.data.allInstaNode} />
+				<Row>
+					<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
+						<Twitter />
+					</Col>
+					<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
+						<Facebook />
+					</Col>
+				</Row>
 			</div>
 		</Layout>
 	);

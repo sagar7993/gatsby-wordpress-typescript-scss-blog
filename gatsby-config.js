@@ -103,6 +103,30 @@ module.exports = {
 		    username: process.env.GATSBY_INSTAGRAM_SOURCE
 		  }
 		},
+		{
+			resolve: `gatsby-plugin-pinterest-twitter-facebook`,
+			options: {
+				pinterest: {
+					enable: true,
+					tall: true,
+					round: false
+				},
+				twitter: {
+					enable: true,
+					containerSelector: '.twitter-container',
+					handle: process.env.GATSBY_TWITTER_SOURCE,
+					showFollowButton: true,
+					showTimeline: true
+				},
+				facebook: {
+					enable: true,
+					containerSelector: '.facebook-container',
+					profile: process.env.GATSBY_FACEBOOK_SOURCE,
+					showLikeButton: true,
+					showTimeline: true
+				}
+			}
+		},
 		'gatsby-plugin-robots-txt',
 		'gatsby-plugin-sass',
 		'gatsby-plugin-advanced-sitemap',

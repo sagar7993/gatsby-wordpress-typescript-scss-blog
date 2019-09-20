@@ -16,7 +16,6 @@ export class Layout extends Component<Props> {
 			<Fragment>
 				<Header />
 				<div className="layout">
-					<div id="fb-root"></div>
 					<main>{this.props.children}</main>
 				</div>
 				<Footer />
