@@ -83,11 +83,11 @@ export const IndexPage = (props: Props) => {
 				)}
 			</div>
 			<Instagram allInstaNode={props.pathContext.allInstaNode} />
-			<Row type="flex" align="middle" gutter={36}>
-				<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
+			<Row type="flex" align="middle" gutter={36} className="margin-top-36">
+				<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12} className="align-center">
 					<Twitter />
 				</Col>
-				<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
+				<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12} className="align-center">
 					<Facebook />
 				</Col>
 			</Row>
