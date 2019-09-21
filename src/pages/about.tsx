@@ -32,7 +32,7 @@ export const AboutPage = (props: Props) => {
 				<Card>
 					<Row gutter={24} type="flex" align="middle">
 						<Col xs={24} sm={24} md={24} lg={12} xl={14} xxl={16}>
-							{fluid && <Image fluid={fluid} alt="Author Bio" />}
+							{fluid && <Image fluid={fluid} alt="Author Bio" title="Author Bio" />}
 						</Col>
 						<Col xs={24} sm={24} md={24} lg={12} xl={10} xxl={8}>
 							<div className="description-wrapper">
@@ -72,7 +72,7 @@ export const AboutPage = (props: Props) => {
 					</Row>
 				</Card>
 				<Instagram allInstaNode={props.data.allInstaNode} />
-				<Row type="flex" align="middle" gutter={36} className="margin-top-36">
+				<Row type="flex" align="middle" gutter={36} className="margin-top-36px">
 					<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12} className="align-center">
 						<Twitter />
 					</Col>

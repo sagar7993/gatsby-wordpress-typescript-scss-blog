@@ -28,7 +28,7 @@ export const Instagram = (props: Props) => {
 									{(instagramPost.node.localFile && instagramPost.node.localFile.childImageSharp) && (
 										<Tooltip title={instagramPost.node.caption} arrowPointAtCenter={true}>
 											<a href={`https://instagram.com/p/${instagramPost.node.id}`} target="_blank" rel="noopenernoopener noreferrer nofollow">
-												<Image fluid={instagramPost.node.localFile.childImageSharp.fluid} />
+												<Image fluid={instagramPost.node.localFile.childImageSharp.fluid} alt={instagramPost.node.caption} title={instagramPost.node.caption} />
 											</a>
 										</Tooltip>
 									)}

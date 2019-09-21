@@ -1,94 +1,145 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's hello-world starter
-</h1>
+# Yellowcake
 
-Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![dependencies](https://david-dm.org/jinksi/netlify-cms-react-starter.svg?style=flat-square)](https://david-dm.org/jinksi/gatsbro)
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+An opinionated starter project for creating lightning-fast websites with [Gatsby](https://gatsbyjs.org) v2 and [Netlify CMS](https://netlifycms.org) v2.
 
-## 🚀 Quick start
+- **[Gatsby](https://gatsbyjs.org)** static site generator
+- **[Netlify CMS](https://github.com/netlify/netlify-cms)** for content management
 
-1.  **Create a Gatsby site.**
+## See also
 
-    Use the Gatsby CLI to create a new site, specifying the hello-world starter.
+[Netlify CMS Docs](https://www.netlifycms.org/docs/)  
+[Netlify CMS Repo](https://github.com/netlify/netlify-cms)
 
-    ```sh
-    # create a new Gatsby site using the hello-world starter
-    gatsby new my-hello-world-starter https://github.com/gatsbyjs/gatsby-starter-hello-world
-    ```
+## Get going
 
-1.  **Start developing.**
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/thriveweb/yellowcake&stack=cms)
 
-    Navigate into your new site’s directory and start it up.
+1.  Hit the **Deploy to Netlify** button. This will:
 
-    ```sh
-    cd my-hello-world-starter/
-    gatsby develop
-    ```
+- Clone the repo into your Github account
+- Create you a new project on Netlify, build & deploy
 
-1.  **Open the source code and start editing!**
+1.  Once your Netlify project has been created, check a couple of settings:
 
-    Your site is now running at `http://localhost:8000`!
+- Enable **Identity**
+- Change **Registration Preferences** to **Invite Only**
+- Enable **Git Gateway**
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+1.  Invite users (probably yourself) to enable admin access
 
-    Open the `my-hello-world-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+- Open the **Identity** tab and hit **Invite Users**
 
-## 🧐 What's inside?
+## Show me the CMS!
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+The CMS lives at [\_\_YOUR_SITE_NAME\_\_.netlify.com/admin](https://__YOUR_SITE_NAME__.netlify.com/admin).
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+## Developing
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+1.  Clone your repo to your local machine
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+1.  Install dependencies
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+`yarn` or `npm install`
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+1.  Run the development server
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+`yarn start` or `npm run start`
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+If you are adding or editing content locally in the CMS, a couple of things to note:
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+1.  Changes will be pushed to the remote repo.
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+1.  You will be prompted to enter your site's url, this is necessary for Netlify Identity to manage user login. This is stored in `localStorage`, so you might have to empty your browser cache if you are switching projects but remaining on `localhost:8000`.
 
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+## Editing CMS fields
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+The Netlify CMS configuration is located in `public/admin/config.yml`. This is where you will configure the pages, fields, posts and settings that are editable by the CMS.
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+Find out more in the [Netlify CMS Docs](https://www.netlifycms.org/docs/#configuration).
 
-12. **`README.md`**: A text file containing useful reference information about your project.
+## Uploadcare setup
 
-## 🎓 Learning Gatsby
+Uploadcare is our file upload system. It hosts the files for us and delivers them trough their CDN network.
+Each site you'll create need its own Uploadcare API key's. See below how to set this up
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
+1. Create new project in Uploadcare and save API keys in project
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+- Go to [Uploadcare.com](https://uploadcare.com/accounts/login/) and login
+- Once on the dashboard create a new project
+- Set the name and hit create
+- In the left menu click in API Keys and copy the public key
+- Now open your project and open the CMS congif.yml file
+- find the `media_library` settings and paste in the public key after `publicKey:`
+- Done!!
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+For more details see the [Netlify CMS Docs](https://www.netlifycms.org/docs/uploadcare/)
+
+## Scheduled content
+
+Scheduled content allows you to schedule posts. Set the date / order field in a post to the feature.
+For the scheduled content to appear on the website we need to deploy our website daily.
+
+1. Setup a Netlify build hook
+
+- Go to https://app.netlify.com/sites/_YOUR_SITE_NAME/setings/deploys/#build-hooks
+- Hit build hook button in the build hooks section
+- Give it a name for example: "Automatic deploy Zapier"
+- Select branch, in most cases master will do.
+- Hit save and copy the generated url
+
+2. Zapier Setup
+
+- Go to [Zapier.com](https://zapier.com/) and login
+- Hit make a zap button in the right top corner
+- Search for Schedule in the search bar and select "Schedule by Zapier"
+- Check every day and hit continue
+- Select a time and make sure trigger on weekends is turned on
+- Double check your settings and hit continue
+- On the left hit add a step - and search for webhook by Zapier
+- Select post as action and continue
+- Past in the url of our recently generated webhook in the url field
+- Make sure "Payload Type" is set to form and hit continue
+- check settings and hit the test button
+- Check your Netlify site if there has been triggered a new deploy
+- If that worked hit finish
+- Give your zap a name, example: "Automatic deploy Yellowcake" and make sure your zap is turned on
+
+That's it, you'r now ready to use scheduled content!!
+
+## Mailchimp integration
+
+https://hooks.zapier.com/hooks/catch/2881617/ea5exg/
+
+- Go to [Zapier.com](https://zapier.com/) and login
+- Hit make a zap button in the right top corner
+- Search for webhook by Zapier and select catch hook and continue to next step
+- In most cases leave this field empty and continue
+- Copy the generated url
+- Now go to the [form settings](https://app.netlify.com/sites/yellowcake/settings/forms#outgoing-notifications) in you Netlify project
+- Find the form notifications section click the add notification button
+- Select the option `outgoing webhook`
+- Set the event to listen for
+- Paste in our recent generated url in the URL to notify field
+- Select your form and save settings
+- Open your website navigate to your form, fill it out and send the data
+- Go back to Zaper and see if your form data has come trough.
+- Hit continue and add a new step on the left side of the screen
+- Search for MailChimp and select add/update subscriber
+- Select MailChimp account or add one and hit the test button
+- if succeeded hit continue button
+- Select your MailChimp list and select the subscriber email address
+- Fill in other settings for your needs and continue
+- Hit send test to MailChimp button and hit finish if succeeded
+- Give your Zap a name and make sure your zap is turned on
+- Submit your form one last time and see if all data is coming trough to MailChimp
+- Thats is!
+
+## Instagram Feed
+
+Get Your Instagram Access Token [here](https://generator.thrivex.io/). In order to display your Instagram photos on your own website, you are required to provide an Instagram Access Token. You can do this by clicking the generator button on this site you will first need to login to your account.
 
 ## 💫 Deploy
 

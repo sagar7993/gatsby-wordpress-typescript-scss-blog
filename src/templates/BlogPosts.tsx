@@ -60,7 +60,7 @@ export const IndexPage = (props: Props) => {
 							</div>
 						)}
 						<Link to={'/post/' + node.slug}>
-							{(fluid && fluid.src && fluid.src.length > 0) && <Image fluid={fluid} alt={node.title} />}
+							{(fluid && fluid.src && fluid.src.length > 0) && <Image fluid={fluid} alt={node.title} title={node.title} />}
 						</Link>
 						<div className="post-excerpt" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }} />
 					</div>
@@ -83,7 +83,7 @@ export const IndexPage = (props: Props) => {
 				)}
 			</div>
 			<Instagram allInstaNode={props.pathContext.allInstaNode} />
-			<Row type="flex" align="middle" gutter={36} className="margin-top-36">
+			<Row type="flex" align="middle" gutter={36} className="margin-top-36px">
 				<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12} className="align-center">
 					<Twitter />
 				</Col>

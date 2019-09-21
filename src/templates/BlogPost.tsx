@@ -52,7 +52,7 @@ export const BlogPost = (props: Props) => {
 					})}
 				</div>
 			)}
-			{fluid && fluid.src && fluid.src.length > 0 && <Image fluid={fluid} alt={props.data.wordpressPost.title} />}
+			{fluid && fluid.src && fluid.src.length > 0 && <Image fluid={fluid} alt={props.data.wordpressPost.title} title={props.data.wordpressPost.title} />}
 			<div className="post" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wordpressPost.content) }} />
 			{process.env && (
 				<div className="comments">
@@ -72,7 +72,7 @@ export const BlogPost = (props: Props) => {
 				)}
 			</div>
 			<Instagram allInstaNode={props.data.allInstaNode} />
-			<Row type="flex" align="middle" gutter={36} className="margin-top-36">
+			<Row type="flex" align="middle" gutter={36} className="margin-top-36px">
 				<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12} className="align-center">
 					<Twitter />
 				</Col>
