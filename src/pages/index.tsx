@@ -93,7 +93,7 @@ export const IndexPage = (props: Props) => {
 											</p>
 										</li>
 										<li>
-											<p>Test cases - full support for writing test cases in Typescript using enzyme and jest. <Icon type="fire" theme="twoTone" twoToneColor="#FF5E65" /></p>
+											<p>Test cases - full support for writing test cases in Typescript using Enzyme and Jest. <Icon type="fire" theme="twoTone" twoToneColor="#FF5E65" /></p>
 										</li>
 										<li>
 											<p>Git pre-commit and pre-push hooks using Husky - execute any custom scripts before any git commit or git push operation, such as linting or running test cases, to ensure that dirty or untested code never gets pushed to your Github repository <Icon type="fire" theme="twoTone" twoToneColor="#FF5E65" /></p>

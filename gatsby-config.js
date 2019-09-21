@@ -27,8 +27,8 @@ module.exports = {
 				name: `${process.env.GATSBY_SITE_NAME}`,
 				short_name: `${process.env.GATSBY_SITE_NAME}`,
 				start_url: '/',
-				background_color: process.env.GATSBY_PRIMARY_ACCENT_COLOR,
-				theme_color: process.env.GATSBY_PRIMARY_ACCENT_COLOR,
+				background_color: process.env.GATSBY_PRIMARY_ACCENT_COLOR || '#4C84FF',
+				theme_color: process.env.GATSBY_PRIMARY_ACCENT_COLOR || '#4C84FF',
 				display: 'minimal-ui',
 				icon: 'src/images/logo.png'
 			},

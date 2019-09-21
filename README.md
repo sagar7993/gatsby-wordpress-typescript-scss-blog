@@ -6,7 +6,6 @@
 
 This is an opinionated starter project to help you create lightning fast PWA websites with [Gatsby](https://gatsbyjs.org) and [Wordpress](https://wordpress.com) CMS, built using [Typescript](http://www.typescriptlang.org/) and [Ant Design](https://github.com/ant-design/ant-design).
 
-
 - **[Gatsby](https://gatsbyjs.org)** static site generator
 - **[Wordpress](https://wordpress.com)** for content management
 - **[Typescript](https://typescriptlang.org)** for statically-typed clean JavaScript code
@@ -19,115 +18,185 @@ Hit the **Deploy to Netlify** button. This will:
 - Clone the repo into your Github account
 - Create a new project on Netlify, build & deploy
 
-## Setting up Wordpress
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate)
 
-Use the included docker-compose.yml file to setup Wordpress on your local machine
+## Using the environment variables
+
+This Gatsby starter template comes with 2 environments, one for development and testing, and another for production. This allows you to use different tokens, API URL's, social account id's etc as needed for your development, testing and production environments. The environment variables defined are as follows: 
+
+- GATSBY_GITHUB_USER (Mandatory)
+This is the username of your Github account
+
+- GATSBY_GITHUB_REPO (Mandatory)
+This is the Github repository URL
+
+- GATSBY_SITE_NAME (Mandatory)
+This is the title of the generated Gatsby site
+
+- GATSBY_SITE_DESCRIPTION (Mandatory)
+This is the description of the generated Gatsby site
+
+- GATSBY_SITE_URL_PATH (Mandatory)
+This is the URL where you will be deploying the generated Gatsby site, but without the http protocol
+For example `mywebsite.com` or `localhost:8000`
+
+- GATSBY_SITE_URL_PROTOCOL (Mandatory)
+This is the http protocol of the URL where you will be deploying the generated Gatsby site, i.e. `http` or `https`
+
+- GATSBY_WORDPRESS_URL_PATH (Mandatory)
+This is the URL of your wordpress site from where you will fetch your posts/pages etc, but without the http protocol
+For example `mywebsite-wordpress.com` or `localhost:8001`
+
+- GATSBY_WORDPRESS_URL_PROTOCOL (Mandatory)
+This is the http protocol of the URL of your wordpress site from where you will fetch your posts/pages etc, i.e. `http` or `https`
+
+- GATSBY_SITE_AUTHOR
+This is the name of the Gatsby site author
+
+- GATSBY_ENABLE_COMMENTS (Optional)
+This is a feature switch flag. If it's set to `1`, comment form will be displayed on all your blog posts. If this is not defined or it's value is anything other than `1` then commenting will be disabled on the website.
+
+- GATSBY_PRIMARY_ACCENT_COLOR (Optional)
+This is the primary accent color of your website, which will be used as the theme color in your web manifest file.
+
+- GATSBY_INSTAGRAM_SOURCE (Optional)
+This is the name of the Instagram account whose feed you want to display on your website.
+Note: Do not include the `@` symbol here.
+
+- GATSBY_TWITTER_SOURCE (Optional)
+This is the handle of the Twitter account whose timeline/follow button you want to display on your website.
+Note: Do not include the `@` symbol here.
+
+- GATSBY_FACEBOOK_SOURCE (Optional)
+This is the name of the Facebook account/page whose timeline/like button you want to display on your website.
+Note: Do not include the `@` symbol here.
+
+- GATSBY_GOOGLE_ANALYTICS (Optional)
+This is your Google Analytics tracking id.
+
+Note: Any new environment variables you want to define MUST have the `GATSBY_` prefix. You can access them using `process.env.GATSBY_MY_ENVIRONMENT_VARIABLE`. Also, `process.env` object cannot be de-structured. To access any variable from this object, use the full variable name.
+
+For example, the following code will NOT work.
+
+```javascript
+const { GATSBY_MY_ENVIRONMENT_VARIABLE } = process.env;
+```
+## Setting up Wordpress locally on your machine
+
+1. Install [Docker](https://www.docker.com/get-started) on your machine
+
+2. Use the included docker-compose.yml file in this repository to setup Wordpress on your local machine by using the command `docker-compose up -d` (Have a look at Docker's documentation for more details)
+
+3. This will create a dockerized wordpress installation on your machine, which you can access here [http://localhost:8001](http://localhost:8001)
+
+4. As given in the docker-compose.yml file, your credentials are the following by default (make sure you change these credentials before deploying anything to production)
+    
+    - MySQL username: `wordpress`
+    - MySQL password: `wordpress`
+    - Wordpress username: `wordpress`
+    - Wordpress password: `wordpress`
+
+5. Once you're done setting up and installing Wordpress, you will see the Wordpress admin dashboard. Go to plugins, and add the following plugins
+
+    ###### If you're planning to use Wordpress custom fields in your Gatsby GraphQL schema, install these 2 plugins (optional, but recommended)
+
+    - `Advanced Custom Fields`
+    - `ACF to REST API`
+    
+        Note: After installing these 2 plugins
+
+        - Go to Wordpress Admin Dashboard here [http://localhost:8001/wp-admin](http://localhost:8001/wp-admin) -> Settings -> Permalinks -> Choose either `Day and name` or `Month and name` option as your permalink structure and click Save.
+        - In the `ACF to REST API` setting just below the permalinks, select `v2` from the `Request Version` menu
+
+    ###### If you're planning to use Yoast for your SEO in the Gatsby GraphQL schema, install these 3 plugins (optional, but recommended)
+
+    - `Yoast SEO`
+    - `Yoast to REST API`
+    - `ACF Content Analysis for Yoast SEO`
+
+6. At this point you have a fully functional Wordpress blog setup, but you haven't added any posts to it. If you type `gatsby develop` in your terminal in the project directory at this point, there won't be any posts or pages for Gatsby to pull. If you want to copy the example blog posts that I have used in the demo for this Gatsby starter template, follow these instructions
+
+    - Install this plugin to your Wordpress installation `All-in-One WP Migration` by going Wordpress Admin Dashboard to [http://localhost:8001/wp-admin](http://localhost:8001/wp-admin) -> Plugins -> Add New, and then activate this plugin.
+    - Go to this plugin's settings, and click on `Import` -> `Import From` -> `File`
+    - Select the file `localhost.wpress` from the root folder of this repository.
+    - Done! The plugin will now import all the sample posts that I have used for creating the demo of this Gatsby starter template.
+
+## Using existing Wordpress blog as your source instead of setting up local installation
+
+If you're planning to use an already existing Wordpress blog as your CMS instead of setting everything up on your local machine, then simply ignore the instructions given in the section above. You might still want to consider installing the Wordpress plugins recommended above if you haven't already.
+
+## Ant Design
+
+This Gatsby starter template uses [Ant Design](https://github.com/ant-design/ant-design) for theming and UI. Although, it's not mandatory to use it for any new visual components that you might create. Feel free to build everything from scratch or use any other UI framework of your choice.
+
+## Comments
+
+Staticman
+
+## Images
+
+Images
+
+## Git Hooks using Husky
+
+Husky
+
+## PWA
+
+This Gatsby starter template uses `gatsby-plugin-offline` plugin. If you don't want your site to work offline, simply comment this plugin out from the `gatsby-config.js` file.
+
+## SEO
+
+This Gatsby starter template has some basic SEO capabilities out of the box such as robots.txt file, sitemap.xml file, meta tags defined in `react-helmet` etc.
+
+## Social widgets
+
+This Gatsby starter template uses the [gatsby-plugin-pinterest-twitter-facebook](https://www.gatsbyjs.org/packages/gatsby-plugin-pinterest-twitter-facebook/) plugin to load the following social media widgets. No API tokens needed for any of these widgets, and no complicated setup procedure. Just plug and play.
+
+- ###### Pinterest
+    - Display the `Pin it` button while hovering over any image on your website.
+
+- ###### Twitter
+    - Display the Twitter follow button, and the Twitter timeline anywhere on your website.
+
+- ###### Facebook
+    - Display the Facebook loke button, and the Facebook timeline anywhere on your website.
+
+Note: Please check this plugin's documentation [here](https://www.gatsbyjs.org/packages/gatsby-plugin-pinterest-twitter-facebook/) to understand all the plugin customization options.
+
+## Instagram
+
+This Gatsby starter template uses the [gatsby-source-instagram](https://www.gatsbyjs.org/packages/gatsby-source-instagram/) plugin to display upto 12 most recent posts of any Instagram account.
+
+Note: Please check this plugin's documentation [here](https://www.gatsbyjs.org/packages/gatsby-source-instagram/) to understand all the plugin customization options.
 
 ## Developing
 
-1.  Clone your repo to your local machine
+Once you have defined the mandatory environment variables mentioned above, and have a Wordpress site ready (either on your local machine or a pre-existing live website), follow these instructions to use this Gatsby starter template
 
 1.  Install dependencies
 
-`yarn` or `npm install`
+    `yarn` or `npm install`
 
-1.  Run the development server
+2.  Run the development server
 
-`yarn start` or `npm run start`
+    `yarn start` or `npm run start`
 
-If you are adding or editing content locally in the CMS, a couple of things to note:
+    Note:
+    
+    - This project uses Typescript, so create new files components with the `.tsx` or `.ts` extension instead of `.jsx` or `.js`
+    - This project uses SASS to write stylesheets. You can create new stylesheets with `.scss` extension and import them into any React component, it will automatically get transpiled into CSS.
 
-1.  Changes will be pushed to the remote repo.
+## Issues
 
-1.  You will be prompted to enter your site's url, this is necessary for Netlify Identity to manage user login. This is stored in `localStorage`, so you might have to empty your browser cache if you are switching projects but remaining on `localhost:8000`.
+If you face any issues while working with this Gatsby starter template, feel free to create a new issue [here](https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate/issues). Please check if there's any existing similar issue already created before creating a new one.
 
-## Editing CMS fields
+## Contribute
 
-The Netlify CMS configuration is located in `public/admin/config.yml`. This is where you will configure the pages, fields, posts and settings that are editable by the CMS.
-
-Find out more in the [Netlify CMS Docs](https://www.netlifycms.org/docs/#configuration).
-
-## Uploadcare setup
-
-Uploadcare is our file upload system. It hosts the files for us and delivers them trough their CDN network.
-Each site you'll create need its own Uploadcare API key's. See below how to set this up
-
-1. Create new project in Uploadcare and save API keys in project
-
-- Go to [Uploadcare.com](https://uploadcare.com/accounts/login/) and login
-- Once on the dashboard create a new project
-- Set the name and hit create
-- In the left menu click in API Keys and copy the public key
-- Now open your project and open the CMS congif.yml file
-- find the `media_library` settings and paste in the public key after `publicKey:`
-- Done!!
-
-For more details see the [Netlify CMS Docs](https://www.netlifycms.org/docs/uploadcare/)
-
-## Scheduled content
-
-Scheduled content allows you to schedule posts. Set the date / order field in a post to the feature.
-For the scheduled content to appear on the website we need to deploy our website daily.
-
-1. Setup a Netlify build hook
-
-- Go to https://app.netlify.com/sites/_YOUR_SITE_NAME/setings/deploys/#build-hooks
-- Hit build hook button in the build hooks section
-- Give it a name for example: "Automatic deploy Zapier"
-- Select branch, in most cases master will do.
-- Hit save and copy the generated url
-
-2. Zapier Setup
-
-- Go to [Zapier.com](https://zapier.com/) and login
-- Hit make a zap button in the right top corner
-- Search for Schedule in the search bar and select "Schedule by Zapier"
-- Check every day and hit continue
-- Select a time and make sure trigger on weekends is turned on
-- Double check your settings and hit continue
-- On the left hit add a step - and search for webhook by Zapier
-- Select post as action and continue
-- Past in the url of our recently generated webhook in the url field
-- Make sure "Payload Type" is set to form and hit continue
-- check settings and hit the test button
-- Check your Netlify site if there has been triggered a new deploy
-- If that worked hit finish
-- Give your zap a name, example: "Automatic deploy Yellowcake" and make sure your zap is turned on
-
-That's it, you'r now ready to use scheduled content!!
-
-## Mailchimp integration
-
-https://hooks.zapier.com/hooks/catch/2881617/ea5exg/
-
-- Go to [Zapier.com](https://zapier.com/) and login
-- Hit make a zap button in the right top corner
-- Search for webhook by Zapier and select catch hook and continue to next step
-- In most cases leave this field empty and continue
-- Copy the generated url
-- Now go to the [form settings](https://app.netlify.com/sites/yellowcake/settings/forms#outgoing-notifications) in you Netlify project
-- Find the form notifications section click the add notification button
-- Select the option `outgoing webhook`
-- Set the event to listen for
-- Paste in our recent generated url in the URL to notify field
-- Select your form and save settings
-- Open your website navigate to your form, fill it out and send the data
-- Go back to Zaper and see if your form data has come trough.
-- Hit continue and add a new step on the left side of the screen
-- Search for MailChimp and select add/update subscriber
-- Select MailChimp account or add one and hit the test button
-- if succeeded hit continue button
-- Select your MailChimp list and select the subscriber email address
-- Fill in other settings for your needs and continue
-- Hit send test to MailChimp button and hit finish if succeeded
-- Give your Zap a name and make sure your zap is turned on
-- Submit your form one last time and see if all data is coming trough to MailChimp
-- Thats is!
-
-## Instagram Feed
-
-Get Your Instagram Access Token [here](https://generator.thrivex.io/). In order to display your Instagram photos on your own website, you are required to provide an Instagram Access Token. You can do this by clicking the generator button on this site you will first need to login to your account.
+Fork this repo and make a PR.
 
 ## 💫 Deploy
+
+Deploy your Gatsby site to Netlify using this Gatsby starter template by clicking on the `Deploy to netlify` button below.
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate)

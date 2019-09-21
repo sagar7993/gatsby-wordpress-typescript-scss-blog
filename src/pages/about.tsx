@@ -41,20 +41,20 @@ export const AboutPage = (props: Props) => {
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 								<div className="description">
 									<p className="margin-bottom-12px">
-										<span className="icon"><Icon type="mail" /></span>
+										<span className="icon"><Icon type="calendar" /></span>
 										<span className="label">31st December, 1992</span>
 									</p>
 									<p className="margin-bottom-12px">
-										<span className="icon"><Icon type="mail" /></span>
+										<span className="icon"><Icon type="phone" /></span>
 										<span className="label">44 (012) 6954 783</span>
 									</p>
 									<p className="margin-bottom-12px">
 										<span className="icon"><Icon type="mail" /></span>
-										<span className="label">businessplan@donald</span>
+										<span className="label">john@doe</span>
 									</p>
 									<p>
-										<span className="icon"><Icon type="mail" /></span>
-										<span className="label">Santa monica bullevard</span>
+										<span className="icon"><Icon type="pushpin" /></span>
+										<span className="label">Santa Monica Boulevard</span>
 									</p>
 								</div>
 							</div>
