@@ -27,13 +27,13 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-762edfece6af89cde178.js"
+    "url": "webpack-runtime-e59dd63a64c8e5cce657.js"
   },
   {
     "url": "commons.2229e8780a1c8d1635d0.css"
   },
   {
-    "url": "commons-32d8926019722b768a25.js"
+    "url": "commons-3ce692621d2d95256388.js"
   },
   {
     "url": "app-db059d9ef05dfebb9351.js"
@@ -43,7 +43,7 @@ self.__precacheManifest = [
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "6a5cdb0a245fb5f214fb2034d7324169"
+    "revision": "2d08b0d9488092b88080036ac97b259e"
   },
   {
     "url": "styles.aafcee07cdeaed2d3549.css"
@@ -52,53 +52,53 @@ self.__precacheManifest = [
     "url": "component---src-templates-blog-posts-tsx-a704d1f6fd85080b7fd2.js"
   },
   {
-    "url": "styles-686f9b1e5039a5bdde3c.js"
+    "url": "styles-1abd5e3540e7e5d8edd4.js"
   },
   {
     "url": "page-data/posts/2/page-data.json",
-    "revision": "29c0a905aa0aed3836ff4dde59182ebc"
+    "revision": "3f2ca25b854c5ab1f6021d236aa2452c"
   },
   {
     "url": "page-data/posts/3/page-data.json",
-    "revision": "2824403ad2f5a1e3821ecade1dc37bd2"
+    "revision": "ee02b3b4ccbcdf16a17e8685b2270718"
   },
   {
     "url": "page-data/posts/page-data.json",
-    "revision": "58836d8720ece5c83390b0dde7a8f7dd"
+    "revision": "f3f1be4f9e604d0a46936e239412069c"
   },
   {
     "url": "component---src-templates-blog-post-tsx-980b242427698f2bb988.js"
   },
   {
     "url": "page-data/post/this-is-my-1st-post/page-data.json",
-    "revision": "789ad69e0ea8525b4874b2638dc57bdb"
+    "revision": "e91ce07629902ceeeee9587c64a327c1"
   },
   {
     "url": "page-data/post/this-is-my-2nd-post/page-data.json",
-    "revision": "6bcccb9c21828922d6ab53564845f80f"
+    "revision": "91c29b8495afc777278498557b772d1a"
   },
   {
     "url": "page-data/post/this-is-my-3rd-post/page-data.json",
-    "revision": "ab81083f4f2004ea95675f8d0892afb3"
+    "revision": "4e33f54506c5b1e684aa5b64d581da27"
   },
   {
     "url": "page-data/post/this-is-my-4th-post/page-data.json",
-    "revision": "0ba7cd63cfdedfc56f4372c6f70cb2ce"
+    "revision": "1a6c7acb6978ec0113584f9e5cca7875"
   },
   {
     "url": "page-data/post/this-is-my-5th-post/page-data.json",
-    "revision": "9205d39f5f9822b9273cfa45aee93439"
+    "revision": "cb0995e26cacccfb76870356763c1693"
   },
   {
     "url": "page-data/post/this-is-my-6th-post/page-data.json",
-    "revision": "b9f9887b575103adbec5a6ccfd6379a8"
+    "revision": "4994f2c9d41e8d95d7d0d2983d558d07"
   },
   {
     "url": "component---src-pages-about-tsx-589effc09b7ac9ec8954.js"
   },
   {
     "url": "page-data/about/page-data.json",
-    "revision": "9fb4dac021022d06f0e586e74506276e"
+    "revision": "004795843dd3a8e2b456bd23aa3fb86a"
   },
   {
     "url": "manifest.webmanifest",
