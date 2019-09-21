@@ -2,9 +2,7 @@ import React from 'react';
 
 export const Twitter = () => {
 	return (
-		<div className="twitter-container">
-			<div id="fb-root"></div>
-		</div>
+		<div className="twitter-container" />
 	);
 };
 

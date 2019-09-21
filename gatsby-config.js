@@ -106,6 +106,7 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-pinterest-twitter-facebook`,
 			options: {
+				delayTimer: 1000,
 				pinterest: {
 					enable: true,
 					tall: true,
