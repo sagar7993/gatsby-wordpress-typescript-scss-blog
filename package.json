@@ -55,7 +55,7 @@
     "gatsby-plugin-sharp": "^2.0.0",
     "gatsby-plugin-typescript": "^2.0.0",
     "gatsby-source-filesystem": "^2.0.0",
-    "gatsby-source-instagram": "^0.0.1",
+    "gatsby-source-instagram": "^0.5.0",
     "gatsby-source-wordpress": "^3.0.0",
     "gatsby-transformer-sharp": "^2.0.0",
     "gatsby-transformer-yaml": "^2.0.0",
