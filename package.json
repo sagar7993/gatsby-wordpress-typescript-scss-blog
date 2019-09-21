@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "antd": "^3.0.0",
-    "axios": "^0.1.0",
+    "axios": "^0.19.0",
     "gatsby": "^2.0.0",
     "gatsby-image": "^2.0.0",
     "gatsby-paginate": "^1.0.0",

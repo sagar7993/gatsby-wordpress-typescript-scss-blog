@@ -1,40 +1,27 @@
-# Yellowcake
+# A starter Gatsby template for a Wordpress blog, built using Typescript and Ant Design
 
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![dependencies](https://david-dm.org/jinksi/netlify-cms-react-starter.svg?style=flat-square)](https://david-dm.org/jinksi/gatsbro)
+[![Github version](https://img.shields.io/github/package-json/v/sagar7993/gatsby-wordpress-typescript-blog-boilerplate)](https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate/releases)
+[![GitHub License](https://img.shields.io/github/license/sagar7993/gatsby-wordpress-typescript-blog-boilerplate)](https://opensource.org/licenses/MIT)
+[![GitHub issues](https://img.shields.io/github/issues-raw/sagar7993/gatsby-wordpress-typescript-blog-boilerplate.svg)](https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate/issues)
 
-An opinionated starter project for creating lightning-fast websites with [Gatsby](https://gatsbyjs.org) v2 and [Netlify CMS](https://netlifycms.org) v2.
+This is an opinionated starter project to help you create lightning fast PWA websites with [Gatsby](https://gatsbyjs.org) and [Wordpress](https://wordpress.com) CMS, built using [Typescript](http://www.typescriptlang.org/) and [Ant Design](https://github.com/ant-design/ant-design).
+
 
 - **[Gatsby](https://gatsbyjs.org)** static site generator
-- **[Netlify CMS](https://github.com/netlify/netlify-cms)** for content management
+- **[Wordpress](https://wordpress.com)** for content management
+- **[Typescript](https://typescriptlang.org)** for statically-typed clean JavaScript code
+- **[Ant Design](https://github.com/ant-design/ant-design)** for theming and UI
 
-## See also
+## Getting started
 
-[Netlify CMS Docs](https://www.netlifycms.org/docs/)  
-[Netlify CMS Repo](https://github.com/netlify/netlify-cms)
-
-## Get going
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/thriveweb/yellowcake&stack=cms)
-
-1.  Hit the **Deploy to Netlify** button. This will:
+Hit the **Deploy to Netlify** button. This will:
 
 - Clone the repo into your Github account
-- Create you a new project on Netlify, build & deploy
+- Create a new project on Netlify, build & deploy
 
-1.  Once your Netlify project has been created, check a couple of settings:
+## Setting up Wordpress
 
-- Enable **Identity**
-- Change **Registration Preferences** to **Invite Only**
-- Enable **Git Gateway**
-
-1.  Invite users (probably yourself) to enable admin access
-
-- Open the **Identity** tab and hit **Invite Users**
-
-## Show me the CMS!
-
-The CMS lives at [\_\_YOUR_SITE_NAME\_\_.netlify.com/admin](https://__YOUR_SITE_NAME__.netlify.com/admin).
+Use the included docker-compose.yml file to setup Wordpress on your local machine
 
 ## Developing
 
@@ -143,6 +130,4 @@ Get Your Instagram Access Token [here](https://generator.thrivex.io/). In order 
 
 ## 💫 Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-hello-world)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate)
