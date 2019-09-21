@@ -54,7 +54,7 @@ This is the http protocol of the URL of your wordpress site from where you will 
 This is the name of the Gatsby site author
 
 - GATSBY_ENABLE_COMMENTS (Optional)
-This is a feature switch flag. If it's set to `1`, comment form will be displayed on all your blog posts. If this is not defined or it's value is anything other than `1` then commenting will be disabled on the website.
+This is a feature switch flag. If it's set to `1`, comment form will be displayed on all your blog posts. If this is not defined or it's value is anything other than `1` then commenting will be disabled on the website. Check out the documentation on `Comments` section below.
 
 - GATSBY_PRIMARY_ACCENT_COLOR (Optional)
 This is the primary accent color of your website, which will be used as the theme color in your web manifest file.
@@ -131,15 +131,37 @@ This Gatsby starter template uses [Ant Design](https://github.com/ant-design/ant
 
 ## Comments
 
-Staticman
+- User-generated content are typically the Achilles heel of any static site — a blog commenting platform, a reviews section or a voting system are just a few common examples. To implement these on a static site, developers often resort to third-party services that inject content into pages through JavaScript embeds or iframes.
+- [Staticman](https://staticman.net/) handles user-generated content for you and transforms it into data files that sit in your GitHub repository, along with the rest of your content.
+- Staticman is free and open source. Check out the documentation [here](https://staticman.net/docs/)
+- This Gatsby starter template uses Staticman to handle comments on blog posts, although you could also use it for handling any user generated data such as reviews, form submits, contact me requests, etc.
+- The documentation on the official website is a bit outdated, therefore you'll have to do a bit of searching on Google to figure stuff out. A lot of the heavy lifting is already done for you in this Gatsby starter template. Check out the Staticman Integration steps below.
+
+## Staticman integration steps
+
+The integration steps mentioned on the official documentation are very outdated. You can follow the instructions below to get started.
+
+1. Add Staticman to your repository - Go to the [Staticman Github App](https://github.com/apps/staticman-net) and click on configure. Grant Staticman write access to your repository. Whenever a user fills out a comment form, Staticman will automatically create a pull request. If you approve it, the comment will be stored as a `.yml` file in your Github repository. The next time you build your Gatsby site, the comment will be visible. You can automate this by triggering a build everytime Staticman's pull request is merged to your release branch. You can use any CI/CD tool for this purpose.
+
+2. Check the `staticman.yml` file in the root directory of this project. All comments will be saved as a `.yml` file in the `src/data/comments` folder. The `gatsby-transformer-yaml` plugin will then scan the folder, and you will be able to access your comments as the `allCommentsYaml` object in your GraphQL schema.
+
+Note: Please check out this plugin's documentation [here](https://www.gatsbyjs.org/packages/gatsby-transformer-yaml/) to understand all the plugin customization options.
+
+3. Create a form on your website, and ensure that the submit URL points to the Staticman API (refer to the official docs for more details)
 
 ## Images
 
-Images
+This Gatsby starter template uses `gatsby-source-wordpress` to source content from your Wordpress CMS. While this plugin can apply image transformations on the featured images, it cannot do that for images within the post/page content. What this means is that if you have any image within your Wordpress post/page, it will have to be served from your original wordpress url without any image transforms. Obviously this isn't ideal, and I haven't found a clean solution for this problem. I can however offer 2 workarounds for this.
+
+1. Insert images from URL in your Wordpress post/page instead of uploading images to the Wordpress `wp-content/uploads` folder (Maybe a good CDN like AWS Cloudfront, Google Photos etc). By doing so, the images will be served from the CDN, and everything works as expected. You still won't be able to do fluid transforms on these images though.
+
+2. This Gatsby starter template uses [gatsby-wordpress-inline-images](https://github.com/TylerBarnes/gatsby-wordpress-inline-images) plugin to download images within Wordpress the post/page content, to the local static folder and also lets you applies fluid image transforms on those images. This is because `gatsby-source-wordpress` doesn't process images in blocks of text which means your admin site has to serve the images. However, I haven't fully tested this plugin and you can feel free to comment it out from the `gatsby-config.js` file if you run into any issues.
+
+Note: Please check out this plugin's documentation [here](https://github.com/TylerBarnes/gatsby-wordpress-inline-images) to understand all the plugin customization options.
 
 ## Git Hooks using Husky
 
-Husky
+This Gatsby starter template uses [Husky](https://github.com/typicode/husky) to create Git hooks. Husky can prevent bad git commit, git pushes etc. You can use the husky hooks in the `package.json` file to execute custom scripts and tasks before each git commit and git push. For example, this project uses the `pre-commit` hook to run the lint script, and the `pre-push` hook to create gatsby build and verify that everything works before git push happens to the repository. This is optional though, and you can opt out of it by simply commenting out the `husky` object in the `package.json` file.
 
 ## PWA
 
@@ -162,13 +184,13 @@ This Gatsby starter template uses the [gatsby-plugin-pinterest-twitter-facebook]
 - ###### Facebook
     - Display the Facebook loke button, and the Facebook timeline anywhere on your website.
 
-Note: Please check this plugin's documentation [here](https://www.gatsbyjs.org/packages/gatsby-plugin-pinterest-twitter-facebook/) to understand all the plugin customization options.
+Note: Please check out this plugin's documentation [here](https://www.gatsbyjs.org/packages/gatsby-plugin-pinterest-twitter-facebook/) to understand all the plugin customization options.
 
 ## Instagram
 
 This Gatsby starter template uses the [gatsby-source-instagram](https://www.gatsbyjs.org/packages/gatsby-source-instagram/) plugin to display upto 12 most recent posts of any Instagram account.
 
-Note: Please check this plugin's documentation [here](https://www.gatsbyjs.org/packages/gatsby-source-instagram/) to understand all the plugin customization options.
+Note: Please check out this plugin's documentation [here](https://www.gatsbyjs.org/packages/gatsby-source-instagram/) to understand all the plugin customization options.
 
 ## Developing
 

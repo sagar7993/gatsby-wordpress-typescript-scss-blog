@@ -1,11 +1,9 @@
 {
   "name": "gatsby-wordpress-typescript-blog-boilerplate",
-  "description": "A starter Gatsby template for a Wordpress blog, built using Typescript and Ant Design",
+  "private": true,
+  "description": "A Gatsby starter template for a Wordpress blog, built using Typescript and Ant Design",
   "version": "1.0.0",
   "author": "Sagar Jain <sagar7993@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate/issues"
-  },
   "homepage": "https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate",
   "keywords": [
     "gatsby",
@@ -91,7 +89,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint",
-      "pre-push": "npm run build && git add public && git commit -m 'fix: updated public folder'"
+      "pre-push": "npm run build && git add public && git commit -m 'fix: updated public folder for release'"
     }
   },
   "browserslist": [
@@ -100,5 +98,11 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "repository": "https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate"
+  },
+  "bugs": {
+    "url": "https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate/issues"
+  }
 }

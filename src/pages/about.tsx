@@ -38,7 +38,7 @@ export const AboutPage = (props: Props) => {
 							<div className="description-wrapper">
 								<h2 className="text-uppercase">John Doe</h2>
 								<p className="text-bold text-uppercase">Frontend Engineer</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 								<div className="description">
 									<p className="margin-bottom-12px">
 										<span className="icon"><Icon type="calendar" /></span>
