@@ -87,21 +87,21 @@ module.exports = {
 			},
 		},
 		{
-		  resolve: 'gatsby-plugin-google-analytics',
-		  options: {
-		    trackingId: process.env.GATSBY_GOOGLE_ANALYTICS,
-		    head: false,
-		    anonymize: true,
-		    respectDNT: true,
-		    exclude: ["/preview/**", "/do-not-track/me/too/"],
-		    pageTransitionDelay: 0,
-		  }
+			resolve: 'gatsby-plugin-google-analytics',
+			options: {
+				trackingId: process.env.GATSBY_GOOGLE_ANALYTICS,
+				head: false,
+				anonymize: true,
+				respectDNT: true,
+				exclude: ["/preview/**", "/do-not-track/me/too/"],
+				pageTransitionDelay: 0,
+			}
 		},
 		{
-		  resolve: 'gatsby-source-instagram',
-		  options: {
-		    username: process.env.GATSBY_INSTAGRAM_SOURCE
-		  }
+			resolve: 'gatsby-source-instagram',
+			options: {
+				username: process.env.GATSBY_INSTAGRAM_SOURCE
+			}
 		},
 		{
 			resolve: `gatsby-plugin-pinterest-twitter-facebook`,
@@ -117,14 +117,26 @@ module.exports = {
 					containerSelector: '.twitter-container',
 					handle: process.env.GATSBY_TWITTER_SOURCE,
 					showFollowButton: true,
-					showTimeline: true
+					showTimeline: true,
+					showFollowerCount: true,
+					timelineTweetCount: 1,
+					noHeader: true,
+					noFooter: true,
+					noBorders: true,
+					noScrollbar: true,
+					transparent: true
 				},
 				facebook: {
 					enable: true,
 					containerSelector: '.facebook-container',
 					profile: process.env.GATSBY_FACEBOOK_SOURCE,
-					showLikeButton: true,
-					showTimeline: true
+					width: 340,
+					height: 500,
+					tabs: 'timeline',
+					hideCover: false,
+					showFacepile: true,
+					smallHeader: false,
+					adaptContainerWidth: true
 				}
 			}
 		},
