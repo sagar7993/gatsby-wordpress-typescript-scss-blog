@@ -18,7 +18,7 @@ export const Instagram = (props: Props) => {
 			<Fragment>
 				<p className="margin-top-36px margin-bottom-0px">
 					<span>Follow me on Instagram </span>
-					<a href={`https://instagram.com/${process.env.GATSBY_INSTAGRAM_SOURCE}`} target="_blank" rel="noopenernoopener noreferrer nofollow">@{process.env.GATSBY_INSTAGRAM_SOURCE}</a>
+					<a href={`https://instagram.com/${process.env.GATSBY_INSTAGRAM_SOURCE}`} target="_blank" rel="noopenernoopener noreferrer nofollow" title={process.env.GATSBY_INSTAGRAM_SOURCE}>@{process.env.GATSBY_INSTAGRAM_SOURCE}</a>
 				</p>
 				<div className="instagram-feed margin-top-36px">
 					{props.allInstaNode.edges.map((instagramPost, index) => {
@@ -27,7 +27,7 @@ export const Instagram = (props: Props) => {
 								<div key={index} className="instagram-post">
 									{(instagramPost.node.localFile && instagramPost.node.localFile.childImageSharp) && (
 										<Tooltip title={instagramPost.node.caption} arrowPointAtCenter={true}>
-											<a href={`https://instagram.com/p/${instagramPost.node.id}`} target="_blank" rel="noopenernoopener noreferrer nofollow">
+											<a href={`https://instagram.com/p/${instagramPost.node.id}`} target="_blank" rel="noopenernoopener noreferrer nofollow" title={instagramPost.node.caption}>
 												<Image fluid={instagramPost.node.localFile.childImageSharp.fluid} alt={instagramPost.node.caption} title={instagramPost.node.caption} />
 											</a>
 										</Tooltip>

@@ -13,7 +13,7 @@ This is an opinionated starter project to help you create lightning fast PWA web
 
 ## Demo
 
-http://eloquent-bartik-09a1e8.netlify.com/
+https://eloquent-bartik-09a1e8.netlify.com
 
 ## Getting started
 
