@@ -32,7 +32,7 @@ export const AboutPage = (props: Props) => {
 				<Card>
 					<Row gutter={24} type="flex" align="middle">
 						<Col xs={24} sm={24} md={24} lg={12} xl={14} xxl={16}>
-							{fluid && <Image fluid={fluid} alt="Author Bio" title="Author Bio" />}
+							{fluid && <Image fluid={fluid} alt="Author Bio" title="Author Bio" data-pin-nopin="true" />}
 						</Col>
 						<Col xs={24} sm={24} md={24} lg={12} xl={10} xxl={8}>
 							<div className="description-wrapper">
