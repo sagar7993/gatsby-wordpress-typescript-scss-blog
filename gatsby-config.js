@@ -120,6 +120,8 @@ module.exports = {
 					showTimeline: true,
 					showFollowerCount: true,
 					timelineTweetCount: 1,
+					width: null,
+					height: null,
 					noHeader: true,
 					noFooter: true,
 					noBorders: true,
