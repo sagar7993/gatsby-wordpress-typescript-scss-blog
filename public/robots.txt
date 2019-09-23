@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://eloquent-bartik-09a1e8.netlify.com/sitemap.xml
+Host: https://eloquent-bartik-09a1e8.netlify.com
