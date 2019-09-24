@@ -39,10 +39,12 @@ export class CommentForm extends Component<Props, State> {
 			const response = await addComment(addCommentRequest);
 			if (response.success) {
 				Message.success('Comment added successfully', 3);
+			} else {
+				Message.error('Comment could not be added', 3);
 			}
 		} catch (error) {
 			console.error(error);
-			Message.success('Comment could not be added', 3);
+			Message.error('Comment could not be added', 3);
 		} finally {
 			this.setState({ isLoading: false });
 			this.props.form.setFieldsValue({ name: '', email: '', comment: '' });

@@ -42,7 +42,9 @@ module.exports = {
 					resolve: `gatsby-wordpress-inline-images`,
 					options: {
 						baseUrl: `${process.env.GATSBY_WORDPRESS_URL_PATH}`,
-						protocol: `${process.env.GATSBY_WORDPRESS_URL_PROTOCOL}`
+						protocol: `${process.env.GATSBY_WORDPRESS_URL_PROTOCOL}`,
+						maxWidth: 960,
+						withWebp: true
 					}
 				}],
 				hostingWPCOM: false,
@@ -134,7 +136,7 @@ module.exports = {
 					profile: process.env.GATSBY_FACEBOOK_SOURCE,
 					width: 340,
 					height: 500,
-					tabs: 'timeline',
+					tabs: 'timeline, events, messages',
 					hideCover: false,
 					showFacepile: true,
 					smallHeader: false,
@@ -148,7 +150,7 @@ module.exports = {
 		{
 			resolve: 'gatsby-plugin-offline',
 			options: {
-				precachePages: ['/posts/*', '/post/*', '/about/'],
+				precachePages: ['/', '/posts/*', '/post/*', '/tag/*', '/category/*', '/about/']
 			}
 		}
 	]

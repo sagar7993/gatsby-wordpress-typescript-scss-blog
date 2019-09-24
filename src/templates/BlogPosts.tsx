@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Image, { FluidObject } from 'gatsby-image';
 
@@ -42,44 +42,46 @@ export const BlogPostsPage = (props: Props) => {
 	return (
 		<Layout>
 			<SEO title={`${site.siteMetadata.title} | ${site.siteMetadata.description}`} description={site.siteMetadata.description} />
-			{group.map(({ node }: { node: Post }) => {
-				const fluid: FluidObject | null = (node.featured_media && node.featured_media.localFile && node.featured_media.localFile.childImageSharp && node.featured_media.localFile.childImageSharp.fluid) ? node.featured_media.localFile.childImageSharp.fluid : null;
-				const categories: CategoryTagInfo[] = node.categories && node.categories.length > 0 ? node.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
-				const tags: CategoryTagInfo[] = node.tags && node.tags.length > 0 ? node.tags.filter((tag) => tag.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
-				return (
-					<div key={node.slug} className="posts">
-						<Link to={`/post/${node.slug}`} title={node.slug}>
-							<h1 className="black-color">{decodeHtmlCharCodes(node.title)}</h1>
-						</Link>
-						{((categories && categories.length > 0) || (tags && tags.length > 0)) && (
-							<div className="categories-container tags-container margin-bottom-24px">
-								{categories.map((category, categoryIndex) => {
-									return (
-										<Tag key={categoryIndex}>
-											<Link to={`/category/${category.slug}`} title={category.name}>
-												<Icon type="folder" />{category.name}
-											</Link>
-										</Tag>
-									);
-								})}
-								{tags.map((tag, tagIndex) => {
-									return (
-										<Tag key={tagIndex}>
-											<Link to={`/tag/${tag.slug}`} title={tag.name}>
-												<Icon type="tag" />{tag.name}
-											</Link>
-										</Tag>
-									);
-								})}
-							</div>
-						)}
-						<Link to={`/post/${node.slug}`} title={node.slug}>
-							{(fluid && fluid.src && fluid.src.length > 0) && <Image fluid={fluid} alt={node.title} title={node.title} />}
-						</Link>
-						<div className="post-excerpt" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }} />
-					</div>
-				);
-			})}
+			<div className="posts">
+				{group.map(({ node }: { node: Post }) => {
+					const fluid: FluidObject | null = (node.featured_media && node.featured_media.localFile && node.featured_media.localFile.childImageSharp && node.featured_media.localFile.childImageSharp.fluid) ? node.featured_media.localFile.childImageSharp.fluid : null;
+					const categories: CategoryTagInfo[] = (node.categories && node.categories.length) > 0 ? node.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
+					const tags: CategoryTagInfo[] = (node.tags && node.tags.length) > 0 ? node.tags : new Array<CategoryTagInfo>();
+					return (
+						<Fragment key={node.slug}>
+							<Link to={`/post/${node.slug}`} title={node.slug}>
+								<h1 className="black-color">{decodeHtmlCharCodes(node.title)}</h1>
+							</Link>
+							{((categories && categories.length > 0) || (tags && tags.length > 0)) && (
+								<div className="categories-container tags-container margin-bottom-24px">
+									{categories.map((category, categoryIndex) => {
+										return (
+											<Tag key={categoryIndex}>
+												<Link to={`/category/${category.slug}`} title={category.name}>
+													<Icon type="folder" />{category.name}
+												</Link>
+											</Tag>
+										);
+									})}
+									{tags.map((tag, tagIndex) => {
+										return (
+											<Tag key={tagIndex}>
+												<Link to={`/tag/${tag.slug}`} title={tag.name}>
+													<Icon type="tag" />{tag.name}
+												</Link>
+											</Tag>
+										);
+									})}
+								</div>
+							)}
+							<Link to={`/post/${node.slug}`} title={node.slug}>
+								{(fluid && fluid.src && fluid.src.length > 0) && <Image fluid={fluid} alt={node.title} title={node.title} />}
+							</Link>
+							<div className="post-excerpt" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }} />
+						</Fragment>
+					);
+				})}
+			</div>
 			<div className="navigation-links">
 				{index > 1 && (
 					<div className="previous-link">
