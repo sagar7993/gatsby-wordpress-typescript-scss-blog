@@ -12,7 +12,9 @@ export const Header = () => {
 			<div className="header-wrapper">
 				<Layout>
 					<Layout.Header className="header">
-						<div className="logo" />
+						<Link to="/" title="Home">
+							<div className="logo" />
+						</Link>
 						<Menu
 							theme="dark"
 							mode="horizontal"

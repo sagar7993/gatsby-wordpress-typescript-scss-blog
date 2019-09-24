@@ -114,7 +114,7 @@ export const IndexPage = (props: Props) => {
 											<p>Google Analytics integration (tracks user sessions, page views etc using your Google Analytics tracking id)</p>
 										</li>
 									</ul>
-									<p className="margin-bottom-0px">Check out the <a href="https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate" target="_blank" rel="noopener noreferrer nofollow" title="Github repository">Github repository</a> to read the full documentation</p>
+									<p className="margin-bottom-0px">Check out the <a href="https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog" target="_blank" rel="noopener noreferrer nofollow" title="Github repository">Github repository</a> to read the full documentation</p>
 								</div>
 							</div>
 						</Col>

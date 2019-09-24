@@ -1,8 +1,8 @@
 # A starter Gatsby template for a Wordpress blog, built using Typescript and Ant Design
 
-[![Github version](https://img.shields.io/github/package-json/v/sagar7993/gatsby-wordpress-typescript-blog-boilerplate)](https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate/releases)
-[![GitHub License](https://img.shields.io/github/license/sagar7993/gatsby-wordpress-typescript-blog-boilerplate)](https://opensource.org/licenses/MIT)
-[![GitHub issues](https://img.shields.io/github/issues-raw/sagar7993/gatsby-wordpress-typescript-blog-boilerplate.svg)](https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate/issues)
+[![Github version](https://img.shields.io/github/package-json/v/sagar7993/gatsby-wordpress-typescript-scss-blog)](https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog/releases)
+[![GitHub License](https://img.shields.io/github/license/sagar7993/gatsby-wordpress-typescript-scss-blog)](https://opensource.org/licenses/MIT)
+[![GitHub issues](https://img.shields.io/github/issues-raw/sagar7993/gatsby-wordpress-typescript-scss-blog.svg)](https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog/issues)
 
 This is an opinionated starter project to help you create lightning fast PWA websites with [Gatsby](https://gatsbyjs.org) and [Wordpress](https://wordpress.com) CMS, built using [Typescript](http://www.typescriptlang.org/) and [Ant Design](https://github.com/ant-design/ant-design).
 
@@ -13,7 +13,7 @@ This is an opinionated starter project to help you create lightning fast PWA web
 
 ## Demo
 
-https://eloquent-bartik-09a1e8.netlify.com
+https://gatsby-wordpress-typescript-scss-blog.netlify.com
 
 ## Getting started
 
@@ -22,7 +22,7 @@ Hit the **Deploy to Netlify** button. This will:
 - Clone the repo into your Github account
 - Create a new project on Netlify, build & deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog)
 
 ## Using the environment variables
 
@@ -215,7 +215,7 @@ Once you have defined the mandatory environment variables mentioned above, and h
 
 ## Issues
 
-If you face any issues while working with this Gatsby starter template, feel free to create a new issue [here](https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate/issues). Please check if there's any existing similar issue already created before creating a new one.
+If you face any issues while working with this Gatsby starter template, feel free to create a new issue [here](https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog/issues). Please check if there's any existing similar issue already created before creating a new one.
 
 ## Contribute
 
@@ -225,4 +225,4 @@ Fork this repo and make a PR.
 
 Deploy your Gatsby site to Netlify using this Gatsby starter template by clicking on the `Deploy to netlify` button below.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog)

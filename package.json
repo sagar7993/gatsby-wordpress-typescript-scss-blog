@@ -1,10 +1,10 @@
 {
-  "name": "gatsby-wordpress-typescript-blog-boilerplate",
+  "name": "gatsby-wordpress-typescript-scss-blog",
   "private": true,
-  "description": "A Gatsby starter template for a Wordpress blog, built using Typescript and Ant Design",
-  "version": "1.0.1",
+  "description": "A Gatsby starter template for a Wordpress blog, built using Typescript, SCSS and Ant Design",
+  "version": "1.0.2",
   "author": "Sagar Jain <sagar7993@gmail.com>",
-  "homepage": "https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate",
+  "homepage": "https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog",
   "keywords": [
     "gatsby",
     "gatsby-starter",
@@ -100,9 +100,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate"
+    "url": "https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog"
   },
   "bugs": {
-    "url": "https://github.com/sagar7993/gatsby-wordpress-typescript-blog-boilerplate/issues"
+    "url": "https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog/issues"
   }
 }

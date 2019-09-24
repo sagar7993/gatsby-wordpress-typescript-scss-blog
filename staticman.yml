@@ -43,7 +43,7 @@ comments:
   moderation: true
 
   # Name of the site. Used in notification emails.
-  name: "eloquent-bartik-09a1e8.netlify.com"
+  name: "gatsby-wordpress-typescript-scss-blog.netlify.com"
 
   # Notification settings. When enabled, users can choose to receive notifications
   # via email when someone adds a reply or a new comment. This requires an account
