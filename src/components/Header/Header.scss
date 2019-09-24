@@ -40,7 +40,11 @@
                             }
 
                             &.ant-menu-item-selected {
-                                background-color: $primaryAccentColor;
+                                background-color: $whiteColor;
+
+                                a {
+                                    color: $primaryAccentColor;
+                                }
                             }
                         }
                     }

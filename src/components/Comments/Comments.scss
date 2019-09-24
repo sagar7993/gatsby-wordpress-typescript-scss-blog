@@ -3,6 +3,14 @@
 .comments-container {
     .ant-comment {
         .ant-comment-inner {
+            .ant-comment-avatar {
+                .anticon {
+                    border: 1px solid #333333;
+                    border-radius: 50%;
+                    padding: 2px;
+                }
+            }
+
             .ant-comment-content {
                 .ant-comment-content-author {
                     .ant-comment-content-author-name {
