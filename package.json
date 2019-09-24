@@ -2,7 +2,7 @@
   "name": "gatsby-wordpress-typescript-scss-blog",
   "private": true,
   "description": "A Gatsby starter template for a Wordpress blog, built using Typescript, SCSS and Ant Design",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Sagar Jain <sagar7993@gmail.com>",
   "homepage": "https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog",
   "keywords": [
