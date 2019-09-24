@@ -1,1 +1,16 @@
 @import '../../styles/colors.scss';
+
+.comments-container {
+    .ant-comment {
+        .ant-comment-inner {
+            .ant-comment-content {
+                .ant-comment-content-author {
+                    .ant-comment-content-author-name {
+                        color: $blackColor;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}

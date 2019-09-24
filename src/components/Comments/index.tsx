@@ -26,7 +26,7 @@ export class Comments extends Component<Props, State> {
 	render() {
 		return (
 			(process.env.GATSBY_ENABLE_COMMENTS === '1' && process.env.GATSBY_GITHUB_USER && process.env.GATSBY_GITHUB_USER.length > 0 && process.env.GATSBY_GITHUB_REPO && process.env.GATSBY_GITHUB_REPO.length > 0) && (
-				<div>
+				<div className="comments-container">
 					<hr />
 					<h2>Comments</h2>
 					<p>{(this.props.comments && this.props.comments.edges && this.props.comments.edges.length > 0) ? `${this.props.comments.edges.length} Comment${this.props.comments.edges.length > 1 ? 's' : ''}` : 'No comments yet.'}</p>

@@ -32,7 +32,7 @@ export const IndexPage = (props: Props) => {
 				<Card>
 					<Row gutter={24} type="flex" align="middle">
 						<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
-							<h2>This is an opinionated starter project to help you create lightning fast PWA websites with Gatsby and Wordpress CMS, built using Typescript and Ant Design.</h2>
+							<h2>This is an opinionated starter project to help you create lightning fast PWA websites with Gatsby and Wordpress CMS, built using Typescript, SCSS and Ant Design.</h2>
 							{fluid && <Image fluid={fluid} alt="Home screen banner" title="Home screen banner" />}
 						</Col>
 						<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>

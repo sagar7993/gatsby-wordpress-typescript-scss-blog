@@ -68,11 +68,7 @@ export const BlogPostPage = (props: Props) => {
 			)}
 			{fluid && fluid.src && fluid.src.length > 0 && <Image fluid={fluid} alt={props.data.wordpressPost.title} title={props.data.wordpressPost.title} />}
 			<div className="post" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wordpressPost.content) }} />
-			{process.env && (
-				<div className="comments">
-					<Comments slug={props.data.wordpressPost.slug} wordpress_id={props.data.wordpressPost.wordpress_id} comments={props.data.allCommentsYaml} />
-				</div>
-			)}
+			{process.env && <Comments slug={props.data.wordpressPost.slug} wordpress_id={props.data.wordpressPost.wordpress_id} comments={props.data.allCommentsYaml} />}
 			<div className="margin-bottom-24px navigation-links">
 				{props.pageContext.next && props.pageContext.next.slug && (
 					<Link to={`/post/${props.pageContext.next.slug}`} title={props.pageContext.next.slug}>

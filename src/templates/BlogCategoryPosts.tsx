@@ -44,7 +44,7 @@ export const BlogCategoryPostsPage = (props: Props) => {
 				const tags: CategoryTagInfo[] = node.tags && node.tags.length > 0 ? node.tags.filter((tag) => tag.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
 				return (
 					<div key={node.slug} className="posts">
-						<Link to={'/post/' + node.slug} title={node.slug}>
+						<Link to={`/post/${node.slug}`} title={node.slug}>
 							<h1 className="black-color">{decodeHtmlCharCodes(node.title)}</h1>
 						</Link>
 						{((categories && categories.length > 0) || (tags && tags.length > 0)) && (
@@ -69,7 +69,7 @@ export const BlogCategoryPostsPage = (props: Props) => {
 								})}
 							</div>
 						)}
-						<Link to={'/post/' + node.slug} title={node.slug}>
+						<Link to={`/post/${node.slug}`} title={node.slug}>
 							{(fluid && fluid.src && fluid.src.length > 0) && <Image fluid={fluid} alt={node.title} title={node.title} />}
 						</Link>
 						<div className="post-excerpt" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }} />

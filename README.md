@@ -4,7 +4,7 @@
 [![GitHub License](https://img.shields.io/github/license/sagar7993/gatsby-wordpress-typescript-scss-blog)](https://opensource.org/licenses/MIT)
 [![GitHub issues](https://img.shields.io/github/issues-raw/sagar7993/gatsby-wordpress-typescript-scss-blog.svg)](https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog/issues)
 
-This is an opinionated starter project to help you create lightning fast PWA websites with [Gatsby](https://gatsbyjs.org) and [Wordpress](https://wordpress.com) CMS, built using [Typescript](http://www.typescriptlang.org/) and [Ant Design](https://github.com/ant-design/ant-design).
+This is an opinionated starter project to help you create lightning fast PWA websites with [Gatsby](https://gatsbyjs.org) and [Wordpress](https://wordpress.com) CMS, built using [Typescript](http://www.typescriptlang.org/), [SCSS](https://sass-lang.com/) and [Ant Design](https://github.com/ant-design/ant-design).
 
 - **[Gatsby](https://gatsbyjs.org)** static site generator
 - **[Wordpress](https://wordpress.com)** for content management
@@ -13,7 +13,7 @@ This is an opinionated starter project to help you create lightning fast PWA web
 
 ## Demo
 
-https://gatsby-wordpress-typescript-scss-blog.netlify.com
+https://gatsby-wordpress-typescript-scss-blog.netlify.com/
 
 ## Getting started
 

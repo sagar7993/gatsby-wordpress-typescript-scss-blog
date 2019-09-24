@@ -48,7 +48,7 @@ export const BlogPostsPage = (props: Props) => {
 				const tags: CategoryTagInfo[] = node.tags && node.tags.length > 0 ? node.tags.filter((tag) => tag.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
 				return (
 					<div key={node.slug} className="posts">
-						<Link to={'/post/' + node.slug} title={node.slug}>
+						<Link to={`/post/${node.slug}`} title={node.slug}>
 							<h1 className="black-color">{decodeHtmlCharCodes(node.title)}</h1>
 						</Link>
 						{((categories && categories.length > 0) || (tags && tags.length > 0)) && (
@@ -73,7 +73,7 @@ export const BlogPostsPage = (props: Props) => {
 								})}
 							</div>
 						)}
-						<Link to={'/post/' + node.slug} title={node.slug}>
+						<Link to={`/post/${node.slug}`} title={node.slug}>
 							{(fluid && fluid.src && fluid.src.length > 0) && <Image fluid={fluid} alt={node.title} title={node.title} />}
 						</Link>
 						<div className="post-excerpt" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }} />
@@ -83,14 +83,14 @@ export const BlogPostsPage = (props: Props) => {
 			<div className="navigation-links">
 				{index > 1 && (
 					<div className="previous-link">
-						<Link to={'/posts/' + previousUrl} title={'/posts/' + previousUrl}>
+						<Link to={`/posts/${previousUrl}`} title={`/posts/${previousUrl}`}>
 							<Button type="primary">Go to Previous Page</Button>
 						</Link>
 					</div>
 				)}
 				{index <= (pageCount - 1) && (
 					<div className="next-link">
-						<Link to={'/posts/' + nextUrl} title={'/posts/' + nextUrl}>
+						<Link to={`/posts/${nextUrl}`} title={`/posts/${nextUrl}`}>
 							<Button type="primary">Go to Next Page</Button>
 						</Link>
 					</div>
