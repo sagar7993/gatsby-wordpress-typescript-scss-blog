@@ -18,9 +18,9 @@ export const Header = () => {
 							mode="horizontal"
 							defaultSelectedKeys={['1']}
 						>
-							<Menu.Item key="1"><Link to="/">Home</Link></Menu.Item>
-							<Menu.Item key="2"><Link to="/posts/">Blog</Link></Menu.Item>
-							<Menu.Item key="3"><Link to="/about/">About</Link></Menu.Item>
+							<Menu.Item key="1"><Link to="/" title="Home">Home</Link></Menu.Item>
+							<Menu.Item key="2"><Link to="/posts/" title="Blog">Blog</Link></Menu.Item>
+							<Menu.Item key="3"><Link to="/about/" title="About">About</Link></Menu.Item>
 						</Menu>
 					</Layout.Header>
 				</Layout>

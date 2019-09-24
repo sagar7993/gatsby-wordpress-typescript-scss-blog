@@ -90,6 +90,38 @@ input[type='number']::-webkit-outer-spin-button {
     }
 }
 
+.categories-container,
+.tags-container {
+    line-height: 32px;
+
+    .ant-tag {
+        padding: 0px 8px;
+        border-radius: 12px;
+
+        a {
+            color: $blackColor;
+
+            .anticon {
+                margin-right: 6px;
+            }
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            a {
+                color: $primaryAccentColor;
+
+                .anticon {
+                    svg {
+                        fill: $primaryAccentColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .navigation-links {
     display: flex;
     justify-content: space-between;

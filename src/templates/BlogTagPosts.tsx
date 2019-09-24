@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Image, { FluidObject } from 'gatsby-image';
 
-import { Button, Tag, Row, Col, Icon } from 'antd';
+import { Tag, Row, Col, Icon } from 'antd';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
@@ -19,16 +19,12 @@ import './Blog.scss';
 export interface Props {
 	pathContext: {
 		group: { node: Post }[];
-		index: number;
-		pageCount: number;
 		allInstaNode: InstagramFeed;
 	};
 }
 
-export const BlogPostsPage = (props: Props) => {
-	const { group, index, pageCount } = props.pathContext;
-	const previousUrl = index - 1 === 1 ? '' : (index - 1).toString();
-	const nextUrl = (index + 1).toString();
+export const BlogTagPostsPage = (props: Props) => {
+	const { group } = props.pathContext;
 	const { site } = useStaticQuery(graphql`
       query {
         site {
@@ -80,22 +76,6 @@ export const BlogPostsPage = (props: Props) => {
 					</div>
 				);
 			})}
-			<div className="navigation-links">
-				{index > 1 && (
-					<div className="previous-link">
-						<Link to={'/posts/' + previousUrl} title={'/posts/' + previousUrl}>
-							<Button type="primary">Go to Previous Page</Button>
-						</Link>
-					</div>
-				)}
-				{index <= (pageCount - 1) && (
-					<div className="next-link">
-						<Link to={'/posts/' + nextUrl} title={'/posts/' + nextUrl}>
-							<Button type="primary">Go to Next Page</Button>
-						</Link>
-					</div>
-				)}
-			</div>
 			<Instagram allInstaNode={props.pathContext.allInstaNode} />
 			<Row type="flex" align="middle" gutter={36} className="margin-top-36px">
 				<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12} className="align-center">
@@ -109,4 +89,4 @@ export const BlogPostsPage = (props: Props) => {
 	);
 };
 
-export default BlogPostsPage;
+export default BlogTagPostsPage;

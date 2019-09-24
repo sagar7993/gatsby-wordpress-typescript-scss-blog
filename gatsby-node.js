@@ -17,6 +17,8 @@ exports.createPages = async ({
 	} = actions;
 
 	const BlogPostTemplate = path.resolve("./src/templates/BlogPost.tsx");
+	const BlogTagPostsTemplate = path.resolve("./src/templates/BlogTagPosts.tsx");
+	const BlogCategoryPostsTemplate = path.resolve("./src/templates/BlogCategoryPosts.tsx");
 
 	const BlogPostsResult = await graphql(`
 	{
@@ -129,6 +131,63 @@ exports.createPages = async ({
 			}
 		});
 	});
+
+	const BlogTagPosts = new Map();
+	const BlogCategoryPosts = new Map();
+
+	BlogPosts.forEach((post) => {
+		const tags = post.node.tags;
+		if (tags && tags.length > 0) {
+			tags.forEach((tag) => {
+				if (BlogTagPosts.has(tag.slug)) {
+					BlogTagPosts.set(tag.slug, [...BlogTagPosts.get(tag.slug), post]);
+				} else {
+					BlogTagPosts.set(tag.slug, [post]);
+				}
+			});
+		}
+		const categories = post.node.categories;
+		if (categories && categories.length > 0) {
+			categories.forEach((category) => {
+				if (BlogCategoryPosts.has(category.slug)) {
+					BlogCategoryPosts.set(category.slug, [...BlogCategoryPosts.get(category.slug), post]);
+				} else {
+					BlogCategoryPosts.set(category.slug, [post]);
+				}
+			});
+		}
+	});
+
+	const BlogTagSlugs = [...BlogTagPosts.keys()];
+	const BlogCategorySlugs = [...BlogCategoryPosts.keys()];
+
+	if (BlogTagSlugs.length > 0) {
+		BlogTagSlugs.forEach((BlogTagSlug) => {
+			createPage({
+				path: `/tag/${BlogTagSlug}`,
+				component: BlogTagPostsTemplate,
+				context: {
+					group: BlogTagPosts.get(BlogTagSlug),
+					slug: BlogTagSlug,
+					allInstaNode: BlogPostsResult.data.allInstaNode
+				}
+			});
+		});
+	}
+
+	if (BlogCategorySlugs.length > 0) {
+		BlogCategorySlugs.forEach((BlogCategorySlug) => {
+			createPage({
+				path: `/category/${BlogCategorySlug}`,
+				component: BlogCategoryPostsTemplate,
+				context: {
+					group: BlogCategoryPosts.get(BlogCategorySlug),
+					slug: BlogCategorySlug,
+					allInstaNode: BlogPostsResult.data.allInstaNode
+				}
+			});
+		});
+	}
 
 	createPaginatedPages({
 		edges: BlogPosts,
