@@ -16,7 +16,7 @@ import Facebook from '../components/Facebook';
 import { Post, CategoryTagInfo, InstagramFeed } from '../contracts/post';
 import { Comment } from '../contracts/comment';
 
-import { decodeHtmlCharCodes } from '../utils';
+import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
 
 import './Blog.scss';
 
@@ -34,15 +34,15 @@ export interface Props {
 			slug: string;
 		}
 	};
+	location: Location;
 }
 
 export const BlogPostPage = (props: Props) => {
-	console.log(props);
 	const fluid: FluidObject | null = (props.data.wordpressPost.featured_media && props.data.wordpressPost.featured_media.localFile && props.data.wordpressPost.featured_media.localFile.childImageSharp && props.data.wordpressPost.featured_media.localFile.childImageSharp.fluid) ? props.data.wordpressPost.featured_media.localFile.childImageSharp.fluid : null;
 	const categories: CategoryTagInfo[] = (props.data.wordpressPost.categories && props.data.wordpressPost.categories.length) > 0 ? props.data.wordpressPost.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
 	const tags: CategoryTagInfo[] = (props.data.wordpressPost.tags && props.data.wordpressPost.tags.length) > 0 ? props.data.wordpressPost.tags : new Array<CategoryTagInfo>();
 	return (
-		<Layout>
+		<Layout location={props.location}>
 			<SEO title={props.data.wordpressPost.title} description={props.data.wordpressPost.excerpt} />
 			<h1>{decodeHtmlCharCodes(props.data.wordpressPost.title)}</h1>
 			{((categories && categories.length > 0) || (tags && tags.length > 0)) && (
@@ -51,7 +51,7 @@ export const BlogPostPage = (props: Props) => {
 						return (
 							<Tag key={categoryIndex}>
 								<Link to={`/category/${category.slug}`} title={category.name}>
-									<Icon type="folder" />{category.name}
+									<Icon type="folder" />{capitalizeFirstLetter(category.name)}
 								</Link>
 							</Tag>
 						);
@@ -60,7 +60,7 @@ export const BlogPostPage = (props: Props) => {
 						return (
 							<Tag key={tagIndex}>
 								<Link to={`/tag/${tag.slug}`} title={tag.name}>
-									<Icon type="tag" />{tag.name}
+									<Icon type="tag" />{capitalizeFirstLetter(tag.name)}
 								</Link>
 							</Tag>
 						);

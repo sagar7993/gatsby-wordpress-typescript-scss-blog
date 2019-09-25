@@ -8,3 +8,10 @@ export const decodeHtmlCharCodes = (html: string): string => {
 	}
 	return html;
 };
+
+export const capitalizeFirstLetter = (input: string | undefined | null): string => {
+	if (!input || input.length === 0) {
+		return '';
+	}
+	return input.charAt(0).toUpperCase() + input.slice(1);
+};

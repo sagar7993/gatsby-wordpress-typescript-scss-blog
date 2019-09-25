@@ -21,12 +21,13 @@ export interface Props {
 		file: ChildImageSharp;
 		allInstaNode: InstagramFeed;
 	};
+	location: Location;
 }
 
 export const AboutPage = (props: Props) => {
 	const fluid: FluidObject | null = (props.data && props.data.file && props.data.file.childImageSharp && props.data.file.childImageSharp.fluid) ? props.data.file.childImageSharp.fluid : null;
 	return (
-		<Layout>
+		<Layout location={props.location}>
 			<SEO title="About Me" />
 			<div className="about">
 				<Card>

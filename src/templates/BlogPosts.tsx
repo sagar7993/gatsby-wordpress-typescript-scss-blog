@@ -12,7 +12,7 @@ import Twitter from '../components/Twitter';
 import Facebook from '../components/Facebook';
 
 import { Post, CategoryTagInfo, InstagramFeed } from '../contracts/post';
-import { decodeHtmlCharCodes } from '../utils';
+import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
 
 import './Blog.scss';
 
@@ -23,6 +23,7 @@ export interface Props {
 		pageCount: number;
 		allInstaNode: InstagramFeed;
 	};
+	location: Location;
 }
 
 export const BlogPostsPage = (props: Props) => {
@@ -40,7 +41,7 @@ export const BlogPostsPage = (props: Props) => {
       }
 	`);
 	return (
-		<Layout>
+		<Layout location={props.location}>
 			<SEO title={`${site.siteMetadata.title} | ${site.siteMetadata.description}`} description={site.siteMetadata.description} />
 			<div className="posts">
 				{group.map(({ node }: { node: Post }) => {
@@ -58,7 +59,7 @@ export const BlogPostsPage = (props: Props) => {
 										return (
 											<Tag key={categoryIndex}>
 												<Link to={`/category/${category.slug}`} title={category.name}>
-													<Icon type="folder" />{category.name}
+													<Icon type="folder" />{capitalizeFirstLetter(category.name)}
 												</Link>
 											</Tag>
 										);
@@ -67,7 +68,7 @@ export const BlogPostsPage = (props: Props) => {
 										return (
 											<Tag key={tagIndex}>
 												<Link to={`/tag/${tag.slug}`} title={tag.name}>
-													<Icon type="tag" />{tag.name}
+													<Icon type="tag" />{capitalizeFirstLetter(tag.name)}
 												</Link>
 											</Tag>
 										);

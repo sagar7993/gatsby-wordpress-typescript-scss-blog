@@ -21,18 +21,19 @@ export interface Props {
 		file: ChildImageSharp;
 		allInstaNode: InstagramFeed;
 	};
+	location: Location;
 }
 
 export const IndexPage = (props: Props) => {
 	const fluid: FluidObject | null = (props.data && props.data.file && props.data.file.childImageSharp && props.data.file.childImageSharp.fluid) ? props.data.file.childImageSharp.fluid : null;
 	return (
-		<Layout>
+		<Layout location={props.location}>
 			<SEO title="Home" />
 			<div className="home">
 				<Card>
 					<Row gutter={24} type="flex" align="middle">
 						<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
-							<h2>This is an opinionated starter project to help you create lightning fast PWA websites with Gatsby and Wordpress CMS, built using Typescript, SCSS and Ant Design.</h2>
+							<h1>This is an opinionated starter project to help you create lightning fast PWA websites with Gatsby and Wordpress CMS, built using Typescript, SCSS and Ant Design.</h1>
 							{fluid && <Image fluid={fluid} alt="Home screen banner" title="Home screen banner" />}
 						</Col>
 						<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
@@ -89,7 +90,7 @@ export const IndexPage = (props: Props) => {
 												<br />
 												<span>As a workaround, you can insert images from URL in your wordpress content.</span>
 												<br />
-												<span>If you don't want to use the workaround mentioned above, and would rather use the images that you have uploaded to your wordpress library, this starter template has an included (experimental) plugin called `gatsby-wordpress-inline-images` which claims to transform all images within post/page content to Gatsby Images with full support for fluid transformations etc.</span>
+												<span>If you don't want to use the workaround mentioned above, and would rather use the images that you have uploaded to your wordpress library, this starter template has an included (untested) plugin called `gatsby-wordpress-inline-images` which to transform all images within post/page content to Gatsby Images with full support for fluid transformations etc.</span>
 											</p>
 										</li>
 										<li>

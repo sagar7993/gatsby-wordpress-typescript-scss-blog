@@ -6,7 +6,13 @@ import { Layout, Menu } from 'antd';
 
 import './Header.scss';
 
-export const Header = () => {
+export interface Props {
+	location: Location;
+}
+
+export const Header = (props: Props) => {
+	const isHomePage = (props.location.pathname === '' || props.location.pathname === '/');
+	const isAboutPage = (props.location.pathname === '/about' || props.location.pathname === '/about/');
 	return (
 		<div className="header-container">
 			<div className="header-wrapper">
@@ -18,10 +24,10 @@ export const Header = () => {
 						<Menu
 							theme="dark"
 							mode="horizontal"
-							defaultSelectedKeys={(window.location.pathname === '/' || window.location.pathname === '') ? ['home'] : ((window.location.pathname === '/about' || window.location.pathname === '/about/') ? ['about'] : ['post'])}
+							defaultSelectedKeys={isHomePage ? ['home'] : (isAboutPage ? ['about'] : ['posts'])}
 						>
-							<Menu.Item key="home" className="margin-right-12px"><Link to="/" title="Home">Home</Link></Menu.Item>
-							<Menu.Item key="post" className="margin-right-12px"><Link to="/posts" title="Blog">Blog</Link></Menu.Item>
+							<Menu.Item key="home"><Link to="/" title="Home">Home</Link></Menu.Item>
+							<Menu.Item key="posts"><Link to="/posts" title="Blog">Blog</Link></Menu.Item>
 							<Menu.Item key="about"><Link to="/about" title="About">About</Link></Menu.Item>
 						</Menu>
 					</Layout.Header>

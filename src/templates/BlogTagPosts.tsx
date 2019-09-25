@@ -12,7 +12,7 @@ import Twitter from '../components/Twitter';
 import Facebook from '../components/Facebook';
 
 import { Post, CategoryTagInfo, InstagramFeed } from '../contracts/post';
-import { decodeHtmlCharCodes } from '../utils';
+import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
 
 import './Blog.scss';
 
@@ -20,7 +20,9 @@ export interface Props {
 	pathContext: {
 		group: { node: Post }[];
 		allInstaNode: InstagramFeed;
+		slug: string;
 	};
+	location: Location;
 }
 
 export const BlogTagPostsPage = (props: Props) => {
@@ -36,9 +38,10 @@ export const BlogTagPostsPage = (props: Props) => {
       }
 	`);
 	return (
-		<Layout>
+		<Layout location={props.location}>
 			<SEO title={`${site.siteMetadata.title} | ${site.siteMetadata.description}`} description={site.siteMetadata.description} />
 			<div className="posts">
+				<h3>Browsing Tag Posts: {capitalizeFirstLetter(props.pathContext.slug)}</h3>
 				{group.map(({ node }: { node: Post }) => {
 					const fluid: FluidObject | null = (node.featured_media && node.featured_media.localFile && node.featured_media.localFile.childImageSharp && node.featured_media.localFile.childImageSharp.fluid) ? node.featured_media.localFile.childImageSharp.fluid : null;
 					const categories: CategoryTagInfo[] = (node.categories && node.categories.length) > 0 ? node.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
@@ -54,7 +57,7 @@ export const BlogTagPostsPage = (props: Props) => {
 										return (
 											<Tag key={categoryIndex}>
 												<Link to={`/category/${category.slug}`} title={category.name}>
-													<Icon type="folder" />{category.name}
+													<Icon type="folder" />{capitalizeFirstLetter(category.name)}
 												</Link>
 											</Tag>
 										);
@@ -63,7 +66,7 @@ export const BlogTagPostsPage = (props: Props) => {
 										return (
 											<Tag key={tagIndex}>
 												<Link to={`/tag/${tag.slug}`} title={tag.name}>
-													<Icon type="tag" />{tag.name}
+													<Icon type="tag" />{capitalizeFirstLetter(tag.name)}
 												</Link>
 											</Tag>
 										);
