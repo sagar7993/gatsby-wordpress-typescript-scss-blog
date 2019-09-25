@@ -27,23 +27,23 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-125f6170b4078d2a30ec.js"
+    "url": "webpack-runtime-f293138a19bb03d51b68.js"
   },
   {
     "url": "commons.37c678e93c076a374ed5.css"
   },
   {
-    "url": "commons-7ddf191d3fc294c0b79b.js"
+    "url": "commons-405aee851ea4d4ea3b7e.js"
   },
   {
-    "url": "app-7a95e131407176ee4e98.js"
+    "url": "app-bd7caa1e561c818d40c2.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-8976e363f997194e448f.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "d936a831420227dcd881b69e7aa8c339"
+    "revision": "26f8bc09e43b239ff1cc45a0e60ca81e"
   },
   {
     "url": "styles.b2ea84ef2d612c45c96d.css"
@@ -52,106 +52,106 @@ self.__precacheManifest = [
     "url": "component---src-pages-index-tsx-4e92fc75c54543fb1e6b.js"
   },
   {
-    "url": "styles-dc7634fbe3aee995dcf1.js"
+    "url": "styles-88061376abd97e2c94b4.js"
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "db1d9d7f71952459d1bc9f5a4e235cc7"
+    "revision": "198bb57679178e5c9418fc40732c6ac3"
   },
   {
     "url": "component---src-templates-blog-posts-tsx-8cceca126b7cdbdc1a97.js"
   },
   {
     "url": "page-data/posts/2/page-data.json",
-    "revision": "faaaf12204a356d7477c3945d79d537c"
+    "revision": "8a13f5c20da8a97faa525ee94eca2875"
   },
   {
     "url": "page-data/posts/3/page-data.json",
-    "revision": "3650c7ea0d387cae7cbab2fe7f7e29cf"
+    "revision": "28f7ee2d9b0eb3990c87f7bd1a3e43a6"
   },
   {
     "url": "page-data/posts/page-data.json",
-    "revision": "a6fccc4db8f27a5c6ec976f2080f8bad"
+    "revision": "6d8ea331175411e307fcc423708b3bc9"
   },
   {
     "url": "component---src-templates-blog-post-tsx-6f0de160d8a0ade00eb9.js"
   },
   {
     "url": "page-data/post/this-is-my-1st-post/page-data.json",
-    "revision": "b979d269e0fee2365666a43351e2b541"
+    "revision": "33c16f18ffe6a838c6ed25448e7ce010"
   },
   {
     "url": "page-data/post/this-is-my-2nd-post/page-data.json",
-    "revision": "91c03758c3036a1e359739b67aab6334"
+    "revision": "c96f0dd716a843318accf54a47f1b9b8"
   },
   {
     "url": "page-data/post/this-is-my-3rd-post/page-data.json",
-    "revision": "7b8a76d51bbaec6200ed7c580e8d661a"
+    "revision": "cebae8a9d6f6df2090022b85c5e8e8e1"
   },
   {
     "url": "page-data/post/this-is-my-4th-post/page-data.json",
-    "revision": "942ba411d8b7c6496a6ce2997c5d1caa"
+    "revision": "495a82c883cba9ad17c6b2e77789bf5a"
   },
   {
     "url": "page-data/post/this-is-my-5th-post/page-data.json",
-    "revision": "975318ee4999c07ddd39f9b7fb097122"
+    "revision": "e849421428d32a36acffd099f187932a"
   },
   {
     "url": "page-data/post/this-is-my-6th-post/page-data.json",
-    "revision": "214bfbd24ba204d6807b02564c748541"
+    "revision": "e5268142e82441c88bf8884b95f93c7a"
   },
   {
     "url": "component---src-templates-blog-tag-posts-tsx-bc4c0b4ef6d4b64e74a1.js"
   },
   {
     "url": "page-data/tag/adventure/page-data.json",
-    "revision": "881addff3c5086ad2853467f51bafc4a"
+    "revision": "23b7f456c3d8e080620334e036c8868a"
   },
   {
     "url": "page-data/tag/food/page-data.json",
-    "revision": "8aa5c7b627589686ae639ea8756ef55e"
+    "revision": "9d47a2a949ceb184fac649e55b0ea619"
   },
   {
     "url": "page-data/tag/life/page-data.json",
-    "revision": "2977ff0cb2a397e5f8900b0c7b7f6934"
+    "revision": "c0212bdd6e75392e86ada9f52879aeda"
   },
   {
     "url": "page-data/tag/nature/page-data.json",
-    "revision": "5e8e3a5e854910b9a018bea82824712b"
+    "revision": "47cc80dbdb61df63ff17bf7fe15d9353"
   },
   {
     "url": "page-data/tag/travel/page-data.json",
-    "revision": "f98299675cc55423c23d24e4e407c041"
+    "revision": "a567d7b2f15d76b3d2ee1a38fbee95cb"
   },
   {
     "url": "component---src-templates-blog-category-posts-tsx-981d7d5faf7e46e416b9.js"
   },
   {
     "url": "page-data/category/adventure/page-data.json",
-    "revision": "0254efcd95ab0bda39dbced9fb93d147"
+    "revision": "cc7dfcee1f6ad9c1fcd82394d84c8754"
   },
   {
     "url": "page-data/category/food/page-data.json",
-    "revision": "af0f1d7d6496d39229a3fda18b05ae46"
+    "revision": "5b4af1a43bf6ca44a1e8e9e6796f5351"
   },
   {
     "url": "page-data/category/life/page-data.json",
-    "revision": "1918335652200b27a5757dd525f26bbb"
+    "revision": "02a007013bab9005cbce9144fbd5faab"
   },
   {
     "url": "page-data/category/nature/page-data.json",
-    "revision": "66592352b84a7039fc64fc13e0b81d38"
+    "revision": "ca2156ce214400d35dba17d516b2f0f6"
   },
   {
     "url": "page-data/category/travel/page-data.json",
-    "revision": "9fa58b8cc6560782a9369f6906bd8016"
+    "revision": "911587f1cea736079afc1ea2f4972d86"
   },
   {
     "url": "component---src-pages-about-tsx-59a604a6268afc7ec76b.js"
   },
   {
     "url": "page-data/about/page-data.json",
-    "revision": "8ae2beadc0174d37c4b3f9b07dfd3865"
+    "revision": "c149b302ea59ab5afb7a2d2e60ce2966"
   },
   {
     "url": "manifest.webmanifest",
@@ -183,7 +183,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-7a95e131407176ee4e98.js`))) {
+  if (!resources || !(await caches.match(`/app-bd7caa1e561c818d40c2.js`))) {
     return await fetch(event.request)
   }
 
