@@ -20,10 +20,10 @@ class CommentNode {
 	wordpress_id: number = 0;
 }
 
-class CommentsEdges {
+class CommentsNodes {
 	node: CommentNode = new CommentNode();
 }
 
-export class Comment {
-	edges: CommentsEdges[] = new Array<CommentsEdges>();
+export class CommentEdges {
+	edges: CommentsNodes[] = new Array<CommentsNodes>();
 }

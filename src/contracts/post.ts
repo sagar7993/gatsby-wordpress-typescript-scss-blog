@@ -11,10 +11,21 @@ export class CategoryTagInfo {
 	wordpress_id: number = 0;
 }
 
+export class AuthorInfo {
+	description: string = '';
+	id: string = '';
+	link: string = '';
+	name: string = '';
+	path: string = '';
+	slug: string = '';
+	url: string = '';
+	wordpress_id: string = '';
+}
+
 export class Post {
 	id: number = 0;
 	date: string = '';
-	modified: Date = new Date();
+	modified: string = '';
 	slug: string = '';
 	status: string = '';
 	type: string = '';
@@ -22,7 +33,7 @@ export class Post {
 	title: string = '';
 	content: string = '';
 	excerpt: string = '';
-	author: string = '';
+	author: AuthorInfo = new AuthorInfo();
 	featured_media: Media = new Media();
 	wordpress_id: number = 0;
 	categories: CategoryTagInfo[] = new Array<CategoryTagInfo>();

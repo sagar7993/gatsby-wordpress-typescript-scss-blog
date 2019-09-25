@@ -44,6 +44,8 @@ module.exports = {
 						baseUrl: `${process.env.GATSBY_WORDPRESS_URL_PATH}`,
 						protocol: `${process.env.GATSBY_WORDPRESS_URL_PROTOCOL}`,
 						maxWidth: 960,
+						maxHeight: 600,
+						quality: 85,
 						withWebp: true
 					}
 				}],

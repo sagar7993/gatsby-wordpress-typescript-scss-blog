@@ -33,7 +33,7 @@ export const IndexPage = (props: Props) => {
 				<Card>
 					<Row gutter={24} type="flex" align="middle">
 						<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
-							<h1>This is an opinionated starter project to help you create lightning fast PWA websites with Gatsby and Wordpress CMS, built using Typescript, SCSS and Ant Design.</h1>
+							<h2>This is an opinionated starter project to help you create lightning fast PWA websites with Gatsby and Wordpress CMS, built using Typescript, SCSS and Ant Design.</h2>
 							{fluid && <Image fluid={fluid} alt="Home screen banner" title="Home screen banner" />}
 						</Col>
 						<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
@@ -121,8 +121,10 @@ export const IndexPage = (props: Props) => {
 						</Col>
 					</Row>
 				</Card>
-				<Instagram allInstaNode={props.data.allInstaNode} />
 				<Row type="flex" align="middle" gutter={36} className="margin-top-36px">
+					<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} className="align-center margin-bottom-36px">
+						<Instagram allInstaNode={props.data.allInstaNode} orientation="horizontal" />
+					</Col>
 					<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12} className="align-center">
 						<Twitter />
 					</Col>

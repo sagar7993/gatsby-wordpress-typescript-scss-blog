@@ -33,7 +33,18 @@ exports.createPages = async ({
 					wordpress_id
 					title
 					excerpt
-					date
+					date(formatString: "MMMM DD, YYYY")
+					modified(formatString: "MMMM DD, YYYY")
+					author {
+						id
+						name
+						url
+						description
+						link
+						slug
+						path
+						wordpress_id
+					}
 					featured_media {
 						localFile {
 							childImageSharp {

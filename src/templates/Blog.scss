@@ -84,8 +84,33 @@ input[type='number']::-webkit-outer-spin-button {
         margin-right: auto;
     }
 
+    .post-meta {
+        .author {
+            margin-right: 12px;
+        }
+
+        .separator {
+            height: 8px;
+            width: 8px;
+            background-color: $blackColor;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 12px;
+        }
+
+        .author,
+        .date {
+            display: inline;
+        }
+    }
+
     .post-excerpt {
         margin-top: 1.45rem;
+    }
+
+    .read-more-container {
+        margin-bottom: 1.45rem;
+        text-align: center;
     }
 }
 

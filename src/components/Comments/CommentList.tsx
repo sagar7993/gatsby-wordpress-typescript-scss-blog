@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import { Comment as PostComment, Icon } from 'antd';
+import { Comment, Icon } from 'antd';
 
 import { timeSinceXAgo } from '../../contracts/util';
-import { Comment } from '../../contracts/comment';
+import { CommentEdges } from '../../contracts/comment';
 
 export interface Props {
-	comments: Comment;
+	comments: CommentEdges;
 }
 
 export class CommentList extends Component<Props> {
@@ -17,7 +17,7 @@ export class CommentList extends Component<Props> {
 				this.props.comments.edges.map((comment, index) => {
 					return (
 						(comment.node.message && comment.node.message !== '') && (
-							<PostComment key={index}
+							<Comment key={index}
 								author={(comment.node.name && comment.node.name.length > 0) ? comment.node.name : '--'}
 								avatar={<Icon type="user" />}
 								content={(comment.node.message && comment.node.message.length > 0) ? comment.node.message : ''}

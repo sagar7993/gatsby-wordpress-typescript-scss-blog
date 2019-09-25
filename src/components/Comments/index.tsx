@@ -4,13 +4,13 @@ import './Comments.scss';
 
 import CommentForm from './CommentForm';
 
-import { Comment } from '../../contracts/comment';
+import { CommentEdges } from '../../contracts/comment';
 import { CommentList } from './CommentList';
 
 export interface Props {
 	slug: string;
 	wordpress_id: number;
-	comments: Comment;
+	comments: CommentEdges;
 }
 
 export interface State {

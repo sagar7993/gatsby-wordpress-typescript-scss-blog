@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Image, { FluidObject } from 'gatsby-image';
 
-import { Tag, Row, Col, Icon } from 'antd';
+import { Tag, Row, Col, Icon, Button } from 'antd';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
@@ -47,42 +47,52 @@ export const BlogCategoryPostsPage = (props: Props) => {
 					const categories: CategoryTagInfo[] = (node.categories && node.categories.length) > 0 ? node.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
 					const tags: CategoryTagInfo[] = (node.tags && node.tags.length > 0) ? node.tags : new Array<CategoryTagInfo>();
 					return (
-						<Fragment key={node.slug}>
+						<article className="post" key={node.slug}>
 							<Link to={`/post/${node.slug}`} title={node.slug}>
 								<h1 className="black-color">{decodeHtmlCharCodes(node.title)}</h1>
 							</Link>
-							{((categories && categories.length > 0) || (tags && tags.length > 0)) && (
-								<div className="categories-container tags-container margin-bottom-24px">
-									{categories.map((category, categoryIndex) => {
-										return (
-											<Tag key={categoryIndex}>
-												<Link to={`/category/${category.slug}`} title={category.name}>
-													<Icon type="folder" />{capitalizeFirstLetter(category.name)}
-												</Link>
-											</Tag>
-										);
-									})}
-									{tags.map((tag, tagIndex) => {
-										return (
-											<Tag key={tagIndex}>
-												<Link to={`/tag/${tag.slug}`} title={tag.name}>
-													<Icon type="tag" />{capitalizeFirstLetter(tag.name)}
-												</Link>
-											</Tag>
-										);
-									})}
-								</div>
-							)}
+							<div className="categories-container tags-container post-meta-container margin-bottom-24px">
+								{categories && categories.length > 0 && categories.map((category, categoryIndex) => {
+									return (
+										<Tag key={categoryIndex}>
+											<Link to={`/category/${category.slug}`} title={category.name}>
+												<Icon type="folder" />{capitalizeFirstLetter(category.name)}
+											</Link>
+										</Tag>
+									);
+								})}
+								{tags && tags.length > 0 && tags.map((tag, tagIndex) => {
+									return (
+										<Tag key={tagIndex}>
+											<Link to={`/tag/${tag.slug}`} title={tag.name}>
+												<Icon type="tag" />{capitalizeFirstLetter(tag.name)}
+											</Link>
+										</Tag>
+									);
+								})}
+								<span className="post-meta margin-left-2px">
+									<span className="author">{capitalizeFirstLetter(node.author.name)}</span>
+									<span className="separator"></span>
+									<span className="date">{(node.modified && node.modified.length > 0) ? node.modified : node.date}</span>
+								</span>
+							</div>
 							<Link to={`/post/${node.slug}`} title={node.slug}>
 								{(fluid && fluid.src && fluid.src.length > 0) && <Image fluid={fluid} alt={node.title} title={node.title} />}
 							</Link>
 							<div className="post-excerpt" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }} />
-						</Fragment>
+							<div className="read-more-container">
+								<Link to={`/post/${node.slug}`} title={node.slug}>
+									<Button type="default" className="read-more">Read more</Button>
+								</Link>
+							</div>
+						</article>
 					);
 				})}
 			</div>
-			<Instagram allInstaNode={props.pathContext.allInstaNode} />
 			<Row type="flex" align="middle" gutter={36} className="margin-top-36px">
+				<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} className="align-center margin-bottom-36px">
+					<Instagram allInstaNode={props.pathContext.allInstaNode} orientation="horizontal" />
+				</Col>
 				<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12} className="align-center">
 					<Twitter />
 				</Col>

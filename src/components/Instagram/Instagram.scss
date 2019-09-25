@@ -5,6 +5,14 @@
     flex-wrap: wrap;
     background: $whiteColor;
 
+    .instagram-profile {
+        z-index: 1;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
     .instagram-post {
         width: 12.5%;
         padding: 6.25% 0;
