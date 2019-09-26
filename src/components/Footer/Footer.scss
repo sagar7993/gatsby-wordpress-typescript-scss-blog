@@ -2,45 +2,61 @@
 
 .footer-container {
     background: $tertiaryAccentColor;
-    height: 64px;
+    min-height: 64px;
+    padding: 0px 1.45rem;
 
-    .footer-wrapper {
-        .ant-layout {
-            .footer {
-                &.ant-layout-footer {
-                    .social-icons-container {
-                        .social-icons {
+    .footer {
+        &.ant-layout-footer {
+            background: $tertiaryAccentColor;
+            padding: 0px;
+            min-height: 64px;
+
+            .footer-wrapper {
+                min-height: 64px;
+
+                .social-icons-container {
+                    .social-icons {
+                        display: flex;
+                        justify-content: center;
+                        flex-wrap: wrap;
+
+                        a {
+                            color: $blackColor;
+                            height: 24px;
+                            width: 32px;
                             display: flex;
                             justify-content: center;
-                            flex-wrap: wrap;
+                            align-items: center;
+                            flex: 0 1 48px;
 
-                            a {
-                                color: $blackColor;
-                                height: 32px;
-                                width: 48px;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                flex: 0 1 48px;
+                            .anticon {
+                                height: 100%;
+                                width: 100%;
 
-                                .anticon {
+                                svg {
                                     height: 100%;
                                     width: 100%;
-
-                                    svg {
-                                        height: 100%;
-                                        width: 100%;
-                                    }
                                 }
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+}
 
-                    @media screen and (max-width: 768px) {
-                        .social-icons-container,
-                        .author-container {
-                            margin-top: 1.45rem;
-                        }
+@media screen and (max-width: 768px) {
+    .footer-container {
+        padding: 1.0875rem 1.45rem;
+
+        .footer {
+            &.ant-layout-footer {
+                .footer-wrapper {
+
+                    .social-icons-container,
+                    .author-container {
+                        margin-top: 1.45rem;
                     }
                 }
             }

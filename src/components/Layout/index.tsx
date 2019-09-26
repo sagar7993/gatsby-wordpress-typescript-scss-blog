@@ -1,4 +1,6 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
+
+import { Layout as AntLayout } from 'antd';
 
 import Header from '../Header';
 import Footer from '../Footer';
@@ -14,13 +16,13 @@ export class Layout extends Component<Props> {
 
 	render() {
 		return (
-			<Fragment>
+			<AntLayout className="layout-container">
 				<Header location={this.props.location} />
 				<div className="layout">
 					<main>{this.props.children}</main>
 				</div>
 				<Footer />
-			</Fragment>
+			</AntLayout>
 		);
 	}
 

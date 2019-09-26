@@ -1,8 +1,12 @@
 @import '../../styles/colors.scss';
 @import '../../styles/reset.scss';
 
-.layout {
-    margin: 0px auto;
-    max-width: 960px;
-    padding: 1.45rem 1.0875rem;
+.layout-container {
+    background: $whiteColor;
+
+    .layout {
+        margin: 0px auto;
+        max-width: 960px;
+        padding: 1.45rem 1.0875rem;
+    }
 }

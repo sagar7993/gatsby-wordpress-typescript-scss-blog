@@ -2,50 +2,45 @@
 
 .header-container {
     background: $primaryAccentColor;
-    height: 64px;
+    min-height: 64px;
+    padding: 0px 1.45rem;
 
-    .header-wrapper {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 0px 1.0875rem 0px 1.0875rem;
-        height: 64px;
+    .header {
+        &.ant-layout-header {
+            background: $primaryAccentColor;
+            padding: 0px;
+            min-height: 64px;
+            max-width: 960px;
+            margin: 0 auto;
 
-        .ant-layout {
-            .header {
-                &.ant-layout-header {
-                    padding: 0px;
-                    height: 64px;
+            .logo {
+                width: 64px;
+                min-height: 64px;
+                background-image: url('../../../static/logo.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 36px;
+                margin: 0px 6px 0px 0;
+                float: left;
+            }
 
-                    .logo {
-                        width: 64px;
-                        height: 64px;
-                        background-image: url('../../../static/logo.png');
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        background-size: 36px;
-                        margin: 0px 6px 0px 0;
-                        float: left;
+            .ant-menu {
+                background: $primaryAccentColor;
+                line-height: 64px;
+
+                .ant-menu-item {
+                    border-color: $primaryAccentColor;
+
+                    a {
+                        color: $whiteColor;
+                        font-size: 1.45rem;
                     }
 
-                    .ant-menu {
-                        background: $primaryAccentColor;
-                        line-height: 64px;
+                    &.ant-menu-item-selected {
+                        background-color: $whiteColor;
 
-                        .ant-menu-item {
-                            border-color: $primaryAccentColor;
-
-                            a {
-                                color: $whiteColor;
-                                font-size: 1.45rem;
-                            }
-
-                            &.ant-menu-item-selected {
-                                background-color: $whiteColor;
-
-                                a {
-                                    color: $primaryAccentColor;
-                                }
-                            }
+                        a {
+                            color: $primaryAccentColor;
                         }
                     }
                 }

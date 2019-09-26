@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'gatsby';
 
-import { Layout, Menu } from 'antd';
+import { Layout as AntLayout, Menu } from 'antd';
 
 import './Header.scss';
 
@@ -15,24 +15,20 @@ export const Header = (props: Props) => {
 	const isAboutPage = (props.location.pathname === '/about' || props.location.pathname === '/about/');
 	return (
 		<div className="header-container">
-			<div className="header-wrapper">
-				<Layout>
-					<Layout.Header className="header">
-						<Link to="/" title="Home">
-							<div className="logo" />
-						</Link>
-						<Menu
-							theme="dark"
-							mode="horizontal"
-							defaultSelectedKeys={isHomePage ? ['home'] : (isAboutPage ? ['about'] : ['posts'])}
-						>
-							<Menu.Item key="home"><Link to="/" title="Home">Home</Link></Menu.Item>
-							<Menu.Item key="posts"><Link to="/posts" title="Blog">Blog</Link></Menu.Item>
-							<Menu.Item key="about"><Link to="/about" title="About">About</Link></Menu.Item>
-						</Menu>
-					</Layout.Header>
-				</Layout>
-			</div>
+			<AntLayout.Header className="header">
+				<Link to="/" title="Home">
+					<div className="logo" />
+				</Link>
+				<Menu
+					theme="dark"
+					mode="horizontal"
+					defaultSelectedKeys={isHomePage ? ['home'] : (isAboutPage ? ['about'] : ['posts'])}
+				>
+					<Menu.Item key="home"><Link to="/" title="Home">Home</Link></Menu.Item>
+					<Menu.Item key="posts"><Link to="/posts" title="Blog">Blog</Link></Menu.Item>
+					<Menu.Item key="about"><Link to="/about" title="About">About</Link></Menu.Item>
+				</Menu>
+			</AntLayout.Header>
 		</div>
 	);
 };
