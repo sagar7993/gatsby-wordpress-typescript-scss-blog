@@ -72,6 +72,35 @@ input[type='number']::-webkit-outer-spin-button {
 .page {
     font-family: $fontFamily;
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    div {
+        a[target='_blank'][id] {
+            &:hover {
+                position: relative;
+
+                &:after {
+                    content: '';
+                    background: url('../../static/anchor.svg');
+                    background-repeat: no-repeat;
+                    background-size: 12px;
+                    height: 12px;
+                    width: 12px;
+                    position: absolute;
+                    display: inline-block;
+                    top: 2px;
+                    right: -16px;
+                }
+            }
+        }
+    }
+
     .more-link {
         color: $primaryAccentColor;
         padding: 0px 12px;

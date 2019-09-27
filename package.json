@@ -28,9 +28,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "npm run purgeCache && npm run lint && gatsby build",
-    "start": "npm run purgeCache && npm run lint && gatsby develop",
-    "serve": "npm run purgeCache && npm run lint && gatsby build && gatsby serve",
+    "build": "npm run purgeCache && npm run lint && cp ./src/environments/.env.production ./.env.production && gatsby build",
+    "start": "npm run purgeCache && npm run lint && cp ./src/environments/.env.development ./.env.development && gatsby develop",
+    "serve": "npm run purgeCache && npm run lint && cp ./src/environments/.env.development ./.env.development && gatsby build && gatsby serve",
     "lint": "tslint -c tslint.json -p tsconfig.json ./src/**/*.{ts,tsx}",
     "purgeAll": "rm -rf node_modules && rm -rf yarn.lock rm -rf package-lock.json && rm -rf .cache && rm -rf public && npm install",
     "purgeCache": "rm -rf .cache && rm -rf public",
