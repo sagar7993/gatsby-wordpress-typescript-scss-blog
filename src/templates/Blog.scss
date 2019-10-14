@@ -182,6 +182,23 @@ input[type='number']::-webkit-outer-spin-button {
     justify-content: space-between;
 }
 
+.not-found-404 {
+    .graphic {
+        width: 100%;
+        text-align: center;
+
+        img {
+            max-height: 200px;
+            object-fit: contain;
+        }
+    }
+
+    .action {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 .home {
     .ant-card {
         box-shadow: none;

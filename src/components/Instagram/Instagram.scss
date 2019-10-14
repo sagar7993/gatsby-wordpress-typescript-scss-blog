@@ -1,87 +1,93 @@
 @import '../../styles/antd.scss';
 
 .instagram-feed {
-    display: flex;
-    flex-wrap: wrap;
-    background: $whiteColor;
-    position: relative;
-
-    .instagram-profile {
-        height: 48px;
-        line-height: 48px;
-        padding: 0px 16px;
-        z-index: 1;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .instagram-post {
-        height: auto;
-        margin: 0px;
-        position: relative;
+    .instagram-posts {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 1s ease;
+        flex-wrap: wrap;
+        background: $whiteColor;
+        position: relative;
 
-        a {
-            height: 100%;
-            width: 100%;
-
-            .gatsby-image-wrapper {
-                height: 100%;
-                width: 100%;
-                margin-bottom: 0px;
-
-                img {
-                    margin-bottom: 0px;
-                }
-            }
+        .instagram-profile {
+            height: 48px;
+            line-height: 48px;
+            padding: 0px 16px;
+            z-index: 1;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
 
-        &:hover {
-            opacity: 0.8;
+        .instagram-post {
+            height: auto;
+            margin: 0px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 1s ease;
+
+            a {
+                height: 100%;
+                width: 100%;
+
+                .gatsby-image-wrapper {
+                    height: 100%;
+                    width: 100%;
+                    margin-bottom: 0px;
+
+                    img {
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+
+            &:hover {
+                opacity: 0.8;
+            }
         }
     }
 
     &.instagram-feed-horizontal {
-        .instagram-post {
-            width: 12.5%;
-            padding: 6.25% 0px;
+        .instagram-posts {
+            .instagram-post {
+                width: 12.5%;
+                padding: 6.25% 0px;
 
-            a {
-                .gatsby-image-wrapper {
-                    display: table-row;
+                a {
+                    .gatsby-image-wrapper {
+                        display: table-row;
+                    }
                 }
             }
-        }
 
-        @media screen and (max-width: 1120px) {
-            .instagram-post {
-                width: 25%;
-                padding: 12.5% 0px;
-                height: auto;
-            }
-        }
-
-        @media screen and (max-width: 500px) {
-            .instagram-post {
-                width: 50%;
-                padding: 25% 0px;
+            @media screen and (max-width: 1120px) {
+                .instagram-post {
+                    width: 25%;
+                    padding: 12.5% 0px;
+                    height: auto;
+                }
             }
 
-            .instagram-post:nth-child(n+6) {
-                display: none;
+            @media screen and (max-width: 500px) {
+                .instagram-post {
+                    width: 50%;
+                    padding: 25% 0px;
+                }
+
+                .instagram-post:nth-child(n+6) {
+                    display: none;
+                }
             }
         }
     }
 
     &.instagram-feed-vertical {
-        .instagram-post {
-            width: 50%;
-            padding: 8px;
+        .instagram-posts {
+            .instagram-post {
+                width: 50%;
+                padding: 8px;
+            }
         }
     }
 }

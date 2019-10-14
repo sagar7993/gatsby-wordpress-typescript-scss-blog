@@ -34,7 +34,8 @@
         "noImplicitThis": true
     },
     "include": [
-        "src"
+        "src",
+        "images.d.ts"
     ],
     "exclude": [
         "node_modules",
