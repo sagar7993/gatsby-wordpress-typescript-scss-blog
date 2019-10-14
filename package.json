@@ -2,7 +2,7 @@
   "name": "gatsby-wordpress-typescript-scss-blog",
   "private": true,
   "description": "A Gatsby starter template for a Wordpress blog, built using Typescript, SCSS and Ant Design",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Sagar Jain <sagar7993@gmail.com>",
   "homepage": "https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog",
   "keywords": [
@@ -88,12 +88,6 @@
     "tslint-loader": "^3.5.4",
     "tslint-react": "^4.0.0",
     "typescript": "^3.0.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm run build && git add public && git commit -m 'fix: updated public folder for release'"
-    }
   },
   "browserslist": [
     ">0.2%",
