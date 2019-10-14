@@ -27,13 +27,13 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-a4c6c73c3daf59608287.js"
+    "url": "webpack-runtime-638ebc25272223ad3515.js"
   },
   {
     "url": "commons.03010c0a4e00d53bd6bf.css"
   },
   {
-    "url": "commons-910717627cc01fac66c9.js"
+    "url": "commons-205f8796758bc8556c59.js"
   },
   {
     "url": "app-7d756ee6b84e914ea57d.js"
@@ -43,7 +43,7 @@ self.__precacheManifest = [
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "18267e88dbea3716713d1cdc71e1027a"
+    "revision": "12a939e2051c8fc80b9c40f79070dbf4"
   },
   {
     "url": "styles.54dd774da1217f0cfa85.css"
@@ -52,106 +52,106 @@ self.__precacheManifest = [
     "url": "component---src-pages-index-tsx-fdbcdcc93a5058fabb18.js"
   },
   {
-    "url": "styles-0014436a62495802b91d.js"
+    "url": "styles-fc5e5b09eaaead8c4821.js"
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "effefdb57cf603bef3e89189d844107c"
+    "revision": "e7363043d0a05db7edbb90320b922bda"
   },
   {
     "url": "component---src-templates-blog-posts-tsx-fe71ce2f81d7cd3417ce.js"
   },
   {
     "url": "page-data/posts/2/page-data.json",
-    "revision": "d143c0f9da86fe0a1a9240b825bb19a8"
+    "revision": "cf1e5ef41baf8f2f2b862e906014678b"
   },
   {
     "url": "page-data/posts/3/page-data.json",
-    "revision": "3ba0be1f1dbfc22928c8e35f6dfb7f07"
+    "revision": "3b45294674094f3e8ef27f410db43de6"
   },
   {
     "url": "page-data/posts/page-data.json",
-    "revision": "123545e681d935e611a206ede78bfe60"
+    "revision": "e8be2ffd19965637c2b664c23ac42e14"
   },
   {
     "url": "component---src-templates-blog-post-tsx-e77f718f4ad3d4577a60.js"
   },
   {
     "url": "page-data/post/this-is-my-1st-post/page-data.json",
-    "revision": "7b0e4d832e69daefcf29cc96db19f817"
+    "revision": "f881a69f2c3bd83a1e7a04ecca992b2a"
   },
   {
     "url": "page-data/post/this-is-my-2nd-post/page-data.json",
-    "revision": "d184e72c667432662d6813a81732f5d2"
+    "revision": "df365a7d7cbfdce9061cb3b267347614"
   },
   {
     "url": "page-data/post/this-is-my-3rd-post/page-data.json",
-    "revision": "45f338e64fc9c837c5a98771a0cf4ca4"
+    "revision": "c5060771fa8c8ca8829924599f75d896"
   },
   {
     "url": "page-data/post/this-is-my-4th-post/page-data.json",
-    "revision": "2b179e4272386a7c2202da3110b5fcc5"
+    "revision": "58f2a4ecde2dd14ed20a5dfb9a8140ef"
   },
   {
     "url": "page-data/post/this-is-my-5th-post/page-data.json",
-    "revision": "ca5a95813b87271663910c2b6ed7ce59"
+    "revision": "6e3e1621686f2cfdb3b949fded0bdc3e"
   },
   {
     "url": "page-data/post/this-is-my-6th-post/page-data.json",
-    "revision": "8e07c90e39588912529758ba8366ecaf"
+    "revision": "3b5b1ebc46692ce1936ba65e646f0612"
   },
   {
     "url": "component---src-templates-blog-tag-posts-tsx-f45ee9a1f4668c907d90.js"
   },
   {
     "url": "page-data/tag/adventure/page-data.json",
-    "revision": "00db67bdb38b8a5bcf657fab98bc9709"
+    "revision": "dfd7b92eb9cc0031339925dff8888a06"
   },
   {
     "url": "page-data/tag/food/page-data.json",
-    "revision": "fb7eb29fcfbfe3626b607eedd25fa9c2"
+    "revision": "eb01fb973d3e0ab3660b0f01b931f463"
   },
   {
     "url": "page-data/tag/life/page-data.json",
-    "revision": "a7326fd68c37c3384747bbd182e444a6"
+    "revision": "105e3c1548d9edeaa5675b5909228666"
   },
   {
     "url": "page-data/tag/nature/page-data.json",
-    "revision": "c698590205dd5858aea0f267274faa65"
+    "revision": "580004403bf4fb65e6f2703886227fc0"
   },
   {
     "url": "page-data/tag/travel/page-data.json",
-    "revision": "8f9729e8922428879d4adb667995825e"
+    "revision": "382fd9d26d74ed184a91f652514cc505"
   },
   {
     "url": "component---src-templates-blog-category-posts-tsx-f1904524971fef7ef513.js"
   },
   {
     "url": "page-data/category/adventure/page-data.json",
-    "revision": "c14d7c92f3401a1f2afb025d35ea5180"
+    "revision": "d3459b7fea97c2429d00cc33e968505e"
   },
   {
     "url": "page-data/category/food/page-data.json",
-    "revision": "9ea7a11bb805090e7db703418886e809"
+    "revision": "469cb44362cdd261e398de282d8e2364"
   },
   {
     "url": "page-data/category/life/page-data.json",
-    "revision": "ac08c41fbbdaa02edb44c2ad7f5054cc"
+    "revision": "a309f698c8bea80bf845d70f34893b93"
   },
   {
     "url": "page-data/category/nature/page-data.json",
-    "revision": "ebb20c4f18b714ae71b3164bbb5c089a"
+    "revision": "3d2f6f2e1cd179870abf6526c1435886"
   },
   {
     "url": "page-data/category/travel/page-data.json",
-    "revision": "5ef028d6267fd5ea924dbaca70586419"
+    "revision": "db046560c5ca6c30e32a2a88a9e642c5"
   },
   {
     "url": "component---src-pages-about-tsx-62c0a763dcb2a2fd9582.js"
   },
   {
     "url": "page-data/about/page-data.json",
-    "revision": "c2ed886b964fce3dd22e49c5d661e9b0"
+    "revision": "d9ff7d7207fb65553be954fee6abec20"
   },
   {
     "url": "manifest.webmanifest",
