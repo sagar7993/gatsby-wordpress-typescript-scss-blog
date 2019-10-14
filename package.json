@@ -89,6 +89,12 @@
     "tslint-react": "^4.0.0",
     "typescript": "^3.0.0"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run build && git add public && git commit -m 'fix: updated public folder for release'"
+    }
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
