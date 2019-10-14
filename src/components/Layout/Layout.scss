@@ -3,10 +3,16 @@
 
 .layout-container {
     background: $whiteColor;
+    position: relative;
 
     .layout {
-        margin: 0px auto;
-        max-width: 960px;
+        margin: 0px auto 72px auto;
+        max-width: 1080px;
         padding: 1.45rem 1.0875rem;
+
+        .sidebar {
+            position: sticky;
+            top: 1.45rem;
+        }
     }
 }

@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { Fragment, ReactNode } from 'react';
 
-export const Facebook = () => {
+export interface Props {
+	title?: ReactNode;
+}
+
+export const Facebook = (props: Props) => {
 	return (
-		<div className="facebook-container" />
+		<Fragment>
+			{props.title}
+			<div className="facebook-container" />
+		</Fragment>
 	);
 };
 

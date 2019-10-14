@@ -40,64 +40,71 @@ export const BlogTagPostsPage = (props: Props) => {
 	return (
 		<Layout location={props.location}>
 			<SEO title={`${site.siteMetadata.title} | ${site.siteMetadata.description}`} description={site.siteMetadata.description} />
-			<div className="posts">
-				<h3>Browsing Tag Posts: {capitalizeFirstLetter(props.pathContext.slug)}</h3>
-				{group.map(({ node }: { node: Post }) => {
-					const fluid: FluidObject | null = (node.featured_media && node.featured_media.localFile && node.featured_media.localFile.childImageSharp && node.featured_media.localFile.childImageSharp.fluid) ? node.featured_media.localFile.childImageSharp.fluid : null;
-					const categories: CategoryTagInfo[] = (node.categories && node.categories.length) > 0 ? node.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
-					const tags: CategoryTagInfo[] = (node.tags && node.tags.length) > 0 ? node.tags : new Array<CategoryTagInfo>();
-					return (
-						<article className="post" key={node.slug}>
-							<Link to={`/post/${node.slug}`} title={node.slug}>
-								<h1 className="black-color">{decodeHtmlCharCodes(node.title)}</h1>
-							</Link>
-							<div className="categories-container tags-container post-meta-container margin-bottom-24px">
-								{categories && categories.length > 0 && categories.map((category, categoryIndex) => {
-									return (
-										<Tag key={categoryIndex}>
-											<Link to={`/category/${category.slug}`} title={category.name}>
-												<Icon type="folder" />{capitalizeFirstLetter(category.name)}
-											</Link>
-										</Tag>
-									);
-								})}
-								{tags && tags.length > 0 && tags.map((tag, tagIndex) => {
-									return (
-										<Tag key={tagIndex}>
-											<Link to={`/tag/${tag.slug}`} title={tag.name}>
-												<Icon type="tag" />{capitalizeFirstLetter(tag.name)}
-											</Link>
-										</Tag>
-									);
-								})}
-								<span className="post-meta margin-left-2px">
-									<span className="author">{capitalizeFirstLetter(node.author.name)}</span>
-									<span className="separator"></span>
-									<span className="date">{(node.modified && node.modified.length > 0) ? node.modified : node.date}</span>
-								</span>
-							</div>
-							<Link to={`/post/${node.slug}`} title={node.slug}>
-								{(fluid && fluid.src && fluid.src.length > 0) && <Image fluid={fluid} alt={node.title} title={node.title} />}
-							</Link>
-							<div className="post-excerpt" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }} />
-							<div className="read-more-container">
-								<Link to={`/post/${node.slug}`} title={node.slug}>
-									<Button type="default" className="read-more">Read more</Button>
-								</Link>
-							</div>
-						</article>
-					);
-				})}
-			</div>
-			<Row type="flex" align="middle" gutter={36} className="margin-top-36px">
-				<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} className="align-center margin-bottom-36px">
+			<Row gutter={36}>
+				<Col xs={24} sm={24} md={24} lg={16} xl={18} xxl={18} id="primary" className="content-area with-sidebar">
+					<div className="posts">
+						<h3>Browsing Tag Posts: {capitalizeFirstLetter(props.pathContext.slug)}</h3>
+						{group.map(({ node }: { node: Post }) => {
+							const fluid: FluidObject | null = (node.featured_media && node.featured_media.localFile && node.featured_media.localFile.childImageSharp && node.featured_media.localFile.childImageSharp.fluid) ? node.featured_media.localFile.childImageSharp.fluid : null;
+							const categories: CategoryTagInfo[] = (node.categories && node.categories.length) > 0 ? node.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
+							const tags: CategoryTagInfo[] = (node.tags && node.tags.length) > 0 ? node.tags : new Array<CategoryTagInfo>();
+							return (
+								<article className="post" key={node.slug}>
+									<Link to={`/post/${node.slug}`} title={node.slug}>
+										<h1 className="black-color">{decodeHtmlCharCodes(node.title)}</h1>
+									</Link>
+									<div className="categories-container tags-container post-meta-container margin-bottom-24px">
+										{categories && categories.length > 0 && categories.map((category, categoryIndex) => {
+											return (
+												<Tag key={categoryIndex}>
+													<Link to={`/category/${category.slug}`} title={category.name}>
+														<Icon type="folder" />{capitalizeFirstLetter(category.name)}
+													</Link>
+												</Tag>
+											);
+										})}
+										{tags && tags.length > 0 && tags.map((tag, tagIndex) => {
+											return (
+												<Tag key={tagIndex}>
+													<Link to={`/tag/${tag.slug}`} title={tag.name}>
+														<Icon type="tag" />{capitalizeFirstLetter(tag.name)}
+													</Link>
+												</Tag>
+											);
+										})}
+										<span className="post-meta margin-left-2px">
+											<span className="author">{capitalizeFirstLetter(node.author.name)}</span>
+											<span className="separator"></span>
+											<span className="date">{(node.modified && node.modified.length > 0) ? node.modified : node.date}</span>
+										</span>
+									</div>
+									<Link to={`/post/${node.slug}`} title={node.slug}>
+										{(fluid && fluid.src && fluid.src.length > 0) && <Image fluid={fluid} alt={node.title} title={node.title} />}
+									</Link>
+									<div className="post-excerpt" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }} />
+									<div className="read-more-container">
+										<Link to={`/post/${node.slug}`} title={node.slug}>
+											<Button type="default" className="read-more">Read more</Button>
+										</Link>
+									</div>
+								</article>
+							);
+						})}
+					</div>
+				</Col>
+				<Col xs={0} sm={0} md={0} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
+					<Twitter title={<h3 className="margin-bottom-36px">Twitter</h3>} />
+					<Facebook title={
+						<h3 className="margin-top-36px margin-bottom-36px">Facebook</h3>
+					} />
+					<Instagram allInstaNode={props.pathContext.allInstaNode} orientation="vertical" title={
+						<h3 className="margin-top-36px margin-bottom-36px">Instagram</h3>
+					} />
+				</Col>
+			</Row>
+			<Row type="flex" align="middle" gutter={36}>
+				<Col xs={24} sm={24} md={24} lg={0} xl={0} xxl={0} className="align-center margin-top-36px margin-bottom-36px">
 					<Instagram allInstaNode={props.pathContext.allInstaNode} orientation="horizontal" />
-				</Col>
-				<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12} className="align-center">
-					<Twitter />
-				</Col>
-				<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12} className="align-center">
-					<Facebook />
 				</Col>
 			</Row>
 		</Layout>

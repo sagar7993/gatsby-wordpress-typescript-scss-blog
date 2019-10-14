@@ -7,10 +7,24 @@ module.exports = {
 		title: `${process.env.GATSBY_SITE_NAME}`,
 		description: `${process.env.GATSBY_SITE_DESCRIPTION}`,
 		author: `@${process.env.GATSBY_SITE_AUTHOR}`,
-		siteUrl: `${process.env.GATSBY_SITE_URL_PROTOCOL}://${process.env.GATSBY_SITE_URL_PATH}`
+		siteUrl: `${process.env.GATSBY_SITE_URL_PROTOCOL}://${process.env.GATSBY_SITE_URL_PATH}`,
+		social: {
+			twitter: 'https://www.twitter.com/sagar7993',
+			facebook: 'https://www.facebook.com/sagar7993',
+			email: 'sagar7993@gmail.com',
+			linkedin: 'https://www.linkedin.com/in/sagar-jain-006074a1',
+			github: 'https://www.github.com/sagar7993'
+		}
 	},
 	plugins: [
 		'gatsby-plugin-typescript',
+		{
+			resolve: 'gatsby-plugin-tslint',
+			options: {
+				test: /\.ts$|\.tsx$/,
+				exclude: /(node_modules|cache|public)/
+			}
+		},
 		'gatsby-plugin-react-helmet',
 		{
 			resolve: 'gatsby-source-filesystem',
@@ -33,6 +47,7 @@ module.exports = {
 				icon: 'src/images/logo.png'
 			},
 		},
+		'gatsby-plugin-catch-links',
 		{
 			resolve: 'gatsby-source-wordpress',
 			options: {
@@ -110,7 +125,7 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-pinterest-twitter-facebook`,
 			options: {
-				delayTimer: 1000,
+				delayTimer: 100,
 				pinterest: {
 					enable: true,
 					tall: true,
@@ -136,8 +151,8 @@ module.exports = {
 					enable: true,
 					containerSelector: '.facebook-container',
 					profile: process.env.GATSBY_FACEBOOK_SOURCE,
-					width: 340,
-					height: 500,
+					// width: 340,
+					// height: 500,
 					tabs: 'timeline, events, messages',
 					hideCover: false,
 					showFacepile: true,

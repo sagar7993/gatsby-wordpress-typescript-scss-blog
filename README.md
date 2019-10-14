@@ -78,6 +78,10 @@ Note: Do not include the `@` symbol here.
 - GATSBY_GOOGLE_ANALYTICS (Optional)
 This is your Google Analytics tracking id.
 
+- GATSBY_STATICMAN_BASE (Optional)
+This is the base URL of the of your Staticman instance. You can use either the public Staticman instance or host your own.
+Note: This is required to enable comments on the website.
+
 Note: Any new environment variables you want to define MUST have the `GATSBY_` prefix. You can access them using `process.env.GATSBY_MY_ENVIRONMENT_VARIABLE`. Also, `process.env` object cannot be de-structured. To access any variable from this object, use the full variable name.
 
 For example, the following code will NOT work.
@@ -217,12 +221,16 @@ Once you have defined the mandatory environment variables mentioned above, and h
 
 If you face any issues while working with this Gatsby starter template, feel free to create a new issue [here](https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog/issues). Please check if there's any existing similar issue already created before creating a new one.
 
-## Contribute
-
-Fork this repo and make a PR.
-
 ## 💫 Deploy
 
 Deploy your Gatsby site to Netlify using this Gatsby starter template by clicking on the `Deploy to netlify` button below.
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog)
+
+## Contribute
+
+Fork this repo and make a PR.
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog/blob/master/LICENSE) - see the LICENCE.md file for details

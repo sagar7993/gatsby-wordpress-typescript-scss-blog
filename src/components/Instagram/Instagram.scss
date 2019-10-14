@@ -4,8 +4,12 @@
     display: flex;
     flex-wrap: wrap;
     background: $whiteColor;
+    position: relative;
 
     .instagram-profile {
+        height: 48px;
+        line-height: 48px;
+        padding: 0px 16px;
         z-index: 1;
         position: absolute;
         left: 50%;
@@ -14,20 +18,26 @@
     }
 
     .instagram-post {
-        width: 12.5%;
-        padding: 6.25% 0;
-        margin: 0;
+        height: auto;
+        margin: 0px;
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
         transition: all 1s ease;
 
-        .gatsby-image-wrapper {
-            display: table-row;
+        a {
+            height: 100%;
+            width: 100%;
 
-            img {
+            .gatsby-image-wrapper {
+                height: 100%;
+                width: 100%;
                 margin-bottom: 0px;
+
+                img {
+                    margin-bottom: 0px;
+                }
             }
         }
 
@@ -36,22 +46,42 @@
         }
     }
 
-    @media screen and (max-width: 1120px) {
+    &.instagram-feed-horizontal {
         .instagram-post {
-            width: 25%;
-            padding: 12.5% 0;
-            height: auto;
+            width: 12.5%;
+            padding: 6.25% 0px;
+
+            a {
+                .gatsby-image-wrapper {
+                    display: table-row;
+                }
+            }
+        }
+
+        @media screen and (max-width: 1120px) {
+            .instagram-post {
+                width: 25%;
+                padding: 12.5% 0px;
+                height: auto;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .instagram-post {
+                width: 50%;
+                padding: 25% 0px;
+            }
+
+            .instagram-post:nth-child(n+6) {
+                display: none;
+            }
         }
     }
 
-    @media screen and (max-width: 500px) {
+    &.instagram-feed-vertical {
         .instagram-post {
             width: 50%;
-            padding: 25% 0;
-        }
-
-        .instagram-post:nth-child(n+5) {
-            display: none;
+            padding: 8px;
         }
     }
 }

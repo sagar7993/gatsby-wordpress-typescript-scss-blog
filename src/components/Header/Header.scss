@@ -14,13 +14,13 @@
             margin: 0 auto;
 
             .logo {
-                width: 64px;
+                width: 48px;
                 min-height: 64px;
                 background-image: url('../../../static/logo.png');
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: 36px;
-                margin: 0px 6px 0px 0;
+                margin: 0px;
                 float: left;
             }
 
@@ -30,6 +30,7 @@
 
                 .ant-menu-item {
                     border-color: $primaryAccentColor;
+                    padding: 0px 12px;
 
                     a {
                         color: $whiteColor;

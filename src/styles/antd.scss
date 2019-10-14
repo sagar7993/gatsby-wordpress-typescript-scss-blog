@@ -142,23 +142,8 @@ textarea:focus,
     background: $primaryAccentColor;
 }
 
-// for the template list
-.ant-menu.tooltip-menu {
-    border-right: none;
-    margin: -12px -16px;
-    width: calc(100% + 32px);
-    height: calc(100% + 24px);
-
-    .ant-menu-item {
-        padding: 5px 12px;
-        height: 32px;
-        line-height: 22px;
-        margin: 0;
-    }
-}
-
 .ant-popover-placement-rightTop {
-    padding-left: 0;
+    padding-left: 0px;
 }
 
 .ant-select-dropdown-menu-item {
@@ -226,40 +211,6 @@ textarea:focus,
         .ant-input-number-handler-down {
             .anticon-down {
                 color: $primaryAccentColor;
-            }
-        }
-    }
-}
-
-.ant-tooltip {
-    &.white-tooltip {
-        padding: 12px 8px;
-
-        &.hide-if-drawer-open {
-            display: none;
-        }
-
-        .ant-tooltip-content {
-            &:before {
-                content: '';
-                content: '';
-                display: block;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%) rotateZ(135deg);
-                left: 4px;
-                width: 8px;
-                height: 8px;
-                background: $whiteColor;
-            }
-
-            .ant-tooltip-arrow {
-                display: none;
-            }
-
-            .ant-tooltip-inner {
-                background-color: $whiteColor;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
             }
         }
     }

@@ -44,58 +44,65 @@ export const BlogPostPage = (props: Props) => {
 	return (
 		<Layout location={props.location}>
 			<SEO title={props.data.wordpressPost.title} description={props.data.wordpressPost.excerpt} />
-			<article className="post">
-				<h1>{decodeHtmlCharCodes(props.data.wordpressPost.title)}</h1>
-				<div className="categories-container tags-container post-meta-container margin-bottom-24px">
-					{categories && categories.length > 0 && categories.map((category, categoryIndex) => {
-						return (
-							<Tag key={categoryIndex}>
-								<Link to={`/category/${category.slug}`} title={category.name}>
-									<Icon type="folder" />{capitalizeFirstLetter(category.name)}
+			<Row gutter={36}>
+				<Col xs={24} sm={24} md={24} lg={16} xl={18} xxl={18} id="primary" className="content-area with-sidebar">
+					<article className="post">
+						<h1>{decodeHtmlCharCodes(props.data.wordpressPost.title)}</h1>
+						<div className="categories-container tags-container post-meta-container margin-bottom-24px">
+							{categories && categories.length > 0 && categories.map((category, categoryIndex) => {
+								return (
+									<Tag key={categoryIndex}>
+										<Link to={`/category/${category.slug}`} title={category.name}>
+											<Icon type="folder" />{capitalizeFirstLetter(category.name)}
+										</Link>
+									</Tag>
+								);
+							})}
+							{tags && tags.length > 0 && tags.map((tag, tagIndex) => {
+								return (
+									<Tag key={tagIndex}>
+										<Link to={`/tag/${tag.slug}`} title={tag.name}>
+											<Icon type="tag" />{capitalizeFirstLetter(tag.name)}
+										</Link>
+									</Tag>
+								);
+							})}
+							<span className="post-meta margin-left-2px">
+								<span className="author">{capitalizeFirstLetter(props.data.wordpressPost.author.name)}</span>
+								<span className="separator"></span>
+								<span className="date">{(props.data.wordpressPost.modified && props.data.wordpressPost.modified.length > 0) ? props.data.wordpressPost.modified : props.data.wordpressPost.date}</span>
+							</span>
+						</div>
+						{fluid && fluid.src && fluid.src.length > 0 && <Image fluid={fluid} alt={props.data.wordpressPost.title} title={props.data.wordpressPost.title} />}
+						<div className="post-content" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wordpressPost.content) }} />
+						<div className="navigation-links margin-bottom-24px">
+							{props.pageContext.next && props.pageContext.next.slug && (
+								<Link to={`/post/${props.pageContext.next.slug}`} title={props.pageContext.next.slug}>
+									<Button type="primary">Go to Previous Post</Button>
 								</Link>
-							</Tag>
-						);
-					})}
-					{tags && tags.length > 0 && tags.map((tag, tagIndex) => {
-						return (
-							<Tag key={tagIndex}>
-								<Link to={`/tag/${tag.slug}`} title={tag.name}>
-									<Icon type="tag" />{capitalizeFirstLetter(tag.name)}
+							)}
+							{props.pageContext.previous && props.pageContext.previous.slug && (
+								<Link to={`/post/${props.pageContext.previous.slug}`} title={props.pageContext.previous.slug}>
+									<Button type="primary">Go to Next Post</Button>
 								</Link>
-							</Tag>
-						);
-					})}
-					<span className="post-meta margin-left-2px">
-						<span className="author">{capitalizeFirstLetter(props.data.wordpressPost.author.name)}</span>
-						<span className="separator"></span>
-						<span className="date">{(props.data.wordpressPost.modified && props.data.wordpressPost.modified.length > 0) ? props.data.wordpressPost.modified : props.data.wordpressPost.date}</span>
-					</span>
-				</div>
-				{fluid && fluid.src && fluid.src.length > 0 && <Image fluid={fluid} alt={props.data.wordpressPost.title} title={props.data.wordpressPost.title} />}
-				<div className="post-content" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wordpressPost.content) }} />
-			</article>
-			{process.env && <Comments slug={props.data.wordpressPost.slug} wordpress_id={props.data.wordpressPost.wordpress_id} comments={props.data.allCommentsYaml} />}
-			<div className="margin-bottom-24px navigation-links">
-				{props.pageContext.next && props.pageContext.next.slug && (
-					<Link to={`/post/${props.pageContext.next.slug}`} title={props.pageContext.next.slug}>
-						<Button type="primary">Go to Previous Post</Button>
-					</Link>
-				)}
-				{props.pageContext.previous && props.pageContext.previous.slug && (
-					<Link to={`/post/${props.pageContext.previous.slug}`} title={props.pageContext.previous.slug}>
-						<Button type="primary">Go to Next Post</Button>
-					</Link>
-				)}
-			</div>
-			<Row type="flex" align="middle" gutter={36} className="margin-top-36px">
-				<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} className="align-center margin-bottom-36px">
+							)}
+						</div>
+					</article>
+					{process.env && <Comments slug={props.data.wordpressPost.slug} wordpress_id={props.data.wordpressPost.wordpress_id} comments={props.data.allCommentsYaml} />}
+				</Col>
+				<Col xs={0} sm={0} md={0} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
+					<Twitter title={<h3 className="margin-bottom-36px">Twitter</h3>} />
+					<Facebook title={
+						<h3 className="margin-top-36px margin-bottom-36px">Facebook</h3>
+					} />
+					<Instagram allInstaNode={props.data.allInstaNode} orientation="vertical" title={
+						<h3 className="margin-top-36px margin-bottom-36px">Instagram</h3>
+					} />
+				</Col>
+			</Row>
+			<Row type="flex" align="middle" gutter={36}>
+				<Col xs={24} sm={24} md={24} lg={0} xl={0} xxl={0} className="align-center margin-top-36px margin-bottom-36px">
 					<Instagram allInstaNode={props.data.allInstaNode} orientation="horizontal" />
-				</Col>
-				<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12} className="align-center">
-					<Twitter />
-				</Col>
-				<Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12} className="align-center">
-					<Facebook />
 				</Col>
 			</Row>
 		</Layout>

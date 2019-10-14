@@ -4,6 +4,12 @@
     background: $tertiaryAccentColor;
     min-height: 64px;
     padding: 0px 1.45rem;
+    margin-top: 1.45rem;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
     .footer {
         &.ant-layout-footer {
