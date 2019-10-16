@@ -183,6 +183,10 @@ This Gatsby starter template has some basic SEO capabilities out of the box such
 
 This Gatsby starter template uses the [gatsby-plugin-pinterest-twitter-facebook](https://www.gatsbyjs.org/packages/gatsby-plugin-pinterest-twitter-facebook/) plugin to load the following social media widgets. No API tokens needed for any of these widgets, and no complicated setup procedure. Just plug and play.
 
+## Reading progress bar
+
+This Gatsby starter template displays a reading progress bar at the top of each page. Feel free to tweak it, hide or show it on certain pages, or remove it altogether if you don't like it.
+
 - ###### Pinterest
     - Display the `Pin it` button while hovering over any image on your website.
 
