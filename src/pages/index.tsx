@@ -14,7 +14,7 @@ import Facebook from '../components/Facebook';
 
 import { ChildImageSharp, InstagramFeed } from '../contracts/post';
 
-import '../templates/Blog.scss';
+import '../styles/blog.scss';
 
 export interface Props {
 	data: {
@@ -36,7 +36,9 @@ export const IndexPage = (props: Props) => {
 							<Row gutter={24} type="flex" align="middle">
 								<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
 									<h2>This is an opinionated starter project to help you create lightning fast PWA websites with Gatsby and Wordpress CMS, built using Typescript, SCSS and Ant Design.</h2>
-									{fluid && <Image fluid={fluid} alt="Home screen banner" title="Home screen banner" />}
+									{(fluid && fluid.src && fluid.src.length > 0) && (
+										<Image fluid={fluid} alt="Home screen banner" title="Home screen banner" />
+									)}
 								</Col>
 								<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
 									<div className="features-wrapper margin-top-36px">

@@ -23,13 +23,11 @@ export const Instagram = (props: Props) => {
 					<a href={`https://instagram.com/${process.env.GATSBY_INSTAGRAM_SOURCE}`} target="_blank" rel="noopenernoopener noreferrer nofollow" title={process.env.GATSBY_INSTAGRAM_SOURCE} className="instagram-profile ant-btn ant-btn-default" ><Icon type="instagram" className="margin-right-8px" />Follow me</a>
 					{props.allInstaNode.edges.map((instagramPost, index) => {
 						return (
-							(instagramPost.node) ? (
+							(instagramPost.node && instagramPost.node.localFile && instagramPost.node.localFile.childImageSharp) ? (
 								<div key={index} className="instagram-post">
-									{(instagramPost.node.localFile && instagramPost.node.localFile.childImageSharp) ? (
-										<a href={`https://instagram.com/p/${instagramPost.node.id}`} target="_blank" rel="noopenernoopener noreferrer nofollow" title={instagramPost.node.caption}>
-											<Image fluid={instagramPost.node.localFile.childImageSharp.fluid} alt={instagramPost.node.caption} title={instagramPost.node.caption} data-pin-nopin="true" />
-										</a>
-									) : <Fragment />}
+									<a href={`https://instagram.com/p/${instagramPost.node.id}`} target="_blank" rel="noopenernoopener noreferrer nofollow" title={instagramPost.node.caption}>
+										<Image fluid={instagramPost.node.localFile.childImageSharp.fluid} alt={instagramPost.node.caption} title={instagramPost.node.caption} data-pin-nopin="true" />
+									</a>
 								</div>
 							) : <Fragment key={index} />
 						);

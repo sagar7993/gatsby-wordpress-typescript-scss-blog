@@ -1,0 +1,226 @@
+@import './antd.scss';
+
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    margin: 0px;
+    padding: 0px;
+    font-family: $fontFamily;
+    color: $blackColor;
+}
+
+::selection {
+    color: $whiteColor;
+    background: $primaryAccentColor;
+}
+
+:focus {
+    outline: none;
+    outline-width: 0px;
+}
+
+input:-internal-autofill-previewed,
+input:-internal-autofill-selected,
+textarea:-internal-autofill-previewed,
+textarea:-internal-autofill-selected,
+select:-internal-autofill-previewed,
+select:-internal-autofill-selected {
+    background-color: transparent;
+    color: $blackColor !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:active {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    transition: background-color 5000s ease-in-out 0s;
+    color: $blackColor !important;
+}
+
+::-webkit-scrollbar {
+    height: 0px;
+    width: 0px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 0px;
+    width: 0px;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0px;
+}
+
+.post,
+.posts,
+.page {
+    font-family: $fontFamily;
+    max-width: 1080px;
+    position: relative;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    div {
+        a[target='_blank'][id] {
+            &:hover {
+                position: relative;
+
+                &:after {
+                    content: '';
+                    background: url('../../static/anchor.svg');
+                    background-repeat: no-repeat;
+                    background-size: 12px;
+                    height: 12px;
+                    width: 12px;
+                    position: absolute;
+                    display: inline-block;
+                    top: 2px;
+                    right: -16px;
+                }
+            }
+        }
+    }
+
+    .more-link {
+        color: $primaryAccentColor;
+        padding: 0px 12px;
+    }
+
+    .aligncenter {
+        clear: both;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .post-meta {
+        .author {
+            margin-right: 12px;
+        }
+
+        .separator {
+            height: 8px;
+            width: 8px;
+            background-color: $primaryAccentColor;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 12px;
+        }
+
+        .author,
+        .date {
+            display: inline;
+        }
+    }
+
+    .post-excerpt {
+        margin-top: 1.45rem;
+    }
+
+    .read-more-container {
+        margin-bottom: 1.45rem;
+        text-align: center;
+    }
+}
+
+.categories-container,
+.tags-container {
+    line-height: 32px;
+
+    .ant-tag {
+        padding: 0px 8px;
+        border-radius: 12px;
+
+        a {
+            color: $blackColor;
+
+            .anticon {
+                margin-right: 6px;
+            }
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            a {
+                color: $primaryAccentColor;
+
+                .anticon {
+                    svg {
+                        fill: $primaryAccentColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.navigation-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.not-found-404 {
+    .graphic {
+        width: 100%;
+        text-align: center;
+
+        img {
+            max-height: 200px;
+            object-fit: contain;
+        }
+    }
+
+    .action {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.home {
+    .ant-card {
+        box-shadow: none;
+    }
+}
+
+.about {
+    .ant-card {
+        box-shadow: none;
+
+        .ant-card-body {
+            .description-wrapper {
+                .description {
+                    .icon {
+                        margin-right: 12px;
+
+                        .anticon {
+                            vertical-align: text-bottom;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

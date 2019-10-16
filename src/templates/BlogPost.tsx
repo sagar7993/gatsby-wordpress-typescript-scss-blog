@@ -18,7 +18,7 @@ import { CommentEdges } from '../contracts/comment';
 
 import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
 
-import './Blog.scss';
+import '../styles/blog.scss';
 
 export interface Props {
 	data: {
@@ -73,7 +73,9 @@ export const BlogPostPage = (props: Props) => {
 								<span className="date">{(props.data.wordpressPost.modified && props.data.wordpressPost.modified.length > 0) ? props.data.wordpressPost.modified : props.data.wordpressPost.date}</span>
 							</span>
 						</div>
-						{fluid && fluid.src && fluid.src.length > 0 && <Image fluid={fluid} alt={props.data.wordpressPost.title} title={props.data.wordpressPost.title} />}
+						{(fluid && fluid.src && fluid.src.length > 0) && (
+							<Image fluid={fluid} alt={props.data.wordpressPost.title} title={props.data.wordpressPost.title} />
+						)}
 						<div className="post-content" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wordpressPost.content) }} />
 						<div className="navigation-links margin-bottom-24px">
 							{props.pageContext.next && props.pageContext.next.slug && (

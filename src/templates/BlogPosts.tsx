@@ -14,7 +14,7 @@ import Facebook from '../components/Facebook';
 import { Post, CategoryTagInfo, InstagramFeed } from '../contracts/post';
 import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
 
-import './Blog.scss';
+import '../styles/blog.scss';
 
 export interface Props {
 	pathContext: {
@@ -79,9 +79,11 @@ export const BlogPostsPage = (props: Props) => {
 										<span className="date">{(node.modified && node.modified.length > 0) ? node.modified : node.date}</span>
 									</span>
 								</div>
-								<Link to={`/post/${node.slug}`} title={node.slug}>
-									{(fluid && fluid.src && fluid.src.length > 0) && <Image fluid={fluid} alt={node.title} title={node.title} />}
-								</Link>
+								{(fluid && fluid.src && fluid.src.length > 0) && (
+									<Link to={`/post/${node.slug}`} title={node.slug}>
+										<Image fluid={fluid} alt={node.title} title={node.title} />
+									</Link>
+								)}
 								<div className="post-excerpt" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }} />
 								<div className="read-more-container">
 									<Link to={`/post/${node.slug}`} title={node.slug}>
