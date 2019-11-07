@@ -38,7 +38,8 @@ export class CommentForm extends Component<Props, State> {
 		try {
 			const response = await addComment(addCommentRequest);
 			if (response.success) {
-				Message.success('Comment added successfully', 3);
+				Message.success('Comment sent for approval successfully', 3);
+				this.props.form.resetFields();
 			} else {
 				Message.error('Comment could not be added', 3);
 			}
