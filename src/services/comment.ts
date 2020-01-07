@@ -6,7 +6,7 @@ import { AddCommentRequest, AddCommentResponse } from '../contracts/comment';
 
 const addCommentUrl = `${process.env.GATSBY_STATICMAN_BASE}/${process.env.GATSBY_GITHUB_USER}/${process.env.GATSBY_GITHUB_REPO}/master/comments`;
 
-export const addComment = async (addCommentRequest: AddCommentRequest): Promise<any> => {
+export const addComment = async (addCommentRequest: AddCommentRequest): Promise<AddCommentResponse> => {
 	try {
 		const formdata = new FormData();
 		formdata.set('fields[name]', addCommentRequest.name);
