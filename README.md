@@ -15,14 +15,17 @@ This is an opinionated starter project to help you create lightning fast PWA web
 
 https://gatsby-wordpress-typescript-scss-blog.netlify.com/
 
-## Getting started
+<!--
+    ## Getting started
 
-Hit the **Deploy to Netlify** button. This will:
+    Hit the **Deploy to Netlify** button. This will:
 
-- Clone the repo into your Github account
-- Create a new project on Netlify, build & deploy
+    - Clone the repo into your Github account
+    - Create a new project on Netlify, build & deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog)
+    [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog)
+ 
+-->
 
 ## Using the environment variables
 
