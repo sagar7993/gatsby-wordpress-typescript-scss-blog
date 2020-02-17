@@ -15,18 +15,6 @@ This is an opinionated starter project to help you create lightning fast PWA web
 
 https://gatsby-wordpress-typescript-scss-blog.netlify.com/
 
-<!--
-    ## Getting started
-
-    Hit the **Deploy to Netlify** button. This will:
-
-    - Clone the repo into your Github account
-    - Create a new project on Netlify, build & deploy
-
-    [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog)
- 
--->
-
 ## Using the environment variables
 
 This Gatsby starter template comes with 2 environments, one for development and testing, and another for production. This allows you to use different tokens, API URL's, social account id's etc as needed for your development, testing and production environments. The environment variables defined are as follows: 
@@ -227,12 +215,6 @@ Once you have defined the mandatory environment variables mentioned above, and h
 ## Issues
 
 If you face any issues while working with this Gatsby starter template, feel free to create a new issue [here](https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog/issues). Please check if there's any existing similar issue already created before creating a new one.
-
-## 💫 Deploy
-
-Deploy your Gatsby site to Netlify using this Gatsby starter template by clicking on the `Deploy to netlify` button below.
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog)
 
 ## Contribute
 
