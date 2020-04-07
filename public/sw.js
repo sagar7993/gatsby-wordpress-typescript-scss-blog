@@ -53,102 +53,102 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "adbcd54f95ea3f37256b0ba669a1be04"
+    "revision": "85b63cb5254eab3db5d81ef3bfbac37f"
   },
   {
     "url": "component---src-templates-blog-posts-tsx-784bafd240d54c2faa26.js"
   },
   {
     "url": "page-data/posts/2/page-data.json",
-    "revision": "a34adc93eac417a20fb71bc3d7af3557"
+    "revision": "70aac41942e52071696f43dde82d61eb"
   },
   {
     "url": "page-data/posts/3/page-data.json",
-    "revision": "aec3c2cbfdf8d4454af18e34bc6a7515"
+    "revision": "28878212e745792489ba25fa2743b6dc"
   },
   {
     "url": "page-data/posts/page-data.json",
-    "revision": "99b0c655308c84bd2879244e2c968721"
+    "revision": "206b42e0774f8f4b9078a3895a331ebf"
   },
   {
     "url": "component---src-templates-blog-post-tsx-bda79f24cf62e7c54f1e.js"
   },
   {
     "url": "page-data/post/this-is-my-1st-post/page-data.json",
-    "revision": "dcbcdb460028f8263b2d49c58160924d"
+    "revision": "c58b600007ce0f6f25b5e1e9c3909b5f"
   },
   {
     "url": "page-data/post/this-is-my-2nd-post/page-data.json",
-    "revision": "0f3cc2ad33cc62e8645688774662f053"
+    "revision": "cac7f461112434b4c1942c3f67a60be6"
   },
   {
     "url": "page-data/post/this-is-my-3rd-post/page-data.json",
-    "revision": "d3d645d6bf21a62ad3f17067d1ba09c8"
+    "revision": "33373642b61188836a282fc9eaa4e30d"
   },
   {
     "url": "page-data/post/this-is-my-4th-post/page-data.json",
-    "revision": "aa94edf1d8fb380bbcac3c7749fb026d"
+    "revision": "1b660804a6874456b77f070c57599bab"
   },
   {
     "url": "page-data/post/this-is-my-5th-post/page-data.json",
-    "revision": "79e277c0b6c935ea5f7333856ddb9cc2"
+    "revision": "2e5c39f216430be95b96329a956445b8"
   },
   {
     "url": "page-data/post/this-is-my-6th-post/page-data.json",
-    "revision": "5298d9cc027d45b4d943d8d297ac1cc6"
+    "revision": "34a250a0b7ebce0e4b49d82b2aa8674f"
   },
   {
     "url": "component---src-templates-blog-tag-posts-tsx-4065e4008de4d2dae5f2.js"
   },
   {
     "url": "page-data/tag/adventure/page-data.json",
-    "revision": "ac015c109b936fd1718c8420d473c268"
+    "revision": "16b49e683869b139e2b9ce37b78679be"
   },
   {
     "url": "page-data/tag/food/page-data.json",
-    "revision": "407bc0546c4c5288e84d570e5cea419f"
+    "revision": "c2efeb1ccb3c24bac102120c03eacbe5"
   },
   {
     "url": "page-data/tag/life/page-data.json",
-    "revision": "54badd1e4c871227136a328edcf72e4d"
+    "revision": "43fae39693bd78aa74f2ce4b700f2329"
   },
   {
     "url": "page-data/tag/nature/page-data.json",
-    "revision": "1cf2f573fe221ebaa479616a46299ffa"
+    "revision": "70e97ae8f2ec4c431dfb61d285bff201"
   },
   {
     "url": "page-data/tag/travel/page-data.json",
-    "revision": "871f59b18fdd5438b55fbfd2f9d1007c"
+    "revision": "ee077f49775013631f3223f19673caf2"
   },
   {
     "url": "component---src-templates-blog-category-posts-tsx-9536f111608f42dc0a93.js"
   },
   {
     "url": "page-data/category/adventure/page-data.json",
-    "revision": "8cabbd97dc5a12a152cb1c1bf49b17e6"
+    "revision": "6d30567f466b27f5bdfea9feaebbad48"
   },
   {
     "url": "page-data/category/food/page-data.json",
-    "revision": "8ea2af54da239280150676d2e5aa9a2e"
+    "revision": "a3b954a5ef1bbb8e54c8dd9617939f00"
   },
   {
     "url": "page-data/category/life/page-data.json",
-    "revision": "0645d9881635a8783ba1ea3420e7ce21"
+    "revision": "192d52ba8bbfed6226ff4dc247d6a16a"
   },
   {
     "url": "page-data/category/nature/page-data.json",
-    "revision": "b298b721a29ae855cc1f205752510715"
+    "revision": "3424b6cb386e86005c74fc05c99f14e3"
   },
   {
     "url": "page-data/category/travel/page-data.json",
-    "revision": "afe0bac58d8b33a4525fb1173f5c410b"
+    "revision": "b087431ea2d4c261dc2156ad4b99d908"
   },
   {
     "url": "component---src-pages-about-tsx-195c5e2e2bcfa7eb044d.js"
   },
   {
     "url": "page-data/about/page-data.json",
-    "revision": "a77850122ac14d9b055a0125591d853e"
+    "revision": "600686b30e405b8c0580b120a3b8fe36"
   },
   {
     "url": "manifest.webmanifest",
