@@ -185,7 +185,7 @@ This Gatsby starter template displays a reading progress bar at the top of each 
     - Display the Twitter follow button, and the Twitter timeline anywhere on your website.
 
 - ###### Facebook
-    - Display the Facebook loke button, and the Facebook timeline anywhere on your website.
+    - Display the Facebook like button, and the Facebook timeline anywhere on your website.
 
 Note: Please check out this plugin's documentation [here](https://www.gatsbyjs.org/packages/gatsby-plugin-pinterest-twitter-facebook/) to understand all the plugin customization options.
 
